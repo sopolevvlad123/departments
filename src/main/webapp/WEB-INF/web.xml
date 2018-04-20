@@ -1,0 +1,83 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/WEB-INF/views/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>createDepartment</servlet-name>
+        <jsp-file>/WEB-INF/views/createDepartment.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createDepartment</servlet-name>
+        <url-pattern>/createDepartment.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>updateDepartment</servlet-name>
+        <jsp-file>/WEB-INF/views/updateDepartment.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateDepartment</servlet-name>
+        <url-pattern>/updateDepartment.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>createEmployee</servlet-name>
+        <jsp-file>/WEB-INF/views/createEmployee.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createEmployee</servlet-name>
+        <url-pattern>/createEmployee.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>employeeList</servlet-name>
+        <jsp-file>/WEB-INF/views/employeeList.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>employeeList</servlet-name>
+        <url-pattern>/employeeList.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateEmployee</servlet-name>
+        <jsp-file>/WEB-INF/views/updateEmployee.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateEmployee</servlet-name>
+        <url-pattern>/updateEmployee.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <servlet-class>com.servlet.FrontControllerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+    <error-page>
+        <location>/WEB-INF/views/errorPage.jsp</location>
+    </error-page>
+
+</web-app>
