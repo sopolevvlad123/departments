@@ -102,8 +102,8 @@ public class EmployeeService {
     };*/
 
 
-        public Map<String,String> validationProblemsMap(String firstName, String lastName, String email, String salaryString, String hireDate, String departmentId, String employeeId){
-        int salary = 0;
+    public Map<String,String> validationProblemsMap(String firstName, String lastName, String email, String salaryString, String hireDate, String departmentId){
+        Integer salary = 0;
         java.sql.Date date = null;
         if (isDateValid(hireDate, DATE_FORMAT)) {
             date = java.sql.Date.valueOf(hireDate);
@@ -112,8 +112,6 @@ public class EmployeeService {
             salary = new BigInteger(salaryString).intValue();
         }
         Employee employee = new Employee(firstName, lastName, email, salary, date, Integer.parseInt(departmentId));
-
-        System.out.println(employee);
         return validViolMap(employee);
     }
 
@@ -126,11 +124,9 @@ public class EmployeeService {
         if (violations.size() > 0){
             int count = 0;
             for (ConstraintViolation violation : violations){
-                System.out.println(++count);
-
-
                 if (violHelpMap.containsKey(violation.getContext().toString())){
                 violationMap.put(violHelpMap.get(violation.getContext().toString()),violation.getMessage());
+                break;
                 }
             }
 

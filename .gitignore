@@ -1,3 +1,11 @@
 **/.idea
 **/target/
 **.iml
+**/out/
+out/artifacts/dep_war_exploded/META-INF/
+out/artifacts/dep_war_exploded/WEB-INF/classes/
+out/artifacts/dep_war_exploded/WEB-INF/lib/jstl-1.2.jar
+out/artifacts/dep_war_exploded/WEB-INF/views/
+out/artifacts/dep_war_exploded/WEB-INF/web.xml
+src/main/resources/
+src/test/

@@ -21,8 +21,8 @@ public class CreateEmployeeHandler extends AbstractCreateServletHanler {
                 request.getParameter("email"),
                 request.getParameter("salary"),
                 request.getParameter("hireDate"),
-                request.getParameter("departmentId"),
-                "11");
+                request.getParameter("departmentId")
+                );
         if (violationsMap.size()>0){
             request.setAttribute("violationMap", violationsMap);
             toPreviousPage(request, response, CREATE_EMPLOYEE_PAGE);
