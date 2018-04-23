@@ -37,7 +37,7 @@ public class DepartmentService {
     }
 
     public Department getDepartment(int departmentId) {
-        Department department = null;
+        Department department;
         try {
             department = departmentDAO.getDepartment(departmentId);
         } catch (SQLException e) {
@@ -74,8 +74,6 @@ public class DepartmentService {
     }
 
     public boolean checkUnique(String departmentName,Integer departmentId) {
-        System.out.println("service dep");
-
         try {
             return departmentDAO.checkUnique(departmentName,departmentId);
         } catch (SQLException e) {
@@ -94,7 +92,6 @@ public class DepartmentService {
         }else {
             department = new Department(Integer.parseInt(departmentId),departmentName);
         }
-        System.out.println("department " + department);
         return validViolMap(department);
     }
 

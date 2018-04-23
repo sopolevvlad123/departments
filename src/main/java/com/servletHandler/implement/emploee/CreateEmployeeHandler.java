@@ -1,7 +1,7 @@
 package com.servletHandler.implement.emploee;
 
 import com.service.EmployeeService;
-import com.servletHandler.implement.AbstractCreateServletHanler;
+import com.servletHandler.ServletHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +13,7 @@ import java.util.Map;
 import static com.utils.ServletHandlerConstants.CREATE_EMPLOYEE_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEP_EMPLOYEES;
 
-public class CreateEmployeeHandler extends AbstractCreateServletHanler {
+public class CreateEmployeeHandler extends ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String,String> violationsMap = EmployeeService.getInstance().validationProblemsMap(request.getParameter("firstName"),

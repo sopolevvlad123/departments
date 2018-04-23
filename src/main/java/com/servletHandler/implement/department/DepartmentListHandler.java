@@ -13,13 +13,12 @@ import java.util.List;
 
 import static com.utils.ServletHandlerConstants.INDEX_PAGE;
 
-public class DepartmentListHandler implements ServletHandler {
+public class DepartmentListHandler extends ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Department> departmentList = DepartmentService.getInstance().getAllDepartments();
         request.setAttribute("departmentList", departmentList);
-        System.out.println("depList");
         RequestDispatcher dispatcher = request.getRequestDispatcher(INDEX_PAGE);
         dispatcher.forward(request, response);
     }

@@ -1,21 +1,19 @@
 package com.servletHandler.implement.department;
 
 import com.service.DepartmentService;
-import com.service.EmployeeService;
-import com.servletHandler.implement.AbstractCreateServletHanler;
+import com.servletHandler.ServletHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
 import java.util.Map;
 
 import static com.utils.ServletHandlerConstants.CREATE_DEPARTMENT_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
 
-public class CreateDepartmentHandler extends AbstractCreateServletHanler {
+public class CreateDepartmentHandler extends ServletHandler {
 
 
     @Override

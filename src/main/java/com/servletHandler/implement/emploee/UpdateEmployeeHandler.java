@@ -2,6 +2,7 @@ package com.servletHandler.implement.emploee;
 
 import com.bean.Employee;
 import com.service.EmployeeService;
+import com.servletHandler.ServletHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import static com.utils.ServletHandlerConstants.CREATE_EMPLOYEE_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEP_EMPLOYEES;
 import static com.utils.ServletHandlerConstants.UPDATE_EMPLOYEE_PAGE;
 
-public class UpdateEmployeeHandler extends CreateEmployeeHandler {
+public class UpdateEmployeeHandler extends ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

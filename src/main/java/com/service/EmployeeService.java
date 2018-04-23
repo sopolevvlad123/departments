@@ -44,7 +44,7 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeById(int employeeId) {
-        Employee employee = null;
+        Employee employee;
         try {
             employee = employeeDAO.getEmployee(employeeId);
         } catch (SQLException e) {
@@ -54,7 +54,7 @@ public class EmployeeService {
     }
 
     public List<Employee> getAllEmployee() {
-        List<Employee> employeeList = null;
+        List<Employee> employeeList;
         try {
             employeeList = employeeDAO.getAllEmployee();
         } catch (SQLException e) {

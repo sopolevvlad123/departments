@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static com.utils.ServletHandlerConstants.GET_DEP_EMPLOYEES;
 
-public class DeleteEmployeeHandler implements ServletHandler {
+public class DeleteEmployeeHandler extends ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {

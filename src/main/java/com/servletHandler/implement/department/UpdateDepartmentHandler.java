@@ -2,6 +2,7 @@ package com.servletHandler.implement.department;
 
 import com.bean.Department;
 import com.service.DepartmentService;
+import com.servletHandler.ServletHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 import static com.utils.ServletHandlerConstants.UPDATE_DEPARTMENT_PAGE;
 
 
-public class UpdateDepartmentHandler extends CreateDepartmentHandler {
+public class UpdateDepartmentHandler extends ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String,String> violationsMap = DepartmentService.getInstance().validationProblemsMap(request.getParameter("departmentName"),request.getParameter("departmentId"));
