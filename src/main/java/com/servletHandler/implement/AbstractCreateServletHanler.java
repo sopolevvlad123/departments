@@ -11,11 +11,6 @@ import java.io.IOException;
 
 public abstract class AbstractCreateServletHanler implements ServletHandler {
 
-    public abstract boolean isBeanValid(HttpServletRequest request);
-
-    public abstract boolean isBeanUnique(HttpServletRequest request);
-
-
     public void toPreviousPage(HttpServletRequest request, HttpServletResponse response, String url) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);

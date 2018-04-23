@@ -3,10 +3,10 @@
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <head>
-    <title> Emploee List</title>
+    <title> Employee List</title>
 </head>
 <body>
-<h1 class="d-flex justify-content-center"> <c:out value="${department.departmentName}"></c:out> Employee List </h1>
+<h1 class="d-flex justify-content-center"> <c:out value="${param.departmentId}"></c:out> Employee List </h1>
 <div class="container">
     <div class="row justify-content-md-center">
         <c:set var="departmentIdQuery" scope="session" value=" ${requestScope['javax.servlet.forward.query_string']}"></c:set>
@@ -35,7 +35,7 @@
                             <input type="hidden" name="hireDate" value="${employee.hireDate}"/>
 
                             <button class="btn btn-primary" name="departmentId" type="submit"
-                                    value="${department.departmentId}"><h6>Update Employee</h6></button>
+                                    value="${param.departmentId}"><h6>Update Employee</h6></button>
                         </form>
                     </div>
                 </li>

@@ -14,7 +14,7 @@ public class Department {
     @NotBlank(message = "Department name should not be blank")
     @MaxLength(value = 20, message = "Maximum length is 20 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")
-    @CheckWith(value = DepartmentNameCheck.class, message = "Department already exist tmp")
+    @CheckWith(value = DepartmentNameCheck.class, message = "Department with this name already exist")
     private String departmentName;
     private List<Employee> employeeList = new ArrayList<>();
 
@@ -83,8 +83,11 @@ public class Department {
 
         @Override
         public boolean isSatisfied(Object validateObj, Object value) {
-            if (!(validateObj instanceof Department)) return false;
-            return DepartmentService.getInstance().checkUnique(((Department) validateObj).getDepartmentName());
+            boolean result = false;
+            if (!(validateObj instanceof Department)) result = false;
+            Department department = (Department) validateObj;
+            result = DepartmentService.getInstance().checkUnique(department.getDepartmentName(),department.departmentId);
+            return result;
         }
     }
 }

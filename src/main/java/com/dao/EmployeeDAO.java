@@ -19,5 +19,5 @@ public interface EmployeeDAO {
 
     boolean deleteEmployee(Integer employeeId) throws SQLException;
 
-    boolean checkUnique(String email) throws SQLException;
+    boolean checkUnique(String email, Integer employeeId) throws SQLException;
 }

@@ -27,7 +27,7 @@ public class Employee {
     @NotNull(message = "Incorrect salary value")
     @Range(min = 10, max = 10000, message = "Min salary is 10  max salary is 10 000")
     private Integer salary;
-    @NotNull(message = "Incorrect date value")
+    @NotNull(message = "Incorrect date   value")
     @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
     private Integer departmentId;
@@ -149,11 +149,12 @@ public class Employee {
     private static class EmployeeEmailCheck implements CheckWithCheck.SimpleCheck{
 
         @Override
-        public boolean isSatisfied(Object validateObj, Object value) {
+        public boolean isSatisfied(Object valObj, Object value) {
             boolean result = false;
-            if (!(validateObj instanceof Employee)) result = false;
-            result = EmployeeService.getInstance().checkUnique(((Employee) validateObj).getEmail());
-
+            if (!(valObj instanceof Employee)) result = false;
+            Employee employee = (Employee) valObj;
+            System.out.println("emplooyee id "  + employee.getEmployeeId() );
+            result = EmployeeService.getInstance().checkUnique(employee.getEmail(),employee.getEmployeeId());
             return result;
         }
     }

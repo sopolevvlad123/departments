@@ -4,6 +4,7 @@ import com.bean.Department;
 import com.dao.DepartmentDAO;
 import com.dao.implement.DepartmentDAOImpl;
 import com.exception.DBException;
+import net.sf.oval.ConstraintViolation;
 import net.sf.oval.Validator;
 
 import java.sql.SQLException;
@@ -72,20 +73,48 @@ public class DepartmentService {
         }
     }
 
-    public boolean checkUnique(String departmentName) {
+    public boolean checkUnique(String departmentName,Integer departmentId) {
+        System.out.println("service dep");
 
         try {
-            return departmentDAO.checkUnique(departmentName);
+            return departmentDAO.checkUnique(departmentName,departmentId);
         } catch (SQLException e) {
             throw new DBException("Fail to check unique department", e);
         }
     }
 
-    public Map<String,String> validationMap(Department department) {
-        Map<String, String>  resut = new HashMap<>();
-        if (validator.validate(department).size()> 0){
+    public Map<String,String> validationProblemsMap(String departmentName){
+        return validationProblemsMap(departmentName, null);
+    }
 
+    public Map<String,String> validationProblemsMap(String departmentName,String departmentId){
+        Department department = null;
+        if (departmentId == null){
+            department = new Department(departmentName);
+        }else {
+            department = new Department(Integer.parseInt(departmentId),departmentName);
         }
-        return resut;
+        System.out.println("department " + department);
+        return validViolMap(department);
+    }
+
+    private Map<String,String> validViolMap(Department department) {
+        Map<String, String> violationMap = new HashMap<>();
+        Map<String, String> violHelpMap = validationNameHelp();
+        List<ConstraintViolation> violations = validator.validate(department);
+        if (violations.size() > 0) {
+            for (int i = violations.size() - 1; i >= 0; i--) {
+                if (violHelpMap.containsKey(violations.get(i).getContext().toString())) {
+                    violationMap.put(violHelpMap.get(violations.get(i).getContext().toString()), violations.get(i).getMessage());
+                }
+            }
+        }
+        return violationMap;
+    }
+
+    private Map<String,String> validationNameHelp(){
+        Map<String,String> violHelpMap = new HashMap<>();
+        violHelpMap.put("com.bean.Department.departmentName", "departmentNameViolation");
+        return violHelpMap;
     }
 }

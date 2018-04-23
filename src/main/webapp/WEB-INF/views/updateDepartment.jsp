@@ -15,7 +15,7 @@
             <input type="text" class="form-control" id="departmentName" name="departmentName"
                    aria-describedby="nameHelp" value="${param.departmentName}">
             <small id="nameHelp" class="form-text text-muted">
-                <c:out value="${departmentViolations[0].getMessage()}"></c:out>
+                <c:out value="${violationMap.departmentNameViolation}"></c:out>
             </small>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

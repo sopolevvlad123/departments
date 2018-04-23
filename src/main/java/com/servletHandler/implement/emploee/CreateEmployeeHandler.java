@@ -33,13 +33,5 @@ public class CreateEmployeeHandler extends AbstractCreateServletHanler {
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + request.getSession().getAttribute("departmentIdQuery").toString().trim());
         }
     }
-    @Override
-    public boolean isBeanValid(HttpServletRequest request) {
-        return false;
-    }
 
-    @Override
-    public boolean isBeanUnique(HttpServletRequest request) {
-        return false;
-    }
 }

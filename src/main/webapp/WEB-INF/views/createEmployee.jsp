@@ -26,7 +26,7 @@
             <label for="email">Email</label>
             <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp"
                    placeholder="Email" value="${param.email}">
-            <small id="emailHelp" class="form-text text-muted"><c:out value="${emailUnique}"></c:out>
+            <small id="emailHelp" class="form-text text-muted">
                 <c:out value="${violationMap.emailViolations}"></c:out>
             </small>
         </div>

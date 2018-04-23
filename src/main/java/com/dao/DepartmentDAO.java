@@ -16,7 +16,7 @@ public interface DepartmentDAO {
 
     boolean deleteDepartment(Integer departmentId) throws SQLException;
 
-    boolean checkUnique(String departmentName) throws SQLException;
+    boolean checkUnique(String departmentName, Integer departmentId) throws SQLException;
 
 
 }

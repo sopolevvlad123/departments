@@ -13,7 +13,9 @@ public interface SQLConstants {
     String UPDATE_EMPLOYEE = "UPDATE `aimprosoft`.`employee` SET `email`= ?, `first_name`=?, " +
             "`second_name`=?, `salary`=?, `hire_date`=?, `department_id`=? WHERE `employee_id`=?\n";
     String DELETE_EMPLOYEE = "DELETE FROM `aimprosoft`.`employee` WHERE `employee_id`=?;";
-    String CHECK_IS_EMAIL_UNIQUE = "SELECT employee.email FROM aimprosoft.employee where employee.email = ?;";
+    String CHECK_IS_EMAIL_UNIQUE_NO_ID = "SELECT employee.email FROM aimprosoft.employee where employee.email = ?;";
+    String CHECK_IS_EMAIL_UNIQUE_WITH_ID = "SELECT * FROM aimprosoft.employee where employee.email = ? and employee.employee_id <> ?;";
+
 
     String INSERT_DEPARTMENT = "INSERT INTO `aimprosoft`.`department` (`department_name`) VALUES (?);\n";
     String SELECT_DEPARTMENT_BY_NAME = "SELECT * FROM aimprosoft.department where aimprosoft.department.department_name = ?;";
@@ -25,7 +27,9 @@ public interface SQLConstants {
     String SELECT_ALL_DEPARTMENTS = "SELECT * FROM aimprosoft.department GROUP BY department_id";
     String UPDATE_DEPARTMENT = "UPDATE `aimprosoft`.`department` SET `department_name`=? WHERE `department_id`=?;\n";
     String DELETE_DEPARTMENT = "DELETE FROM `aimprosoft`.`department` WHERE `department_id`=?;";
-    String CHECK_IS_DEP_NAME_UNIQUE = "SELECT aimprosoft.department.department_name FROM aimprosoft.department where department_name = ?;";
+    String CHECK_DEP_NAME_UNIQUE_NO_ID = "SELECT aimprosoft.department.department_name FROM aimprosoft.department where department_name = ?;";
+    String CHECK_DEP_NAME_UNIQUE_WITH_ID = "SELECT aimprosoft.department.department_name FROM aimprosoft.department where department.department_name = ? " +
+            "and department.department_id <> ?;";
 
 
     String mainURL = "http://localhost:8080/";

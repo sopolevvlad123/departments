@@ -126,12 +126,22 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean checkUnique(String email) throws SQLException {
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE)) {
-            statement.setString(1, email);
-            ResultSet resultSet = statement.executeQuery();
-            return ! resultSet.next();
+    public boolean checkUnique(String email, Integer employeeId) throws SQLException {
+        if (employeeId == null){
+            try (Connection connection = ConnectionFactory.getConnection();
+                 PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE_NO_ID)) {
+                statement.setString(1, email);
+                ResultSet resultSet = statement.executeQuery();
+                return ! resultSet.next();
+            }
+        }else {
+            try (Connection connection = ConnectionFactory.getConnection();
+                 PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE_WITH_ID)) {
+                statement.setString(1, email);
+                statement.setInt(2,employeeId);
+                ResultSet resultSet = statement.executeQuery();
+                return ! resultSet.next();
+            }
         }
     }
 }

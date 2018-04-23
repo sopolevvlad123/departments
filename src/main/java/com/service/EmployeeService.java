@@ -89,20 +89,20 @@ public class EmployeeService {
         }
     }
 
-    public boolean checkUnique(String email) {
+    public boolean checkUnique(String email, Integer employeeId) {
         try {
-            return employeeDAO.checkUnique(email);
+            return employeeDAO.checkUnique(email, employeeId);
         } catch (SQLException e) {
             throw new DBException("Fail to check unique employee", e);
         }
     }
 
-    /*public Map<String,List<String>> validationProblemsMap(String firstName, String lastName, String email, String salaryString, String hireDate, String departmentId, String employeeId){
-        return validationProblemsMap(firstName, lastName, email, salaryString, hireDate, departmentId, e);
-    };*/
-
-
     public Map<String,String> validationProblemsMap(String firstName, String lastName, String email, String salaryString, String hireDate, String departmentId){
+        return validationProblemsMap(firstName, lastName, email, salaryString, hireDate, departmentId, null);
+    }
+
+    public Map<String,String> validationProblemsMap(String firstName, String lastName, String email, String salaryString, String hireDate, String departmentId, String employeeId){
+        Employee employee = null;
         Integer salary = 0;
         java.sql.Date date = null;
         if (isDateValid(hireDate, DATE_FORMAT)) {
@@ -111,28 +111,28 @@ public class EmployeeService {
         if (isNumValid(salaryString)) {
             salary = new BigInteger(salaryString).intValue();
         }
-        Employee employee = new Employee(firstName, lastName, email, salary, date, Integer.parseInt(departmentId));
+        if (employeeId == null){
+             employee = new Employee(firstName, lastName, email, salary, date, Integer.parseInt(departmentId));
+        }else {
+             employee = new Employee(Integer.parseInt(employeeId), firstName, lastName, email, salary, date, Integer.parseInt(departmentId));
+        }
         return validViolMap(employee);
     }
 
     private Map<String,String> validViolMap(Employee employee) {
-        Map<String,String> violationMap = new HashMap<>();
-        Map<String,String> violHelpMap = validationNameHelp();
+        Map<String, String> violationMap = new HashMap<>();
+        Map<String, String> violHelpMap = validationNameHelp();
         List<ConstraintViolation> violations = validator.validate(employee);
-        System.out.println(violations);
-
-        if (violations.size() > 0){
-            int count = 0;
-            for (ConstraintViolation violation : violations){
-                if (violHelpMap.containsKey(violation.getContext().toString())){
-                violationMap.put(violHelpMap.get(violation.getContext().toString()),violation.getMessage());
-                break;
+        if (violations.size() > 0) {
+            for (int i = violations.size() - 1; i >= 0; i--) {
+                if (violHelpMap.containsKey(violations.get(i).getContext().toString())) {
+                    violationMap.put(violHelpMap.get(violations.get(i).getContext().toString()), violations.get(i).getMessage());
                 }
             }
-
         }
         return violationMap;
     }
+
     private Map<String,String> validationNameHelp(){
         Map<String,String> violHelpMap = new HashMap<>();
         violHelpMap.put("com.bean.Employee.firstName", "firstNameViolations");
@@ -142,7 +142,6 @@ public class EmployeeService {
         violHelpMap.put("com.bean.Employee.hireDate", "hireDateViolations");
         return violHelpMap;
     }
-
 
     private boolean isNumValid(String num) {
         if (num == null) {
