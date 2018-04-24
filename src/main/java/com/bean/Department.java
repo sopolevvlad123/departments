@@ -1,8 +1,10 @@
 package com.bean;
 
-import com.service.DepartmentService;
+import com.dao.DepartmentDAO;
+import com.dao.implement.DepartmentDAOImpl;
 import net.sf.oval.constraint.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -30,7 +32,7 @@ public class Department {
         this.departmentId = departmentId;
     }
 
-    public int getDepartmentId() {
+    public Integer getDepartmentId() {
         return departmentId;
     }
 
@@ -81,12 +83,18 @@ public class Department {
 
     private static class DepartmentNameCheck implements CheckWithCheck.SimpleCheck{
 
+        DepartmentDAO departmentDAO = new DepartmentDAOImpl();
+
         @Override
         public boolean isSatisfied(Object validateObj, Object value) {
             boolean result = false;
             if (!(validateObj instanceof Department)) result = false;
             Department department = (Department) validateObj;
-            result = DepartmentService.getInstance().checkUnique(department.getDepartmentName(),department.departmentId);
+            try {
+                result = departmentDAO.checkUnique(department.getDepartmentName(),department.departmentId);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             return result;
         }
     }

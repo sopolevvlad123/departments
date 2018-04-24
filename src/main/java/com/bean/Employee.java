@@ -1,6 +1,6 @@
 package com.bean;
 
-import com.service.EmployeeService;
+import com.service.impl.EmployeeServiceImpl;
 import net.sf.oval.constraint.*;
 
 import java.util.Date;
@@ -154,7 +154,7 @@ public class Employee {
             if (!(valObj instanceof Employee)) result = false;
             Employee employee = (Employee) valObj;
             System.out.println("emplooyee id "  + employee.getEmployeeId() );
-            result = EmployeeService.getInstance().checkUnique(employee.getEmail(),employee.getEmployeeId());
+            result = EmployeeServiceImpl.getInstance().checkUnique(employee.getEmail(),employee.getEmployeeId());
             return result;
         }
     }

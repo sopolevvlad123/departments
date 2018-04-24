@@ -1,7 +1,6 @@
 package com.servletHandler.implement.department;
 
 
-import com.service.DepartmentService;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +15,8 @@ public class DeleteDepartmentHandler extends ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws  IOException {
 
-        DepartmentService.getInstance().deleteDepartment(Integer.parseInt(request.getParameter("departmentId")));
-        response.sendRedirect(GET_DEPARTMENT_LIST);
+       /* DepartmentService.getInstance().deleteDepartment(Integer.parseInt(request.getParameter("departmentId")));
+        response.sendRedirect(GET_DEPARTMENT_LIST);*/
     }
 
 

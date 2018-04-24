@@ -6,25 +6,34 @@ import com.dao.DepartmentDAO;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentDAOImpl implements DepartmentDAO {
 
     @Override
-    public boolean createDepartment(String name) throws SQLException {
-        boolean result = false;
+    public void saveOrUpdate(Department department) throws SQLException {
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SAVE_OR_UPDATE_DEPARTMENT)) {
+            statement.setString(1, department.getDepartmentName());
+            if (department.getDepartmentId() == null){
+                statement.setNull(2,Types.INTEGER);
+            }else {
+                statement.setInt(2,department.getDepartmentId());
+            }
+
+            statement.execute();
+        }
+    }
+
+    @Override
+    public void createDepartment(String name) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_DEPARTMENT)) {
             statement.setString(1, name);
             statement.execute();
-            result = true;
         }
-        return result;
     }
 
     @Override
@@ -38,7 +47,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
                 department = new Department(resultSet.getInt("department_id"),resultSet.getString("department_name"));
             }
         }
-
         return department;
     }
 
@@ -56,29 +64,30 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         return departmentList;
     }
 
-    @Override
-    public boolean updateDepartment(Department department) throws SQLException {
-        boolean result = false;
+    /*@Override
+    public void updateDepartment(Department department) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.UPDATE_DEPARTMENT)) {
             statement.setString(1, department.getDepartmentName());
             statement.setInt(2, department.getDepartmentId());
             statement.execute();
-            result = true;
         }
-        return result;
-    }
+    }*/
 
     @Override
-    public boolean deleteDepartment(Integer departmentId) throws SQLException {
-        boolean result = false;
+    public void deleteDepartment(Integer departmentId) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_DEPARTMENT)) {
             statement.setInt(1, departmentId);
             statement.execute();
-            result = true;
         }
-        return result;
+    }
+
+    private void createDepartment(Department department){
+
+    }
+    private void updateDepartment(Department department){
+
     }
 
     @Override

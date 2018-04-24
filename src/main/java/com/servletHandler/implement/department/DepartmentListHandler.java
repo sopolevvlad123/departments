@@ -1,7 +1,6 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Department;
-import com.service.DepartmentService;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +16,7 @@ public class DepartmentListHandler extends ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Department> departmentList = DepartmentService.getInstance().getAllDepartments();
+        List<Department> departmentList = departmentService.getAllDepartments();
         request.setAttribute("departmentList", departmentList);
         RequestDispatcher dispatcher = request.getRequestDispatcher(INDEX_PAGE);
         dispatcher.forward(request, response);

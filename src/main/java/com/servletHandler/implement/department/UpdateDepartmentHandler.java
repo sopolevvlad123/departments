@@ -1,8 +1,9 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Department;
-import com.service.DepartmentService;
+import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
+import com.validator.DepartmentValidator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +19,21 @@ import static com.utils.ServletHandlerConstants.UPDATE_DEPARTMENT_PAGE;
 public class UpdateDepartmentHandler extends ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Map<String,String> violationsMap = DepartmentService.getInstance().validationProblemsMap(request.getParameter("departmentName"),request.getParameter("departmentId"));
-        if (violationsMap.size()>0){
-            request.setAttribute("violationMap", violationsMap);
-            toPreviousPage(request, response, UPDATE_DEPARTMENT_PAGE);
-        }else {
-            DepartmentService.getInstance().updateDepartment(new Department(Integer.parseInt(request.getParameter("departmentId")),
-                    request.getParameter("departmentName")));
-            response.sendRedirect(GET_DEPARTMENT_LIST);
+        DepartmentValidator departmentValidator = new DepartmentValidator();
+        try {
+            departmentValidator.validateDepartment(buildDepartment(request.getParameter("departmentName"),request.getParameter("departmentId")));
+        } catch (ValidationException e) {
+            e.printStackTrace();
+            request.setAttribute("violationMap", e.getViolationsMap());
+            toPreviousPage(request, response, CREATE_DEPARTMENT_PAGE);
+            return;
         }
+        departmentService.saveOrUpdate(buildDepartment(request.getParameter("departmentName"),request.getParameter("departmentId")));
+        response.sendRedirect(GET_DEPARTMENT_LIST);
     }
+
+    private Department buildDepartment(String departmentName, String departmentId){
+        return new Department(Integer.parseInt(departmentId),departmentName);
+    }
+
 }

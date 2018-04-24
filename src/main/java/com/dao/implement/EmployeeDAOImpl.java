@@ -14,8 +14,12 @@ import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
-    public boolean createEmployee(String email, String firstName, String lastName, int salary, java.util.Date hireDate, int departmentId) throws SQLException {
-        boolean result = false;
+    public void saveOrUpdate(Employee employee) throws SQLException {
+
+    }
+
+    @Override
+    public void createEmployee(String email, String firstName, String lastName, int salary, java.util.Date hireDate, int departmentId) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_EMPLOYEE)) {
             statement.setString(1, email);
@@ -25,9 +29,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             statement.setDate(5, new java.sql.Date(hireDate.getTime()));
             statement.setInt(6, departmentId);
             statement.execute();
-            result = true;
         }
-        return result;
     }
 
     @Override
@@ -96,8 +98,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean updateEmployee(Employee employee) throws SQLException {
-        boolean result = false;
+    public void updateEmployee(Employee employee) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.UPDATE_EMPLOYEE)) {
             statement.setString(1, employee.getEmail());
@@ -108,21 +109,16 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             statement.setInt(6, employee.getDepartmentId());
             statement.setInt(7, employee.getEmployeeId());
             statement.execute();
-            result = true;
         }
-        return result;
     }
 
     @Override
-    public boolean deleteEmployee(Integer employeeId) throws SQLException {
-        boolean result = false;
+    public void deleteEmployee(Integer employeeId) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_EMPLOYEE)) {
             statement.setInt(1, employeeId);
             statement.execute();
-            result = true;
         }
-        return result;
     }
 
     @Override

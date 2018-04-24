@@ -1,6 +1,6 @@
 package com.servletHandler.implement.emploee;
 
-import com.service.EmployeeService;
+import com.service.impl.EmployeeServiceImpl;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ import static com.utils.ServletHandlerConstants.GET_DEP_EMPLOYEES;
 public class CreateEmployeeHandler extends ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Map<String,String> violationsMap = EmployeeService.getInstance().validationProblemsMap(request.getParameter("firstName"),
+      /*  Map<String,String> violationsMap = EmployeeServiceImpl.getInstance().validationProblemsMap(request.getParameter("firstName"),
                 request.getParameter("lastName"),
                 request.getParameter("email"),
                 request.getParameter("salary"),
@@ -27,11 +27,12 @@ public class CreateEmployeeHandler extends ServletHandler {
             request.setAttribute("violationMap", violationsMap);
             toPreviousPage(request, response, CREATE_EMPLOYEE_PAGE);
         }else {
-            EmployeeService.getInstance().createEmployee(request.getParameter("email"), request.getParameter("firstName"),
+            EmployeeServiceImpl.getInstance().createEmployee(request.getParameter("email"), request.getParameter("firstName"),
                     request.getParameter("lastName"), Integer.parseInt(request.getParameter("salary")),
                     Date.valueOf(request.getParameter("hireDate")), Integer.parseInt(request.getParameter("departmentId")));
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + request.getSession().getAttribute("departmentIdQuery").toString().trim());
         }
-    }
+    }*/
 
+    }
 }

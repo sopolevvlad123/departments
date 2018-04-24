@@ -7,7 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 public interface EmployeeDAO {
-    boolean createEmployee(String email, String firstName, String lastName, int salary, Date hireDate, int departmentId) throws SQLException;
+    void saveOrUpdate(Employee employee) throws SQLException;
+
+    void createEmployee(String email, String firstName, String lastName, int salary, Date hireDate, int departmentId) throws SQLException;
 
     Employee getEmployee(Integer employeeId) throws SQLException;
 
@@ -15,9 +17,10 @@ public interface EmployeeDAO {
 
     List<Employee> getEmployeeByDepartment(Integer departmentId) throws SQLException;
 
-    boolean updateEmployee(Employee employee) throws SQLException;
+    void updateEmployee(Employee employee) throws SQLException;
 
-    boolean deleteEmployee(Integer employeeId) throws SQLException;
+    void deleteEmployee(Integer employeeId) throws SQLException;
 
     boolean checkUnique(String email, Integer employeeId) throws SQLException;
+
 }

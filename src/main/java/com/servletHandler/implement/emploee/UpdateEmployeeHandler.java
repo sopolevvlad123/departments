@@ -1,7 +1,7 @@
 package com.servletHandler.implement.emploee;
 
 import com.bean.Employee;
-import com.service.EmployeeService;
+import com.service.impl.EmployeeServiceImpl;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.ServletException;
@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.Map;
 
-import static com.utils.ServletHandlerConstants.CREATE_EMPLOYEE_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEP_EMPLOYEES;
 import static com.utils.ServletHandlerConstants.UPDATE_EMPLOYEE_PAGE;
 
@@ -19,7 +18,7 @@ public class UpdateEmployeeHandler extends ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        Map<String,String> violationsMap = EmployeeService.getInstance().validationProblemsMap(request.getParameter("firstName"),
+       /* Map<String,String> violationsMap = EmployeeServiceImpl.getInstance().validationProblemsMap(request.getParameter("firstName"),
                 request.getParameter("lastName"),
                 request.getParameter("email"),
                 request.getParameter("salary"),
@@ -39,9 +38,9 @@ public class UpdateEmployeeHandler extends ServletHandler {
                     Integer.parseInt(request.getParameter("salary")),
                     Date.valueOf(request.getParameter("hireDate")),
                     Integer.parseInt(request.getParameter("departmentId")));
-            EmployeeService.getInstance().updateEmployee(employee);
+            EmployeeServiceImpl.getInstance().updateEmployee(employee);
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + request.getSession().getAttribute("departmentIdQuery").toString().trim());
-        }
+        }*/
 
 
     }
