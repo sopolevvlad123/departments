@@ -13,10 +13,9 @@ import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 public class DeleteDepartmentHandler extends ServletHandler {
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws  IOException {
-
-       /* DepartmentService.getInstance().deleteDepartment(Integer.parseInt(request.getParameter("departmentId")));
-        response.sendRedirect(GET_DEPARTMENT_LIST);*/
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        departmentService.deleteDepartment(Integer.parseInt(request.getParameter("departmentId")));
+        response.sendRedirect(GET_DEPARTMENT_LIST);
     }
 
 

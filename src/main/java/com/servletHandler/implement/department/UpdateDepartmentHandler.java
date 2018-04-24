@@ -9,31 +9,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
 
-import static com.utils.ServletHandlerConstants.CREATE_DEPARTMENT_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 import static com.utils.ServletHandlerConstants.UPDATE_DEPARTMENT_PAGE;
 
 
-public class UpdateDepartmentHandler extends ServletHandler {
+public class UpdateDepartmentHandler extends CreateDepartmentHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DepartmentValidator departmentValidator = new DepartmentValidator();
-        try {
-            departmentValidator.validateDepartment(buildDepartment(request.getParameter("departmentName"),request.getParameter("departmentId")));
-        } catch (ValidationException e) {
-            e.printStackTrace();
-            request.setAttribute("violationMap", e.getViolationsMap());
-            toPreviousPage(request, response, CREATE_DEPARTMENT_PAGE);
-            return;
-        }
-        departmentService.saveOrUpdate(buildDepartment(request.getParameter("departmentName"),request.getParameter("departmentId")));
-        response.sendRedirect(GET_DEPARTMENT_LIST);
+        saveOrUpdateDepartment(buildDepartment(request), request, response, GET_DEPARTMENT_LIST, UPDATE_DEPARTMENT_PAGE);
     }
 
-    private Department buildDepartment(String departmentName, String departmentId){
-        return new Department(Integer.parseInt(departmentId),departmentName);
+    protected Department buildDepartment(HttpServletRequest request) {
+        return new Department(Integer.parseInt(request.getParameter("departmentId")),
+                request.getParameter("departmentName"));
     }
 
 }

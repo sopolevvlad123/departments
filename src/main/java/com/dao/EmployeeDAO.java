@@ -9,15 +9,11 @@ import java.util.List;
 public interface EmployeeDAO {
     void saveOrUpdate(Employee employee) throws SQLException;
 
-    void createEmployee(String email, String firstName, String lastName, int salary, Date hireDate, int departmentId) throws SQLException;
-
     Employee getEmployee(Integer employeeId) throws SQLException;
 
     List<Employee> getAllEmployee() throws SQLException;
 
     List<Employee> getEmployeeByDepartment(Integer departmentId) throws SQLException;
-
-    void updateEmployee(Employee employee) throws SQLException;
 
     void deleteEmployee(Integer employeeId) throws SQLException;
 

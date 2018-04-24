@@ -5,29 +5,26 @@ import com.dao.EmployeeDAO;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public void saveOrUpdate(Employee employee) throws SQLException {
-
-    }
-
-    @Override
-    public void createEmployee(String email, String firstName, String lastName, int salary, java.util.Date hireDate, int departmentId) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_EMPLOYEE)) {
-            statement.setString(1, email);
-            statement.setString(2, firstName);
-            statement.setString(3, lastName);
-            statement.setInt(4, salary);
-            statement.setDate(5, new java.sql.Date(hireDate.getTime()));
-            statement.setInt(6, departmentId);
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SAVE_OR_UPDATE_EMPLOYEE)) {
+            statement.setString(1, employee.getEmail());
+            statement.setString(2, employee.getFirstName());
+            statement.setString(3, employee.getLastName());
+            statement.setInt(4, employee.getSalary());
+            statement.setDate(5, new java.sql.Date(employee.getHireDate().getTime()));
+            statement.setInt(6, employee.getDepartmentId());
+            if (employee.getEmployeeId() == null){
+                statement.setNull(7,Types.INTEGER);
+            }else {
+                statement.setInt(7, employee.getEmployeeId());
+            }
             statement.execute();
         }
     }
@@ -98,21 +95,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public void updateEmployee(Employee employee) throws SQLException {
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement statement = connection.prepareStatement(SQLConstants.UPDATE_EMPLOYEE)) {
-            statement.setString(1, employee.getEmail());
-            statement.setString(2, employee.getFirstName());
-            statement.setString(3, employee.getLastName());
-            statement.setInt(4, employee.getSalary());
-            statement.setDate(5, new java.sql.Date(employee.getHireDate().getTime()));
-            statement.setInt(6, employee.getDepartmentId());
-            statement.setInt(7, employee.getEmployeeId());
-            statement.execute();
-        }
-    }
-
-    @Override
     public void deleteEmployee(Integer employeeId) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_EMPLOYEE)) {
@@ -128,15 +110,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                  PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE_NO_ID)) {
                 statement.setString(1, email);
                 ResultSet resultSet = statement.executeQuery();
-                return ! resultSet.next();
+                return !resultSet.next();
             }
         }else {
             try (Connection connection = ConnectionFactory.getConnection();
-                 PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE_WITH_ID)) {
+                 PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE)) {
                 statement.setString(1, email);
-                statement.setInt(2,employeeId);
+                statement.setInt(2, employeeId);
                 ResultSet resultSet = statement.executeQuery();
-                return ! resultSet.next();
+                return !resultSet.next();
             }
         }
     }

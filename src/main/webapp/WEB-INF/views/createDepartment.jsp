@@ -7,23 +7,27 @@
 </head>
 <body>
 <div class="container">
-    <h2>Create Department Form</h2>
-    <form action="/createDepartment.do" method="post">
-        <div class="form-group">
-            <label for="departmentName">Name of Department</label>
-            <input type="text" class="form-control" id="departmentName" name="departmentName"
-                   aria-describedby="nameHelp" placeholder="Name" value="${param.departmentName}">
-            <small id="nameHelp" class="form-text text-muted">Name should be unique
-                <c:out value="${violationMap.departmentNameViolation}"></c:out>
-            </small>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-    <div class="row justify-content-md-between">
-        <a class="btn btn-primary" href="/departmentList.do" role="button">Main Page</a>
+    <div class="row d-flex justify-content-center">
+        <h2>Create Department Form</h2>
     </div>
-</div>
+    <form action="/createDepartment.do" method="post">
 
+        <div class="form-group row">
+            <label for="departmentName" class="col-2 col-form-label">Department Name</label>
+            <div class="col-6">
+                <input class="form-control" type="text" name="departmentName" id="departmentName"
+                       value="${param.departmentName}">
+            </div>
+            <div>
+                <c:out value="${violationMap.departmentNameViolation}"></c:out>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-between">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-success" href="/departmentList.do" role="button">Main Page</a>
+        </div>
+    </form>
+</div>
 </body>
 </html>

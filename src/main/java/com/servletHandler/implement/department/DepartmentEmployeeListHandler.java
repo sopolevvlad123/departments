@@ -15,14 +15,12 @@ import static com.utils.ServletHandlerConstants.EMPLOYEE_LIST_PAGE;
 
 public class DepartmentEmployeeListHandler extends ServletHandler {
 
-
-
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*List<Employee> employeeList = EmployeeServiceImpl.getInstance().getEmployeesByDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
+        List<Employee> employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter("departmentId")));
         request.setAttribute("employeeList", employeeList);
         request.setAttribute("departmentId", Integer.parseInt(request.getParameter("departmentId")));
         RequestDispatcher dispatcher = request.getRequestDispatcher(EMPLOYEE_LIST_PAGE);
-        dispatcher.forward(request, response);*/
+        dispatcher.forward(request, response);
     }
 }

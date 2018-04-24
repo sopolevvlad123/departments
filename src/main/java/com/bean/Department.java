@@ -1,22 +1,19 @@
 package com.bean;
 
-import com.dao.DepartmentDAO;
-import com.dao.implement.DepartmentDAOImpl;
+import com.validator.DepartmentNameValidator;
+import com.validator.DepartmentValidator;
 import net.sf.oval.constraint.*;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 public class Department {
 
     private Integer departmentId;
     @NotNull
     @NotBlank(message = "Department name should not be blank")
-    @MaxLength(value = 20, message = "Maximum length is 20 symbols")
+    @MaxLength(value = 10, message = "Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")
-    @CheckWith(value = DepartmentNameCheck.class, message = "Department with this name already exist")
+    @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
     private List<Employee> employeeList = new ArrayList<>();
 
@@ -81,21 +78,4 @@ public class Department {
                 '}';
     }
 
-    private static class DepartmentNameCheck implements CheckWithCheck.SimpleCheck{
-
-        DepartmentDAO departmentDAO = new DepartmentDAOImpl();
-
-        @Override
-        public boolean isSatisfied(Object validateObj, Object value) {
-            boolean result = false;
-            if (!(validateObj instanceof Department)) result = false;
-            Department department = (Department) validateObj;
-            try {
-                result = departmentDAO.checkUnique(department.getDepartmentName(),department.departmentId);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            return result;
-        }
-    }
 }

@@ -22,7 +22,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             }else {
                 statement.setInt(2,department.getDepartmentId());
             }
-
             statement.execute();
         }
     }
@@ -64,16 +63,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         return departmentList;
     }
 
-    /*@Override
-    public void updateDepartment(Department department) throws SQLException {
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement statement = connection.prepareStatement(SQLConstants.UPDATE_DEPARTMENT)) {
-            statement.setString(1, department.getDepartmentName());
-            statement.setInt(2, department.getDepartmentId());
-            statement.execute();
-        }
-    }*/
-
     @Override
     public void deleteDepartment(Integer departmentId) throws SQLException {
         try (Connection connection = ConnectionFactory.getConnection();
@@ -81,13 +70,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             statement.setInt(1, departmentId);
             statement.execute();
         }
-    }
-
-    private void createDepartment(Department department){
-
-    }
-    private void updateDepartment(Department department){
-
     }
 
     @Override
@@ -100,7 +82,9 @@ public class DepartmentDAOImpl implements DepartmentDAO {
                 return !resultSet.next();
             }
         }else {
+
             try (Connection connection = ConnectionFactory.getConnection();
+
                  PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_DEP_NAME_UNIQUE_WITH_ID)) {
                 statement.setString(1, departmentName);
                 statement.setInt(2,departmentId);
@@ -108,7 +92,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
                 return !resultSet.next();
             }
         }
-
     }
 
 

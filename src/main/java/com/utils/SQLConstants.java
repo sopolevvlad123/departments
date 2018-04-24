@@ -3,7 +3,7 @@ package com.utils;
 public interface SQLConstants {
 
     String SAVE_OR_UPDATE_EMPLOYEE ="REPLACE INTO `aimprosoft`.`employee` (`email`, `first_name`, " +
-            "`second_name`, `salary`, `hire_date`, `department_id`) VALUES (?, ?, ?, ?, ?, ?);\n";
+            "`second_name`, `salary`, `hire_date`, `department_id`,`employee_id`) VALUES (?, ?, ?, ?, ?, ?, ?);\n";
     String INSERT_EMPLOYEE = "INSERT INTO `aimprosoft`.`employee` (`email`, `first_name`, " +
             "`second_name`, `salary`, `hire_date`, `department_id`) VALUES (?, ?, ?, ?, ?, ?);\n";
     String SELECT_EMPLOYEE_BY_EMAIL = "SELECT employee.*, department.department_name  FROM aimprosoft.employee " +
@@ -16,7 +16,7 @@ public interface SQLConstants {
             "`second_name`=?, `salary`=?, `hire_date`=?, `department_id`=? WHERE `employee_id`=?\n";
     String DELETE_EMPLOYEE = "DELETE FROM `aimprosoft`.`employee` WHERE `employee_id`=?;";
     String CHECK_IS_EMAIL_UNIQUE_NO_ID = "SELECT employee.email FROM aimprosoft.employee where employee.email = ?;";
-    String CHECK_IS_EMAIL_UNIQUE_WITH_ID = "SELECT * FROM aimprosoft.employee where employee.email = ? and employee.employee_id <> ?;";
+    String CHECK_IS_EMAIL_UNIQUE = "SELECT * FROM aimprosoft.employee where employee.email = ? and employee.employee_id <> ?;";
 
 
     String SAVE_OR_UPDATE_DEPARTMENT = "REPLACE INTO `aimprosoft`.`department` (`department_name`,`department_id`) VALUES (?,?);\n";

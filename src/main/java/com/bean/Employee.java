@@ -1,6 +1,6 @@
 package com.bean;
 
-import com.service.impl.EmployeeServiceImpl;
+import com.validator.EmployeeEmailValidator;
 import net.sf.oval.constraint.*;
 
 import java.util.Date;
@@ -10,19 +10,19 @@ public class Employee {
     private Integer employeeId;
     @NotNull(message = "Incorrect value")
     @NotBlank(message = "First Name should not be blank")
-    @MaxLength(value = 20, message = " Maximum length is 20 symbols")
+    @MaxLength(value = 10, message = " Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "First Name should contain ONLY letters and numbers")
     private String firstName;
     @NotNull(message = "Incorrect value")
     @NotBlank(message = "Last Name should not be blank")
-    @MaxLength(value = 20, message = "Maximum length is 20 symbols")
+    @MaxLength(value = 10, message = "Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Last Name should contain ONLY letters and numbers")
     private String lastName;
     @NotNull(message = "Incorrect value")
     @NotBlank(message = "Email should not be blank")
-    @MaxLength(value = 20, message = "Maximum length is 20 symbols")
+    @MaxLength(value = 20, message = "Maximum length is 10 symbols")
     @Email(message = "Email is incorrect")
-    @CheckWith(value = EmployeeEmailCheck.class, message = "Employee with this email already exist")
+    @CheckWith(value = EmployeeEmailValidator.class, message = "Employee with this email already exist")
     private String email;
     @NotNull(message = "Incorrect salary value")
     @Range(min = 10, max = 10000, message = "Min salary is 10  max salary is 10 000")
@@ -144,18 +144,5 @@ public class Employee {
                 ", departmentId=" + departmentId +
                 ", departmentName='" + departmentName + '\'' +
                 '}';
-    }
-
-    private static class EmployeeEmailCheck implements CheckWithCheck.SimpleCheck{
-
-        @Override
-        public boolean isSatisfied(Object valObj, Object value) {
-            boolean result = false;
-            if (!(valObj instanceof Employee)) result = false;
-            Employee employee = (Employee) valObj;
-            System.out.println("emplooyee id "  + employee.getEmployeeId() );
-            result = EmployeeServiceImpl.getInstance().checkUnique(employee.getEmail(),employee.getEmployeeId());
-            return result;
-        }
     }
 }

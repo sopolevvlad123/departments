@@ -17,28 +17,27 @@ import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
 
 public class CreateDepartmentHandler extends ServletHandler {
-    private DepartmentService departmentService = DepartmentServiceImpl.getInstance();
-
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DepartmentValidator departmentValidator = new DepartmentValidator();
+        saveOrUpdateDepartment(buildDepartment(request),request,response,GET_DEPARTMENT_LIST,CREATE_DEPARTMENT_PAGE);
+    }
+
+
+     protected void saveOrUpdateDepartment(Department department, HttpServletRequest request, HttpServletResponse response, String successURL, String unSuccessURL) throws ServletException, IOException {
         try {
-            departmentValidator.validateDepartment(buildDepartment(request.getParameter("departmentName")));
+            departmentValidator.validateDepartment(department);
         } catch (ValidationException e) {
             e.printStackTrace();
             request.setAttribute("violationMap", e.getViolationsMap());
-            toPreviousPage(request, response, CREATE_DEPARTMENT_PAGE);
+            toPreviousPage(request, response, unSuccessURL);
             return;
         }
-        departmentService.saveOrUpdate(buildDepartment(request.getParameter("departmentName")));
-        response.sendRedirect(GET_DEPARTMENT_LIST);
-
+        departmentService.saveOrUpdate(department);
+        response.sendRedirect(successURL);
     }
 
-    private Department buildDepartment(String departmentName){
-        return new Department(departmentName);
+    protected Department buildDepartment(HttpServletRequest request){
+        return new Department(request.getParameter("departmentName"));
     }
-
-
 }

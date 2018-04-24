@@ -18,8 +18,7 @@ public class DepartmentListHandler extends ServletHandler {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Department> departmentList = departmentService.getAllDepartments();
         request.setAttribute("departmentList", departmentList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher(INDEX_PAGE);
-        dispatcher.forward(request, response);
+        toPreviousPage(request,response,INDEX_PAGE);
     }
 
 
