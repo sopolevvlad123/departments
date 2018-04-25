@@ -19,8 +19,6 @@ public interface ServletHandlerConstants {
     String INDEX_PAGE = "/index.jsp";
     String UPDATE_DEPARTMENT_PAGE = "/updateDepartment.jsp";
     String UPDATE_EMPLOYEE_PAGE = "/updateEmployee.jsp";
-
-
-
+    String PAGE_404 ="/404.jsp";
 
 }

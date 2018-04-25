@@ -54,8 +54,10 @@
             <div class="col-6">
                 <input class="form-control" type="date" name="hireDate" id="hireDate" value="${param.hireDate}">
             </div>
+            <div>
+                <c:out value="${violationMap.hireDateViolations}"></c:out>
+            </div>
         </div>
-
         <input type="hidden" name="departmentId" value="${param.departmentId}"/>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -1,5 +1,6 @@
 package com.servlet;
 
+import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
 import com.utils.ServletHandlerFactory;
 
@@ -16,7 +17,11 @@ public class FrontControllerServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletHandler servletHandler = servlethandlerFactory.getHandler(request.getRequestURI());
-        servletHandler.execute(request, response);
+        try {
+            servletHandler.execute(request, response);
+        } catch (DAOException e) {
+            throw new ServletException(e);
+        }
     }
 
 }

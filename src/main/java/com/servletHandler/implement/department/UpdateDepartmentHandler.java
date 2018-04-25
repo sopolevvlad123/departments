@@ -1,6 +1,7 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Department;
+import com.exception.DAOException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
 import com.validator.DepartmentValidator;
@@ -16,7 +17,7 @@ import static com.utils.ServletHandlerConstants.UPDATE_DEPARTMENT_PAGE;
 
 public class UpdateDepartmentHandler extends CreateDepartmentHandler {
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
         saveOrUpdateDepartment(buildDepartment(request), request, response, GET_DEPARTMENT_LIST, UPDATE_DEPARTMENT_PAGE);
     }
 

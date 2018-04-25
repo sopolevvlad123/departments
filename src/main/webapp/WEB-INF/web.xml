@@ -64,6 +64,15 @@
         <url-pattern>/updateEmployee.jsp</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>errorPage</servlet-name>
+        <jsp-file>/WEB-INF/views/errorPage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>errorPage</servlet-name>
+        <url-pattern>/errorPage.jsp</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>FrontControllerServlet</servlet-name>
@@ -77,7 +86,13 @@
 
 
     <error-page>
+        <exception-type>java.lang.Throwable</exception-type >
         <location>/WEB-INF/views/errorPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/page404.jsp</location>
     </error-page>
 
 </web-app>

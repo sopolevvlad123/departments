@@ -1,6 +1,7 @@
 package com.servletHandler;
 
 import com.bean.Employee;
+import com.exception.DAOException;
 import com.service.DepartmentService;
 import com.service.EmployeeService;
 import com.service.impl.DepartmentServiceImpl;
@@ -23,7 +24,7 @@ public abstract class ServletHandler {
     public RequestDataParser   requestDataParser   = new RequestDataParser();
 
 
-    public abstract void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException;
+    public abstract void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException, DAOException;
 
 
     public void toPreviousPage(HttpServletRequest request, HttpServletResponse response, String url) throws ServletException, IOException {

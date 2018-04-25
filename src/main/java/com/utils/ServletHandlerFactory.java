@@ -25,9 +25,12 @@ public class ServletHandlerFactory {
         servletHandlerMap.put(CREATE_EMPLOYEE, new CreateEmployeeHandler());
         servletHandlerMap.put(DELETE_EMPLOYEE, new DeleteEmployeeHandler());
         servletHandlerMap.put(UPDATE_EMPLOYEE, new UpdateEmployeeHandler());
+        servletHandlerMap.put(PAGE_404, new UpdateEmployeeHandler());
+
     }
 
     public ServletHandler getHandler(String url) {
+
         return servletHandlerMap.get(url);
     }
 }

@@ -1,16 +1,17 @@
 package com.service;
 
 import com.bean.Department;
+import com.exception.DAOException;
 
 import java.util.List;
 
 public interface DepartmentService {
 
-    void saveOrUpdate(Department department);
+    void saveOrUpdate(Department department) throws DAOException;
 
-    Department getDepartment(Integer departmentId);
+    Department getDepartment(Integer departmentId) throws DAOException;
 
-    List<Department> getAllDepartments();
+    List<Department> getAllDepartments() throws DAOException;
 
-    void deleteDepartment(Integer departmentId);
+    void deleteDepartment(Integer departmentId) throws DAOException;
 }

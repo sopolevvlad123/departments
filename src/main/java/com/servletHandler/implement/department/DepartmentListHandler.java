@@ -1,6 +1,7 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Department;
+import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +16,7 @@ import static com.utils.ServletHandlerConstants.INDEX_PAGE;
 public class DepartmentListHandler extends ServletHandler {
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
         List<Department> departmentList = departmentService.getAllDepartments();
         request.setAttribute("departmentList", departmentList);
         toPreviousPage(request,response,INDEX_PAGE);

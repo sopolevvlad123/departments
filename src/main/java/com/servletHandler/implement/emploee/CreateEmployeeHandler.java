@@ -1,6 +1,7 @@
 package com.servletHandler.implement.emploee;
 
 import com.bean.Employee;
+import com.exception.DAOException;
 import com.exception.ValidationException;
 import com.service.EmployeeService;
 import com.service.impl.EmployeeServiceImpl;
@@ -19,12 +20,12 @@ import static com.utils.ServletHandlerConstants.*;
 
 public class CreateEmployeeHandler extends ServletHandler {
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
         saveOrUpdateEmployee(buildEmployee(request),request,response,GET_DEP_EMPLOYEES,CREATE_EMPLOYEE_PAGE);
 
     }
 
-    protected void saveOrUpdateEmployee(Employee employee,HttpServletRequest request, HttpServletResponse response, String successURL, String failURL) throws ServletException, IOException {
+    protected void saveOrUpdateEmployee(Employee employee,HttpServletRequest request, HttpServletResponse response, String successURL, String failURL) throws ServletException, IOException, DAOException {
         try {
             employeeValidator.validateEmployee(employee);
         } catch (ValidationException e) {
@@ -33,11 +34,11 @@ public class CreateEmployeeHandler extends ServletHandler {
             toPreviousPage(request, response, failURL);
             return;
         }
-        employeeService.saveOrUpdateEmployee(buildEmployee(request));
+        employeeService.saveOrUpdateEmployee(employee);
         response.sendRedirect(successURL + "?" + request.getSession().getAttribute("departmentIdQuery").toString().trim());
     }
 
-    private Employee buildEmployee(HttpServletRequest request){
+    protected Employee buildEmployee(HttpServletRequest request){
             return new Employee(request.getParameter("firstName"),
                                 request.getParameter("lastName"),
                                 request.getParameter("email"),

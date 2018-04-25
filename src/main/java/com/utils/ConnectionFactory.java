@@ -1,8 +1,7 @@
 package com.utils;
 
 
-import com.exception.DBException;
-
+import com.exception.DAOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,23 +13,23 @@ public class ConnectionFactory {
     private static final String login = "root";
     private static final String password = "root";
 
-    public static Connection getConnection() {
+    public static Connection getConnection() throws DAOException{
         Connection connection = null;
         try {
             Class.forName(driverName);
             connection = DriverManager.getConnection(connectionString, login, password);
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DBException(" Connection problems",e);
+            throw new DAOException("Fail to get connection",e);
         }
         return connection;
     }
 
-    public static void closeConnection(Connection connection) {
+    public static void closeConnection(Connection connection) throws DAOException{
         if (connection == null) {
             try {
                 connection.close();
             } catch (SQLException e) {
-                throw new DBException(" Connection problems",e);
+                throw new DAOException("Fail to close connection",e);
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Employee;
+import com.exception.DAOException;
 import com.service.impl.EmployeeServiceImpl;
 import com.servletHandler.ServletHandler;
 
@@ -16,7 +17,7 @@ import static com.utils.ServletHandlerConstants.EMPLOYEE_LIST_PAGE;
 public class DepartmentEmployeeListHandler extends ServletHandler {
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
         List<Employee> employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter("departmentId")));
         request.setAttribute("employeeList", employeeList);
         request.setAttribute("departmentId", Integer.parseInt(request.getParameter("departmentId")));
