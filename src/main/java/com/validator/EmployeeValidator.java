@@ -33,7 +33,6 @@ public class EmployeeValidator {
         List<ConstraintViolation> violations = validator.validate(employee);
         if (violations.size() > 0) {
             for (int i = violations.size() - 1; i >= 0; i--) {
-                System.out.println("viol debug" + violations.get(i).getContext() + "    " + violations.get(i).getMessage());
                 if (validationNameHelp.containsKey(violations.get(i).getContext().toString())) {
                     violationMap.put(validationNameHelp.get(violations.get(i).getContext().toString()), violations.get(i).getMessage());
                 }

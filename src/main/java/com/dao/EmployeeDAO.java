@@ -3,7 +3,6 @@ package com.dao;
 import com.bean.Employee;
 
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 public interface EmployeeDAO {

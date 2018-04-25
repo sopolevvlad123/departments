@@ -2,9 +2,6 @@ package com.servletHandler.implement.department;
 
 import com.bean.Department;
 import com.exception.DAOException;
-import com.exception.ValidationException;
-import com.servletHandler.ServletHandler;
-import com.validator.DepartmentValidator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +18,7 @@ public class UpdateDepartmentHandler extends CreateDepartmentHandler {
         saveOrUpdateDepartment(buildDepartment(request), request, response, GET_DEPARTMENT_LIST, UPDATE_DEPARTMENT_PAGE);
     }
 
-    protected Department buildDepartment(HttpServletRequest request) {
+    Department buildDepartment(HttpServletRequest request) {
         return new Department(Integer.parseInt(request.getParameter("departmentId")),
                 request.getParameter("departmentName"));
     }

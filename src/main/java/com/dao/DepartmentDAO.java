@@ -8,8 +8,6 @@ import java.util.List;
 public interface DepartmentDAO {
     void saveOrUpdate(Department department) throws SQLException;
 
-    void createDepartment(String name) throws SQLException;
-
     Department getDepartment(Integer departmentId) throws SQLException;
 
     List<Department> getAllDepartments() throws SQLException;

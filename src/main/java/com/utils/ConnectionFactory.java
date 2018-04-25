@@ -14,7 +14,7 @@ public class ConnectionFactory {
     private static final String password = "root";
 
     public static Connection getConnection() throws DAOException{
-        Connection connection = null;
+        Connection connection;
         try {
             Class.forName(driverName);
             connection = DriverManager.getConnection(connectionString, login, password);
@@ -25,7 +25,7 @@ public class ConnectionFactory {
     }
 
     public static void closeConnection(Connection connection) throws DAOException{
-        if (connection == null) {
+        if (connection != null) {
             try {
                 connection.close();
             } catch (SQLException e) {

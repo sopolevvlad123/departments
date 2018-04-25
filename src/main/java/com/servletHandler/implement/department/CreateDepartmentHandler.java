@@ -3,10 +3,7 @@ package com.servletHandler.implement.department;
 import com.bean.Department;
 import com.exception.DAOException;
 import com.exception.ValidationException;
-import com.service.DepartmentService;
-import com.service.impl.DepartmentServiceImpl;
 import com.servletHandler.ServletHandler;
-import com.validator.DepartmentValidator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,11 +18,10 @@ public class CreateDepartmentHandler extends ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
-        saveOrUpdateDepartment(buildDepartment(request),request,response,GET_DEPARTMENT_LIST,CREATE_DEPARTMENT_PAGE);
+        saveOrUpdateDepartment(buildDepartment(request), request, response, GET_DEPARTMENT_LIST, CREATE_DEPARTMENT_PAGE);
     }
 
-
-     protected void saveOrUpdateDepartment(Department department, HttpServletRequest request, HttpServletResponse response, String successURL, String unSuccessURL) throws ServletException, IOException, DAOException {
+     void saveOrUpdateDepartment(Department department, HttpServletRequest request, HttpServletResponse response, String successURL, String unSuccessURL) throws ServletException, IOException, DAOException {
         try {
             departmentValidator.validateDepartment(department);
         } catch (ValidationException e) {
@@ -38,7 +34,7 @@ public class CreateDepartmentHandler extends ServletHandler {
         response.sendRedirect(successURL);
     }
 
-    protected Department buildDepartment(HttpServletRequest request){
+     Department buildDepartment(HttpServletRequest request) {
         return new Department(request.getParameter("departmentName"));
     }
 }

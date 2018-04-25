@@ -1,6 +1,5 @@
 package com.servletHandler;
 
-import com.bean.Employee;
 import com.exception.DAOException;
 import com.service.DepartmentService;
 import com.service.EmployeeService;

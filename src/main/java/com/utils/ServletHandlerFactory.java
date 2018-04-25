@@ -30,7 +30,9 @@ public class ServletHandlerFactory {
     }
 
     public ServletHandler getHandler(String url) {
-
+        if (url == null){
+            return servletHandlerMap.get(PAGE_404);
+        }
         return servletHandlerMap.get(url);
     }
 }

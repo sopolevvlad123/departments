@@ -20,9 +20,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             statement.setInt(4, employee.getSalary());
             statement.setDate(5, new java.sql.Date(employee.getHireDate().getTime()));
             statement.setInt(6, employee.getDepartmentId());
-            if (employee.getEmployeeId() == null){
-                statement.setNull(7,Types.INTEGER);
-            }else {
+            if (employee.getEmployeeId() == null) {
+                statement.setNull(7, Types.INTEGER);
+            } else {
                 statement.setInt(7, employee.getEmployeeId());
             }
             statement.execute();
@@ -77,7 +77,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         List<Employee> employeeList = new ArrayList<>();
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_DEPARTMENTS_EMPLOYEE_BY_ID)) {
-            statement.setInt(1,departmentId);
+            statement.setInt(1, departmentId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Employee employee = new Employee(resultSet.getInt("employee_id"),
@@ -105,22 +105,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public boolean checkUnique(String email, Integer employeeId) throws SQLException {
-        if (employeeId == null){
-            try (Connection connection = ConnectionFactory.getConnection();
-                 PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE_NO_ID)) {
-                statement.setString(1, email);
-                ResultSet resultSet = statement.executeQuery();
-                return !resultSet.next();
-            }
-        }else {
-            try (Connection connection = ConnectionFactory.getConnection();
-                 PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE)) {
-                statement.setString(1, email);
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE)) {
+            statement.setString(1, email);
+            if (employeeId == null) {
+                statement.setNull(2, Types.INTEGER);
+            } else {
                 statement.setInt(2, employeeId);
-                ResultSet resultSet = statement.executeQuery();
-                return !resultSet.next();
             }
+            ResultSet resultSet = statement.executeQuery();
+            return !resultSet.next();
         }
     }
+
 }
 

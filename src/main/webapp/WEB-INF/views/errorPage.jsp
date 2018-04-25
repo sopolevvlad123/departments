@@ -12,8 +12,6 @@
 <div class="container">
     <div class="jumbotron" style="padding: 180px">
         <h1 class="text-center">Error page<p></p>
-            ${param}
-            <c:out value="${pageContext.errorData}"></c:out>
             <p>
                 <small class="text-center"><c:out value="${pageContext.errorData.throwable.message}"></c:out>
                 </small>
