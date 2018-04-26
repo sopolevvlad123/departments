@@ -9,14 +9,14 @@ public class RequestDataParser {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 
-    public Integer parseInteger(String num) {
+    public static Integer parseInteger(String num) {
         if (num == null || !(Pattern.matches("[0-9]+", num) && num.length() < 10)) {
             return 0;
         }
         return Integer.parseInt(num);
     }
 
-    public Date parseDate(String date) {
+    public static Date parseDate(String date) {
         if (date == null) {
             return new Date(0,0,0);
         }

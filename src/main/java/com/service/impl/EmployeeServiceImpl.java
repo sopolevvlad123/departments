@@ -5,10 +5,13 @@ import com.bean.Employee;
 import com.dao.EmployeeDAO;
 import com.dao.implement.EmployeeDAOImpl;
 import com.exception.DAOException;
+import com.exception.ValidationException;
 import com.service.EmployeeService;
+import com.utils.ConstraintViolationsParser;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeServiceImpl implements EmployeeService {
     private static EmployeeServiceImpl instance;
@@ -23,11 +26,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void saveOrUpdateEmployee(Employee employee) throws DAOException {
+    public void saveOrUpdateEmployee(Employee employee) throws DAOException, ValidationException {
+        Map<String,String> violationMap = ConstraintViolationsParser.getViolationsMap(employee);
+        if (violationMap.size() > 0){
+            throw new ValidationException("Fail to create or update employee", violationMap);
+        }
         try {
              employeeDAO.saveOrUpdate(employee);
         } catch (SQLException e) {
-            throw new DAOException("Fail to create employee", e);
+            throw new DAOException("Fail to create or update employee", e);
         }
     }
 
@@ -72,5 +79,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new DAOException("Fail to delete employee", e);
         }
     }
+
 
 }

@@ -4,7 +4,6 @@ import com.bean.Department;
 import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

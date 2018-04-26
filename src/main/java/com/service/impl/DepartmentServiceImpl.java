@@ -4,10 +4,13 @@ import com.bean.Department;
 import com.dao.DepartmentDAO;
 import com.dao.implement.DepartmentDAOImpl;
 import com.exception.DAOException;
+import com.exception.ValidationException;
 import com.service.DepartmentService;
+import com.utils.ConstraintViolationsParser;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public class DepartmentServiceImpl implements DepartmentService {
     private static DepartmentServiceImpl instance;
@@ -22,12 +25,17 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void saveOrUpdate(Department department) throws DAOException {
+    public void saveOrUpdate(Department department) throws DAOException, ValidationException {
+        Map<String,String> violationMap = ConstraintViolationsParser.getViolationsMap(department);
+        if (violationMap.size() > 0){
+            throw new ValidationException("Fail to create or update department", violationMap);
+        }
         try {
             departmentDAO.saveOrUpdate(department);
         } catch (SQLException e) {
-            throw new DAOException("Fail to create department", e);
+            throw new DAOException("Fail to create or update department", e);
         }
+
     }
 
     @Override

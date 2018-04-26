@@ -9,7 +9,7 @@
                value="${param.departmentName}">
     </div>
     <div>
-        <c:out value="${violationMap.departmentNameViolation}"></c:out>
+        <c:out value="${violationMap.departmentName}"></c:out>
     </div>
 </div>
 

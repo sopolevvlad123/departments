@@ -4,6 +4,7 @@ import com.bean.Employee;
 import com.exception.DAOException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
+import com.utils.RequestDataParser;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,15 +21,16 @@ public class CreateEmployeeHandler extends ServletHandler {
     }
 
     void saveOrUpdateEmployee(Employee employee, HttpServletRequest request, HttpServletResponse response, String successURL, String failURL) throws ServletException, IOException, DAOException {
+
         try {
-            employeeValidator.validateEmployee(employee);
+            employeeService.saveOrUpdateEmployee(employee);
         } catch (ValidationException e) {
             e.printStackTrace();
             request.setAttribute("violationMap", e.getViolationsMap());
             toPreviousPage(request, response, failURL);
             return;
         }
-        employeeService.saveOrUpdateEmployee(employee);
+
         response.sendRedirect(successURL + "?" + request.getSession().getAttribute("departmentIdQuery").toString().trim());
     }
 
@@ -36,8 +38,8 @@ public class CreateEmployeeHandler extends ServletHandler {
         return new Employee(request.getParameter("firstName"),
                 request.getParameter("lastName"),
                 request.getParameter("email"),
-                requestDataParser.parseInteger(request.getParameter("salary")),
-                requestDataParser.parseDate(request.getParameter("hireDate")),
+                RequestDataParser.parseInteger(request.getParameter("salary")),
+                RequestDataParser.parseDate(request.getParameter("hireDate")),
                 Integer.parseInt(request.getParameter("departmentId")));
     }
 }

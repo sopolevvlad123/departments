@@ -5,17 +5,16 @@
         <input class="form-control" type="text" name="firstName" id="firstName" value="${param.firstName}">
     </div>
     <div>
-        <c:out value="${violationMap.firstNameViolations}"></c:out>
+        <c:out value="${violationMap.firstName}"></c:out>
     </div>
 </div>
-
 <div class="form-group row">
     <label for="lastName" class="col-2 col-form-label">Last Name</label>
     <div class="col-6">
         <input class="form-control" type="text" name="lastName" id="lastName" value="${param.lastName}">
     </div>
     <div>
-        <c:out value="${violationMap.lastNameViolations}"></c:out>
+        <c:out value="${violationMap.lastName}"></c:out>
     </div>
 </div>
 
@@ -25,7 +24,7 @@
         <input class="form-control" type="text" name="email" id="email" value="${param.email}">
     </div>
     <div>
-        <c:out value="${violationMap.emailViolations}"></c:out>
+        <c:out value="${violationMap.email}"></c:out>
     </div>
 </div>
 
@@ -35,7 +34,7 @@
         <input class="form-control" type="text" name="salary" id="salary" value="${param.salary}">
     </div>
     <div>
-        <c:out value="${violationMap.salaryViolations}"></c:out>
+        <c:out value="${violationMap.salary}"></c:out>
     </div>
 </div>
 
@@ -43,6 +42,9 @@
     <label for="hireDate" class="col-2 col-form-label">Hire Date</label>
     <div class="col-6">
         <input class="form-control" type="date" name="hireDate" id="hireDate" value="${param.hireDate}">
+    </div>
+    <div>
+        <c:out value="${violationMap.hireDate}"></c:out>
     </div>
 </div>
 

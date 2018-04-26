@@ -1,7 +1,6 @@
 package com.bean;
 
 import com.validator.DepartmentNameValidator;
-import com.validator.DepartmentValidator;
 import net.sf.oval.constraint.*;
 import java.util.ArrayList;
 import java.util.List;

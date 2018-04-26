@@ -2,11 +2,13 @@ package com.service;
 
 import com.bean.Employee;
 import com.exception.DAOException;
+import com.exception.ValidationException;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeService {
-    void saveOrUpdateEmployee(Employee employee) throws DAOException;
+    void saveOrUpdateEmployee(Employee employee) throws DAOException, ValidationException;
 
     Employee getEmployee(Integer employeeId) throws DAOException;
 
@@ -15,5 +17,6 @@ public interface EmployeeService {
     List<Employee> getDepartmentsEmployees(Integer departmentId) throws DAOException;
 
     void deleteEmployee(Integer employeeId) throws DAOException;
+
 
 }
