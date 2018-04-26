@@ -17,7 +17,6 @@ public class CreateEmployeeHandler extends ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
         saveOrUpdateEmployee(buildEmployee(request), request, response, GET_DEP_EMPLOYEES, CREATE_EMPLOYEE_PAGE);
-
     }
 
     void saveOrUpdateEmployee(Employee employee, HttpServletRequest request, HttpServletResponse response, String successURL, String failURL) throws ServletException, IOException, DAOException {

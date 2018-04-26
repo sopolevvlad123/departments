@@ -14,15 +14,13 @@ import java.io.IOException;
 
 public abstract class ServletHandler {
 
-    public DepartmentService   departmentService   = DepartmentServiceImpl.getInstance();
-    public EmployeeService     employeeService     = EmployeeServiceImpl.getInstance();
+    protected DepartmentService   departmentService   = DepartmentServiceImpl.getInstance();
+    protected EmployeeService     employeeService     = EmployeeServiceImpl.getInstance();
 
     public abstract void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException, DAOException;
 
-
-    public void toPreviousPage(HttpServletRequest request, HttpServletResponse response, String url) throws ServletException, IOException {
+    protected void toPreviousPage(HttpServletRequest request, HttpServletResponse response, String url) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
-
 }
