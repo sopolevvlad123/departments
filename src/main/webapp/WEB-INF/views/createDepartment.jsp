@@ -11,7 +11,9 @@
         <h2>Create Department Form</h2>
     </div>
     <form action="/createDepartment.do" method="post">
+        <jsp:include page="/createUpdateDepartmentFormComponent.jsp"></jsp:include>
 
+    <%--
         <div class="form-group row">
             <label for="departmentName" class="col-2 col-form-label">Department Name</label>
             <div class="col-6">
@@ -23,10 +25,9 @@
             </div>
         </div>
 
-        <div class="row justify-content-md-between">
+     <div class="row justify-content-md-between">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-success" href="/departmentList.do" role="button">Main Page</a>
-        </div>
+        </div>--%>
     </form>
 </div>
 </body>

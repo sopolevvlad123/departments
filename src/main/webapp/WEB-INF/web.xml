@@ -2,9 +2,13 @@
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
-
+<!--
     <welcome-file-list>
         <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
+    </welcome-file-list>-->
+
+    <welcome-file-list>
+        <welcome-file>/departmentList.do</welcome-file>
     </welcome-file-list>
 
     <servlet>
@@ -71,6 +75,25 @@
     <servlet-mapping>
         <servlet-name>errorPage</servlet-name>
         <url-pattern>/errorPage.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>createUpdateDepartmentFormComponent</servlet-name>
+        <jsp-file>/WEB-INF/views/components/createUpdateDepartmentFormComponent.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createUpdateDepartmentFormComponent</servlet-name>
+        <url-pattern>/createUpdateDepartmentFormComponent.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>createUpdateEmployeeFormComponent</servlet-name>
+        <jsp-file>/WEB-INF/views/components/createUpdateEmployeeFormComponent.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createUpdateEmployeeFormComponent</servlet-name>
+        <url-pattern>/createUpdateEmployeeFormComponent.jsp</url-pattern>
     </servlet-mapping>
 
 
