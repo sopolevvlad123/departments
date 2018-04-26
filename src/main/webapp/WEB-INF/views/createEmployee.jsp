@@ -11,7 +11,7 @@
 
     <h2>Create Employee Form</h2>
 
-    <form action="/createEmployee.do" method="post">
+    <form action= <c:url value="/createEmployee.do"/> method="post">
         <jsp:include page="/createUpdateEmployeeFormComponent.jsp"></jsp:include>
     </form>
 

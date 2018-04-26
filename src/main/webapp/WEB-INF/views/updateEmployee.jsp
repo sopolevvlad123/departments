@@ -9,7 +9,7 @@
 
 <div class="container">
     <h2>Update Employee Form</h2>
-    <form action="/updateEmployee.do" method="post">
+    <form action= <c:url value= "/updateEmployee.do"/> method="post">
         <jsp:include page="/createUpdateEmployeeFormComponent.jsp"></jsp:include>
     </form>
 </div>

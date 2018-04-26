@@ -10,9 +10,11 @@
     <div class="row d-flex justify-content-center">
         <h2>Create Department Form</h2>
     </div>
-    <form action="/createDepartment.do" method="post">
+
+    <form action=<c:url value="/createDepartment.do"/> >
         <jsp:include page="/createUpdateDepartmentFormComponent.jsp"></jsp:include>
     </form>
+
 </div>
 </body>
 </html>

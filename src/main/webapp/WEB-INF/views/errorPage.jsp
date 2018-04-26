@@ -18,7 +18,7 @@
             </p>
         </h1>
         <p class="text-center">Try pressing the back button or clicking on this button.</p>
-        <p class="text-center"><a class="btn btn-primary" href="/departmentList.do"><i
+        <p class="text-center"><a class="btn btn-primary" href= <c:url value= "/departmentList.do"/>><i
                 class="fa fa-home"></i>MainPage</a></p>
     </div>
 

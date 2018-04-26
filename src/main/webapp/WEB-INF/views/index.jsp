@@ -47,8 +47,8 @@
     </table>
 
     <div class="row justify-content-md-around">
-        <a class="btn btn-success" href="/departmentList.do" role="button">Get Departments</a>
-        <a class="btn btn-success" href="/createDepartment.jsp" role="button">Create Department</a>
+        <a class="btn btn-success" href= <c:url value= "/departmentList.do"/>  role="button">Get Departments</a>
+        <a class="btn btn-success" href= <c:url value= "/createDepartment.jsp"/> role="button">Create Department</a>
     </div>
 </div>
 </body>

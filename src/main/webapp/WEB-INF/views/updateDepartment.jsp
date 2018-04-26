@@ -11,7 +11,7 @@
 
     <h2>Update Department Form</h2>
 
-    <form action="/updateDepartment.do" method="post">
+    <form action= <c:url value="/updateDepartment.do"/> method="post">
         <jsp:include page="/createUpdateDepartmentFormComponent.jsp"></jsp:include>
     </form>
 

@@ -59,7 +59,7 @@
 
     <div class="row justify-content-md-around">
 
-        <form action="/createEmployee.jsp" method="get">
+        <form action = <c:url value= "/createEmployee.jsp"/> method="get">
             <button class="btn btn-success" name="departmentId" type="submit" value="${departmentId}">
                 <h6>Create Employee</h6></button>
         </form>
