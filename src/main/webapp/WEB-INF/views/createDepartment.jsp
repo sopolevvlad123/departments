@@ -12,22 +12,6 @@
     </div>
     <form action="/createDepartment.do" method="post">
         <jsp:include page="/createUpdateDepartmentFormComponent.jsp"></jsp:include>
-
-    <%--
-        <div class="form-group row">
-            <label for="departmentName" class="col-2 col-form-label">Department Name</label>
-            <div class="col-6">
-                <input class="form-control" type="text" name="departmentName" id="departmentName"
-                       value="${param.departmentName}">
-            </div>
-            <div>
-                <c:out value="${violationMap.departmentNameViolation}"></c:out>
-            </div>
-        </div>
-
-     <div class="row justify-content-md-between">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>--%>
     </form>
 </div>
 </body>
