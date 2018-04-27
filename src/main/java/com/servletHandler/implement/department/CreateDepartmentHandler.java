@@ -35,6 +35,7 @@ public class CreateDepartmentHandler extends ServletHandler {
     }
 
      Department buildDepartment(HttpServletRequest request) {
+
         return new Department(request.getParameter("departmentName"));
     }
 }

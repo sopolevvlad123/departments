@@ -7,6 +7,10 @@
     <div>
         <c:out value="${violationMap.firstName}"></c:out>
     </div>
+    <c:out value="${departmentId}"></c:out>
+    <c:out value="${param.departmentIdQuery}"></c:out>
+
+
 </div>
 <div class="form-group row">
     <label for="lastName" class="col-2 col-form-label">Last Name</label>
@@ -50,7 +54,9 @@
 
 <input type="hidden" name="employeeId" value="${param.employeeId}"/>
 <input type="hidden" name="departmentId" value="${param.departmentId}"/>
+<input type="hidden" name="query" value="${param.departmentIdQuery}"/>
+
 <div class="row justify-content-md-between">
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a class="btn btn-success" href=<c:url value =  "/getDepartmentsEmployees.do?departmentId=${param.departmentId}"/>   role="button">Employee List</a>
+    <a class="btn btn-success" href= <c:url value =  "/getDepartmentsEmployees.do?departmentId=${param.departmentId}"/>   role="button">Employee List</a>
 </div>

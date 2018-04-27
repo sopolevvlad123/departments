@@ -29,8 +29,7 @@ public class CreateEmployeeHandler extends ServletHandler {
             toPreviousPage(request, response, failURL);
             return;
         }
-
-        response.sendRedirect(successURL + "?" + request.getSession().getAttribute("departmentIdQuery").toString().trim());
+        response.sendRedirect(successURL + "?" + "departmentId=" + request.getParameter("departmentId") );
     }
 
     Employee buildEmployee(HttpServletRequest request) {

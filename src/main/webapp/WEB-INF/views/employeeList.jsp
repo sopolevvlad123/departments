@@ -7,7 +7,6 @@
 </head>
 <body>
 <h1 class="d-flex justify-content-center">Employee List</h1>
-<c:set var="departmentIdQuery" scope="session" value=" ${requestScope['javax.servlet.forward.query_string']}"></c:set>
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
@@ -33,6 +32,7 @@
                 <td><c:out value="${employee.hireDate}"></c:out></td>
                 <td>
                     <form action="/deleteEmployee.do" method="post">
+                        <input type="hidden" name="departmentId" value="${departmentId}"/>
                         <button class="btn btn-light" name="employeeId" type="submit"
                                 value="${employee.employeeId}"><h6>Delete Employee</h6></button>
                     </form>
