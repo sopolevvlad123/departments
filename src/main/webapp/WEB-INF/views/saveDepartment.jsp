@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <h2>Save Department</h2>
+        <h2>Save Department Form</h2>
     </div>
 
     <form action=<c:url value="/saveDepartment.do"/> >
