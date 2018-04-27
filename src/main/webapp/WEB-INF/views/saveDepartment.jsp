@@ -11,7 +11,7 @@
         <h2>Save Department</h2>
     </div>
 
-    <form action=<c:url value="/createDepartment.do"/> >
+    <form action=<c:url value="/saveDepartment.do"/> >
         <div class="form-group row">
             <label for="departmentName" class="col-2 col-form-label">Department Name</label>
             <div class="col-6">

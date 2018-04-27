@@ -14,7 +14,7 @@ import java.io.IOException;
 
 import static com.utils.ServletHandlerConstants.*;
 
-public class CreateEmployeeHandler implements ServletHandler {
+public class SaveEmployeeHandler implements ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
         try {
@@ -22,7 +22,7 @@ public class CreateEmployeeHandler implements ServletHandler {
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
         } catch (ValidationException e) {
             request.setAttribute("violationMap", e.getViolationsMap());
-            RequestDispatcher dispatcher = request.getRequestDispatcher(CREATE_EMPLOYEE_PAGE);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE);
             dispatcher.forward(request, response);
         }
     }

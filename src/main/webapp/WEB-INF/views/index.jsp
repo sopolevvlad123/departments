@@ -29,7 +29,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action=<c:url value= "/createDepartment.jsp"/> method="get">
+                    <form action=<c:url value= "/saveDepartment.jsp"/> method="get">
                         <input type="hidden" name="departmentName" value="${department.departmentName}"/>
                         <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Update</h6></button>
@@ -48,7 +48,7 @@
 
     <div class="row justify-content-md-around">
         <a class="btn btn-success" href= <c:url value= "/departmentList.do"/>  role="button">Get Departments</a>
-        <a class="btn btn-success" href= <c:url value= "/createDepartment.jsp"/> role="button">Create Department</a>
+        <a class="btn btn-success" href= <c:url value= "/saveDepartment.jsp"/> role="button">Create Department</a>
     </div>
 </div>
 </body>

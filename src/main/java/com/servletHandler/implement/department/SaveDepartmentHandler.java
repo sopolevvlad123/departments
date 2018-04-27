@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.utils.ServletHandlerConstants.CREATE_DEPARTMENT_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
+import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT_PAGE;
 
 
-public class CreateDepartmentHandler implements ServletHandler {
+public class SaveDepartmentHandler implements ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
@@ -24,7 +24,7 @@ public class CreateDepartmentHandler implements ServletHandler {
             response.sendRedirect(GET_DEPARTMENT_LIST);
         } catch (ValidationException e) {
             request.setAttribute("violationMap", e.getViolationsMap());
-            RequestDispatcher dispatcher = request.getRequestDispatcher(CREATE_DEPARTMENT_PAGE);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
             dispatcher.forward(request, response);
         }
     }

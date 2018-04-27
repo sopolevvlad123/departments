@@ -31,14 +31,14 @@
                 <td><c:out value="${employee.salary}"></c:out></td>
                 <td><c:out value="${employee.hireDate}"></c:out></td>
                 <td>
-                    <form action="/deleteEmployee.do" method="post">
+                    <form action=<c:url value= "/deleteEmployee.do"/>  method="post">
                         <input type="hidden" name="departmentId" value="${departmentId}"/>
                         <button class="btn btn-light" name="employeeId" type="submit"
                                 value="${employee.employeeId}"><h6>Delete Employee</h6></button>
                     </form>
                 </td>
                 <td>
-                    <form action="/updateEmployee.jsp" method="get">
+                    <form action=<c:url value= "/saveEmployee.jsp"/> method="get">
 
                         <input type="hidden" name="employeeId" value="${employee.employeeId}"/>
                         <input type="hidden" name="firstName" value="${employee.firstName}"/>
@@ -59,13 +59,13 @@
 
     <div class="row justify-content-md-around">
 
-        <form action = <c:url value= "/createEmployee.jsp"/> method="get">
+        <form action = <c:url value= "/saveEmployee.jsp"/> method="get">
             <button class="btn btn-success" name="departmentId" type="submit" value="${departmentId}">
                 <h6>Create Employee</h6></button>
         </form>
 
         <div>
-            <a class="btn btn-success" href="/departmentList.do" role="button">Main Page</a>
+            <a class="btn btn-success" href=<c:url value= "/departmentList.do"/> role="button">Main Page</a>
         </div>
     </div>
 
