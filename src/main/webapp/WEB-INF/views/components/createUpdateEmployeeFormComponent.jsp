@@ -7,9 +7,6 @@
     <div>
         <c:out value="${violationMap.firstName}"></c:out>
     </div>
-    <c:out value="${departmentId}"></c:out>
-    <c:out value="${param.departmentIdQuery}"></c:out>
-
 
 </div>
 <div class="form-group row">

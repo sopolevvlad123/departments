@@ -13,7 +13,7 @@ import java.util.List;
 
 import static com.utils.ServletHandlerConstants.EMPLOYEE_LIST_PAGE;
 
-public class DepartmentEmployeeListHandler extends ServletHandler {
+public class DepartmentEmployeeListHandler implements ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {

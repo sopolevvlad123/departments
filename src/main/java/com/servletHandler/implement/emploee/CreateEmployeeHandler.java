@@ -6,6 +6,7 @@ import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
 import com.utils.RequestDataParser;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,31 +14,33 @@ import java.io.IOException;
 
 import static com.utils.ServletHandlerConstants.*;
 
-public class CreateEmployeeHandler extends ServletHandler {
+public class CreateEmployeeHandler implements ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
-        saveOrUpdateEmployee(buildEmployee(request), request, response, GET_DEP_EMPLOYEES, CREATE_EMPLOYEE_PAGE);
-    }
-
-    void saveOrUpdateEmployee(Employee employee, HttpServletRequest request, HttpServletResponse response, String successURL, String failURL) throws ServletException, IOException, DAOException {
-
         try {
-            employeeService.saveOrUpdateEmployee(employee);
+            employeeService.saveOrUpdateEmployee(buildEmployee(request));
+            response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
         } catch (ValidationException e) {
-            e.printStackTrace();
             request.setAttribute("violationMap", e.getViolationsMap());
-            toPreviousPage(request, response, failURL);
-            return;
+            RequestDispatcher dispatcher = request.getRequestDispatcher(CREATE_EMPLOYEE_PAGE);
+            dispatcher.forward(request, response);
         }
-        response.sendRedirect(successURL + "?" + "departmentId=" + request.getParameter("departmentId") );
     }
 
     Employee buildEmployee(HttpServletRequest request) {
-        return new Employee(request.getParameter("firstName"),
-                request.getParameter("lastName"),
-                request.getParameter("email"),
-                RequestDataParser.parseInteger(request.getParameter("salary")),
-                RequestDataParser.parseDate(request.getParameter("hireDate")),
-                Integer.parseInt(request.getParameter("departmentId")));
+        Employee employee = new Employee();
+
+        employee.setFirstName(request.getParameter("firstName"));
+        employee.setLastName(request.getParameter("lastName"));
+        employee.setEmail(request.getParameter("email"));
+        employee.setSalary(RequestDataParser.parseInteger(request.getParameter("salary")));
+        employee.setHireDate(RequestDataParser.parseDate(request.getParameter("hireDate")));
+        employee.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
+
+        if (!(request.getParameter("employeeId").isEmpty())) {
+            employee.setEmployeeId(Integer.parseInt(request.getParameter("employeeId")));
+        }
+
+        return employee;
     }
 }

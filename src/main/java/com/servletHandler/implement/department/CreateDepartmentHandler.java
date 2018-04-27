@@ -5,6 +5,7 @@ import com.exception.DAOException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,28 +15,25 @@ import static com.utils.ServletHandlerConstants.CREATE_DEPARTMENT_PAGE;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
 
-public class CreateDepartmentHandler extends ServletHandler {
+public class CreateDepartmentHandler implements ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
-        saveOrUpdateDepartment(buildDepartment(request), request, response, CREATE_DEPARTMENT_PAGE, GET_DEPARTMENT_LIST);
+        try {
+            departmentService.saveOrUpdate(buildDepartment(request));
+            response.sendRedirect(GET_DEPARTMENT_LIST);
+        } catch (ValidationException e) {
+            request.setAttribute("violationMap", e.getViolationsMap());
+            RequestDispatcher dispatcher = request.getRequestDispatcher(CREATE_DEPARTMENT_PAGE);
+            dispatcher.forward(request, response);
+        }
     }
-
-     void saveOrUpdateDepartment(Department department, HttpServletRequest request, HttpServletResponse response,
-                                 String unSuccessURL, String successURL) throws ServletException, IOException, DAOException {
-         try {
-             departmentService.saveOrUpdate(department);
-         } catch (ValidationException e) {
-             e.printStackTrace();
-             request.setAttribute("violationMap", e.getViolationsMap());
-             toPreviousPage(request, response, unSuccessURL);
-             return;
-         }
-        response.sendRedirect(successURL);
-    }
-
      Department buildDepartment(HttpServletRequest request) {
-
-        return new Department(request.getParameter("departmentName"));
+        Department department = new Department();
+        department.setDepartmentName(request.getParameter("departmentName"));
+        if (!(request.getParameter("departmentId").isEmpty())){
+            department.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
+        }
+        return department;
     }
 }

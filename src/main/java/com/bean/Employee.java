@@ -59,7 +59,7 @@ public class Employee {
         return employeeId;
     }
 
-    public void setEmployeeId(int emploeeId) {
+    public void setEmployeeId(Integer emploeeId) {
         this.employeeId = employeeId;
     }
 
@@ -91,7 +91,7 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 
@@ -107,7 +107,7 @@ public class Employee {
         return departmentId;
     }
 
-    public void setDepartmentId(int departmentId) {
+    public void setDepartmentId(Integer departmentId) {
         this.departmentId = departmentId;
     }
 

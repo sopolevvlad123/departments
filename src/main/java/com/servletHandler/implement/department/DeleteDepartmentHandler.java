@@ -11,7 +11,7 @@ import java.io.IOException;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
 
-public class DeleteDepartmentHandler extends ServletHandler {
+public class DeleteDepartmentHandler implements ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, DAOException {

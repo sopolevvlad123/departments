@@ -11,7 +11,7 @@ public class RequestDataParser {
 
     public static Integer parseInteger(String num) {
         if (num == null || !(Pattern.matches("[0-9]+", num) && num.length() < 10)) {
-            return 0;
+            return null;
         }
         return Integer.parseInt(num);
     }

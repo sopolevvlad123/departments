@@ -29,7 +29,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action="/updateDepartment.jsp" method="get">
+                    <form action=<c:url value= "/createDepartment.jsp"/> method="get">
                         <input type="hidden" name="departmentName" value="${department.departmentName}"/>
                         <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Update</h6></button>

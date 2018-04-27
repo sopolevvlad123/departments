@@ -8,11 +8,25 @@
 <body>
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <h2>Create Department Form</h2>
+        <h2>Save Department</h2>
     </div>
 
     <form action=<c:url value="/createDepartment.do"/> >
-        <jsp:include page="/createUpdateDepartmentFormComponent.jsp"></jsp:include>
+        <div class="form-group row">
+            <label for="departmentName" class="col-2 col-form-label">Department Name</label>
+            <div class="col-6">
+                <input type="hidden" name="departmentId" value="${param.departmentId}"/>
+                <input class="form-control" type="text" name="departmentName" id="departmentName"
+                       value="${param.departmentName}">
+            </div>
+            <div>
+                <c:out value="${violationMap.departmentName}"></c:out>
+            </div>
+        </div>
+        <div class="row justify-content-md-between">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-success" href= <c:url value="/departmentList.do"/> role="button" >Main Page</a>
+        </div>
     </form>
 
 </div>
