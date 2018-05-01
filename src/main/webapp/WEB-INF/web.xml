@@ -2,10 +2,6 @@
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
-<!--
-    <welcome-file-list>
-        <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
-    </welcome-file-list>-->
 
     <welcome-file-list>
         <welcome-file>/departmentList.do</welcome-file>
@@ -66,6 +62,22 @@
     <servlet-mapping>
         <servlet-name>FrontControllerServlet</servlet-name>
         <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>Log4jInit</servlet-name>
+        <servlet-class>com.utils.Log4jInit</servlet-class>
+        <init-param>
+            <param-name>log4jProperties</param-name>
+            <param-value>/home/belikov/IdeaProjects/dep/src/resources/log4j.properties</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Log4jInit</servlet-name>
+        <url-pattern>/Log4jInit</url-pattern>
     </servlet-mapping>
 
 

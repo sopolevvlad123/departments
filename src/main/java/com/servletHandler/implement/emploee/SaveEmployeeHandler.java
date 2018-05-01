@@ -5,6 +5,7 @@ import com.exception.DAOException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
 import com.utils.RequestDataParser;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,6 +22,8 @@ public class SaveEmployeeHandler implements ServletHandler {
             employeeService.saveOrUpdateEmployee(buildEmployee(request));
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
         } catch (ValidationException e) {
+            Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
             RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE);
             dispatcher.forward(request, response);
@@ -29,7 +32,6 @@ public class SaveEmployeeHandler implements ServletHandler {
 
     Employee buildEmployee(HttpServletRequest request) {
         Employee employee = new Employee();
-
         employee.setFirstName(request.getParameter("firstName"));
         employee.setLastName(request.getParameter("lastName"));
         employee.setEmail(request.getParameter("email"));

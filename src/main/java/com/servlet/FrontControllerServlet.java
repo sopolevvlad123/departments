@@ -3,6 +3,7 @@ package com.servlet;
 import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
 import com.utils.ServletHandlerFactory;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,8 @@ public class FrontControllerServlet extends HttpServlet {
         try {
             servletHandler.execute(request, response);
         } catch (DAOException e) {
+            Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
             throw new ServletException(e);
         }
     }

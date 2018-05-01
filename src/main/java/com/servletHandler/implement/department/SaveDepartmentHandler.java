@@ -4,6 +4,7 @@ import com.bean.Department;
 import com.exception.DAOException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,11 +24,14 @@ public class SaveDepartmentHandler implements ServletHandler {
             departmentService.saveOrUpdate(buildDepartment(request));
             response.sendRedirect(GET_DEPARTMENT_LIST);
         } catch (ValidationException e) {
+            Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
             RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
             dispatcher.forward(request, response);
         }
     }
+
      Department buildDepartment(HttpServletRequest request) {
         Department department = new Department();
         department.setDepartmentName(request.getParameter("departmentName"));
