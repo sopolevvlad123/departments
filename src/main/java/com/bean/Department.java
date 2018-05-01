@@ -2,18 +2,29 @@ package com.bean;
 
 import com.validator.DepartmentNameValidator;
 import net.sf.oval.constraint.*;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+@Entity
+@Table(name = "department" )
 public class Department {
 
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "department_id")
     private Integer departmentId;
+
+    @Column(name = "department_name")
     @NotNull
     @NotBlank(message = "Department name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "departmentId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {

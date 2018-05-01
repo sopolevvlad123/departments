@@ -3,33 +3,50 @@ package com.bean;
 import com.validator.EmployeeEmailValidator;
 import net.sf.oval.constraint.*;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(name = "employee")
 public class Employee {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "employee_id")
     private Integer employeeId;
+
+    @Column(name = "first_name")
     @NotNull(message = "Incorrect value")
     @NotBlank(message = "First Name should not be blank")
     @MaxLength(value = 10, message = " Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "First Name should contain ONLY letters and numbers")
     private String firstName;
+
+    @Column(name = "second_name")
     @NotNull(message = "Incorrect value")
     @NotBlank(message = "Last Name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Last Name should contain ONLY letters and numbers")
     private String lastName;
+
+    @Column(name = "email")
     @NotNull(message = "Incorrect value")
     @NotBlank(message = "Email should not be blank")
-    @MaxLength(value = 20, message = "Maximum length is 10 symbols")
+    @MaxLength(value = 20, message = "Maximum length is 20 symbols")
     @Email(message = "Email is incorrect")
     @CheckWith(value = EmployeeEmailValidator.class, message = "Employee with this email already exist")
     private String email;
+
+    @Column(name = "salary")
     @NotNull(message = "Incorrect salary value")
     @Range(min = 10, max = 10000, message = "Min salary is 10  max salary is 10 000")
     private Integer salary;
+
+    @Column(name = "hire_date")
     @NotNull(message = "Incorrect date   value")
     @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
+
+    @Column(name = "department_id")
     private Integer departmentId;
 
     public Employee() {
