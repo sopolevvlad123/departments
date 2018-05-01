@@ -43,8 +43,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                         resultSet.getString("email"),
                         resultSet.getInt("salary"),
                         resultSet.getDate("hire_date"),
-                        resultSet.getInt("department_id"),
-                        resultSet.getString("department_name"));
+                        resultSet.getInt("department_id"));
             }
 
         }
@@ -64,8 +63,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                         resultSet.getString("email"),
                         resultSet.getInt("salary"),
                         resultSet.getDate("hire_date"),
-                        resultSet.getInt("department_id"),
-                        resultSet.getString("department_name"));
+                        resultSet.getInt("department_id"));
                 employeeList.add(employee);
             }
         }
@@ -86,8 +84,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                         resultSet.getString("email"),
                         resultSet.getInt("salary"),
                         resultSet.getDate("hire_date"),
-                        resultSet.getInt("department_id"),
-                        resultSet.getString("department_name"));
+                        resultSet.getInt("department_id"));
                 employeeList.add(employee);
             }
         }

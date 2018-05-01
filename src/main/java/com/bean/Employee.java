@@ -31,7 +31,6 @@ public class Employee {
     @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
     private Integer departmentId;
-    private String departmentName;
 
     public Employee() {
     }
@@ -50,10 +49,7 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-    public Employee(int employeeId, String firstName, String lastName, String email, int salary, Date hireDate, int departmentId, String departmentName) {
-        this(employeeId, firstName, lastName, email, salary, hireDate, departmentId);
-        this.departmentName = departmentName;
-    }
+
 
     public Integer getEmployeeId() {
         return employeeId;
@@ -111,13 +107,6 @@ public class Employee {
         this.departmentId = departmentId;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
-    }
-
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -142,7 +131,6 @@ public class Employee {
                 ", salary=" + salary +
                 ", hireDate=" + hireDate +
                 ", departmentId=" + departmentId +
-                ", departmentName='" + departmentName + '\'' +
                 '}';
     }
 }

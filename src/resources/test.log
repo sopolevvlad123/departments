@@ -8,3 +8,4 @@
 01/05/2018 12:28 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Fail to create or update department>
 01/05/2018 12:28 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Fail to create or update department>
 01/05/2018 12:29 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Fail to create or update employee>
+01/05/2018 12:40 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Fail to create or update employee>
