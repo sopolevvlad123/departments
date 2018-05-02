@@ -11,7 +11,7 @@ public interface IGenericDAO<T> {
 
     List<T> getAll() throws SQLException;
 
-    List<T> getByParam(Integer id) throws SQLException;
+    List<T> getByParam(String param, Integer id) throws SQLException;
 
     void delete(Integer employeeId) throws SQLException;
 
