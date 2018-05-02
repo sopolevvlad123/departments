@@ -2,6 +2,7 @@ package com.servlet;
 
 import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
+import com.utils.HibernateSessionFactory;
 import com.utils.ServletHandlerFactory;
 import org.apache.log4j.Logger;
 

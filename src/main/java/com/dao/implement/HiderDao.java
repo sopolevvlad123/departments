@@ -3,6 +3,7 @@ package com.dao.implement;
 import com.bean.Employee;
 import com.dao.IGenericDAO;
 import com.utils.HibernateSessionFactory;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,7 +11,7 @@ import org.hibernate.Transaction;
 import java.sql.SQLException;
 import java.util.List;
 
-public class HiderDao<T> implements IGenericDAO {
+public class HiderDao<T> implements IGenericDAO<T> {
 
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
     private Class <T> clazz;
@@ -20,12 +21,10 @@ public class HiderDao<T> implements IGenericDAO {
         //return  sessionFactory.openSession().get(clazz,id);
         Session session = sessionFactory.openSession();
         Transaction tx = null;
-        Integer employeeID = null;
-
+        T bean = null;
         try {
             tx = session.beginTransaction();
-            Employee employee = new Employee(fname, lname, salary);
-            employeeID = (Integer) session.save(employee);
+            bean = session.get(clazz,id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -33,7 +32,7 @@ public class HiderDao<T> implements IGenericDAO {
         } finally {
             session.close();
         }
-        return employeeID;
+        return bean;
 
 
     }

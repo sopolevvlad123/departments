@@ -9,3 +9,22 @@
 01/05/2018 12:28 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Fail to create or update department>
 01/05/2018 12:29 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Fail to create or update employee>
 01/05/2018 12:40 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Fail to create or update employee>
+02/05/2018 12:17 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Fail to create or update department>
+02/05/2018 12:17 [http-nio-8080-exec-8] ERROR - <com.exception.ValidationException: Fail to create or update department>
+02/05/2018 12:28 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Fail to create or update department>
+02/05/2018 12:31 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 12:31 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 12:34 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 12:34 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 12:35 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 12:35 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 12:37 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
