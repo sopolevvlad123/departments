@@ -172,3 +172,13 @@
 02/05/2018 2:40 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
 02/05/2018 2:40 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
 02/05/2018 2:40 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 3:21 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Fail to create or update department>
+02/05/2018 3:22 [http-nio-8080-exec-10] ERROR - <com.exception.ValidationException: Fail to create or update department>
+02/05/2018 3:22 [http-nio-8080-exec-1] ERROR - <com.exception.ValidationException: Fail to create or update department>
+02/05/2018 3:22 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Fail to create or update employee>
+02/05/2018 3:24 [http-nio-8080-exec-8] ERROR - <com.exception.AppException: Fail to create or update employee at handler layer>
+02/05/2018 3:36 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Fail to create or update employee>
+02/05/2018 4:03 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Fail to create or update employee>
+02/05/2018 4:04 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Fail to create or update employee>
+02/05/2018 4:13 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+02/05/2018 4:13 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>

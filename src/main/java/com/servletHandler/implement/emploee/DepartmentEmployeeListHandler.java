@@ -1,7 +1,9 @@
-package com.servletHandler.implement.department;
+package com.servletHandler.implement.emploee;
 
 import com.bean.Employee;
+import com.exception.AppException;
 import com.exception.DAOException;
+import com.exception.ServiceException;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.RequestDispatcher;
@@ -16,8 +18,13 @@ import static com.utils.ServletHandlerConstants.EMPLOYEE_LIST_PAGE;
 public class DepartmentEmployeeListHandler implements ServletHandler {
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
-        List<Employee> employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter("departmentId")));
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
+        List<Employee> employeeList = null;
+        try {
+            employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter("departmentId")));
+        } catch (ServiceException e) {
+            throw new AppException("Fail to get departments employee at handler layer", e);
+        }
         request.setAttribute("employeeList", employeeList);
         request.setAttribute("departmentId", Integer.parseInt(request.getParameter("departmentId")));
         RequestDispatcher dispatcher = request.getRequestDispatcher(EMPLOYEE_LIST_PAGE);

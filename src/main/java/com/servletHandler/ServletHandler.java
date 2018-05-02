@@ -1,5 +1,6 @@
 package com.servletHandler;
 
+import com.exception.AppException;
 import com.exception.DAOException;
 import com.service.DepartmentService;
 import com.service.EmployeeService;
@@ -16,7 +17,7 @@ public interface  ServletHandler {
      DepartmentService   departmentService   = DepartmentServiceImpl.getInstance();
      EmployeeService     employeeService     = EmployeeServiceImpl.getInstance();
 
-     void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException, DAOException;
+     void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException, AppException;
 
 
 }

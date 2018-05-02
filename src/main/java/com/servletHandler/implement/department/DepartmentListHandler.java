@@ -1,7 +1,9 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Department;
+import com.exception.AppException;
 import com.exception.DAOException;
+import com.exception.ServiceException;
 import com.servletHandler.ServletHandler;
 
 import javax.servlet.RequestDispatcher;
@@ -16,12 +18,15 @@ import static com.utils.ServletHandlerConstants.INDEX_PAGE;
 public class DepartmentListHandler implements ServletHandler {
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
-        List<Department> departmentList = departmentService.getAllDepartments();
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
+        List<Department> departmentList = null;
+        try {
+            departmentList = departmentService.getAllDepartments();
+        } catch (ServiceException e) {
+            throw new AppException("Fail to department list employee at handler layer", e);
+        }
         request.setAttribute("departmentList", departmentList);
         RequestDispatcher dispatcher = request.getRequestDispatcher(INDEX_PAGE);
         dispatcher.forward(request, response);
     }
-
-
 }

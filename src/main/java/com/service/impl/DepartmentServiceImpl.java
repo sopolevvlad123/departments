@@ -4,6 +4,7 @@ import com.bean.Department;
 import com.dao.DepartmentDAO;
 import com.dao.implement.DepartmentDAOImpl;
 import com.exception.DAOException;
+import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.DepartmentService;
 import com.utils.ConstraintViolationsParser;
@@ -25,46 +26,46 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void saveOrUpdate(Department department) throws DAOException, ValidationException {
+    public void saveOrUpdate(Department department) throws ServiceException, ValidationException {
         Map<String,String> violationMap = ConstraintViolationsParser.getViolationsMap(department);
         if (violationMap.size() > 0){
-            throw new ValidationException("Fail to create or update department", violationMap);
+            throw new ValidationException("Validations problems with department bean", violationMap);
         }
         try {
             departmentDAO.saveOrUpdate(department);
         } catch (SQLException e) {
-            throw new DAOException("Fail to create or update department", e);
+            throw new ServiceException("Fail to create or update department at service layer", e);
         }
 
     }
 
     @Override
-    public Department getDepartment(Integer departmentId) throws DAOException{
+    public Department getDepartment(Integer departmentId) throws ServiceException{
         Department department;
         try {
             department = departmentDAO.getDepartment(departmentId);
         } catch (SQLException e) {
-            throw new DAOException("Fail to get department", e);
+            throw new ServiceException("Fail to get department at service layer", e);
         }
         return department;
     }
 
-    public List<Department> getAllDepartments() throws DAOException{
+    public List<Department> getAllDepartments() throws ServiceException{
         List<Department> departmentList;
         try {
             departmentList = departmentDAO.getAllDepartments();
         } catch (SQLException e) {
-            throw new DAOException("Fail to get all departments", e);
+            throw new ServiceException("Fail to get all departments at service layer", e);
         }
         return departmentList;
     }
 
     @Override
-    public void deleteDepartment(Integer departmentId) throws DAOException {
+    public void deleteDepartment(Integer departmentId) throws ServiceException {
         try {
             departmentDAO.deleteDepartment(departmentId);
         } catch (SQLException e) {
-            throw new DAOException("Fail to delete department", e);
+            throw new ServiceException("Fail to delete department at service layer", e);
         }
 
     }

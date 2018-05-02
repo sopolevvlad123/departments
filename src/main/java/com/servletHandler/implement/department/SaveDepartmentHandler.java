@@ -1,7 +1,9 @@
 package com.servletHandler.implement.department;
 
 import com.bean.Department;
+import com.exception.AppException;
 import com.exception.DAOException;
+import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
 import org.apache.log4j.Logger;
@@ -19,23 +21,25 @@ import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT_PAGE;
 public class SaveDepartmentHandler implements ServletHandler {
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         try {
             departmentService.saveOrUpdate(buildDepartment(request));
             response.sendRedirect(GET_DEPARTMENT_LIST);
         } catch (ValidationException e) {
-            Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
+            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
             RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
             dispatcher.forward(request, response);
+        } catch (ServiceException e) {
+            throw new AppException("Fail to create or update department at handler layer", e);
         }
     }
 
-     Department buildDepartment(HttpServletRequest request) {
+    Department buildDepartment(HttpServletRequest request) {
         Department department = new Department();
         department.setDepartmentName(request.getParameter("departmentName"));
-        if (!(request.getParameter("departmentId").isEmpty())){
+        if (!(request.getParameter("departmentId").isEmpty())) {
             department.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
         }
         return department;

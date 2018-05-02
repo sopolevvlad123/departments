@@ -1,5 +1,6 @@
 package com.servlet;
 
+import com.exception.AppException;
 import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
 import com.utils.HibernateSessionFactory;
@@ -21,7 +22,7 @@ public class FrontControllerServlet extends HttpServlet {
         ServletHandler servletHandler = servlethandlerFactory.getHandler(request.getRequestURI());
         try {
             servletHandler.execute(request, response);
-        } catch (DAOException e) {
+        } catch (AppException e) {
             Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
             throw new ServletException(e);

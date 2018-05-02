@@ -1,7 +1,9 @@
 package com.servletHandler.implement.emploee;
 
 import com.bean.Employee;
+import com.exception.AppException;
 import com.exception.DAOException;
+import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
 import com.utils.RequestDataParser;
@@ -17,7 +19,7 @@ import static com.utils.ServletHandlerConstants.*;
 
 public class SaveEmployeeHandler implements ServletHandler {
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DAOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         try {
             employeeService.saveOrUpdateEmployee(buildEmployee(request));
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
@@ -27,6 +29,8 @@ public class SaveEmployeeHandler implements ServletHandler {
             request.setAttribute("violationMap", e.getViolationsMap());
             RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE);
             dispatcher.forward(request, response);
+        } catch (ServiceException e) {
+            throw new AppException("Fail to create or update employee at handler layer", e);
         }
     }
 

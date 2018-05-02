@@ -32,7 +32,8 @@
                 <td><c:out value="${employee.hireDate}"></c:out></td>
                 <td>
                     <form action=<c:url value= "/deleteEmployee.do"/>  method="post">
-                        <input type="hidden" name="departmentId" value="${departmentId}"/>
+
+                        <input type="hidden" name="departmentId" value="${param.departmentId}"/>
                         <button class="btn btn-light" name="employeeId" type="submit"
                                 value="${employee.employeeId}"><h6>Delete Employee</h6></button>
                     </form>

@@ -2,6 +2,7 @@ package com.dao.implement;
 
 import com.bean.Employee;
 import com.dao.EmployeeDAO;
+import com.exception.DAOException;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
-    public void saveOrUpdate(Employee employee) throws SQLException {
+    public void saveOrUpdate(Employee employee) throws DAOException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.SAVE_OR_UPDATE_EMPLOYEE)) {
             statement.setString(1, employee.getEmail());
@@ -26,82 +27,72 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 statement.setInt(7, employee.getEmployeeId());
             }
             statement.execute();
+        }catch (SQLException e){
+            throw new DAOException("Fail to save/update employee",e);
         }
     }
 
     @Override
-    public Employee getEmployee(Integer employeeId) throws SQLException {
+    public Employee getEmployee(Integer employeeId) throws DAOException {
         Employee employee = null;
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_EMPLOYEE_BY_ID)) {
             statement.setInt(1, employeeId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                employee = new Employee(resultSet.getInt("employee_id"),
-                        resultSet.getString("first_name"),
-                        resultSet.getString("second_name"),
-                        resultSet.getString("email"),
-                        resultSet.getInt("salary"),
-                        resultSet.getDate("hire_date"),
-                        resultSet.getInt("department_id"));
+                employee = buildEmployee(resultSet);
             }
 
+        }catch (SQLException e){
+            throw new DAOException("Fail to get employee",e);
         }
         return employee;
     }
 
     @Override
-    public List<Employee> getAllEmployee() throws SQLException {
+    public List<Employee> getAllEmployee() throws DAOException {
         List<Employee> employeeList = new ArrayList<>();
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_ALL_EMPLOYEE)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                Employee employee = new Employee(resultSet.getInt("employee_id"),
-                        resultSet.getString("first_name"),
-                        resultSet.getString("second_name"),
-                        resultSet.getString("email"),
-                        resultSet.getInt("salary"),
-                        resultSet.getDate("hire_date"),
-                        resultSet.getInt("department_id"));
-                employeeList.add(employee);
+                employeeList.add(buildEmployee(resultSet));
             }
+        }catch (SQLException e){
+            throw new DAOException("Fail to get all employee",e);
         }
         return employeeList;
     }
 
     @Override
-    public List<Employee> getEmployeeByDepartment(Integer departmentId) throws SQLException {
+    public List<Employee> getEmployeeByDepartment(Integer departmentId) throws DAOException {
         List<Employee> employeeList = new ArrayList<>();
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_DEPARTMENTS_EMPLOYEE_BY_ID)) {
             statement.setInt(1, departmentId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                Employee employee = new Employee(resultSet.getInt("employee_id"),
-                        resultSet.getString("first_name"),
-                        resultSet.getString("second_name"),
-                        resultSet.getString("email"),
-                        resultSet.getInt("salary"),
-                        resultSet.getDate("hire_date"),
-                        resultSet.getInt("department_id"));
-                employeeList.add(employee);
+                employeeList.add(buildEmployee(resultSet));
             }
+        }catch (SQLException e){
+            throw new DAOException("Fail to get departments employee employee",e);
         }
         return employeeList;
     }
 
     @Override
-    public void deleteEmployee(Integer employeeId) throws SQLException {
+    public void deleteEmployee(Integer employeeId) throws DAOException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_EMPLOYEE)) {
             statement.setInt(1, employeeId);
             statement.execute();
+        }catch (SQLException e){
+            throw new DAOException("Fail to delete employee",e);
         }
     }
 
     @Override
-    public boolean checkUnique(String email, Integer employeeId) throws SQLException {
+    public boolean checkUnique(String email, Integer employeeId) throws DAOException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE)) {
             statement.setString(1, email);
@@ -112,7 +103,19 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             }
             ResultSet resultSet = statement.executeQuery();
             return !resultSet.next();
+        }catch (SQLException e){
+            throw new DAOException("Fail to check unique employee",e);
         }
+    }
+    private Employee buildEmployee(ResultSet resultSet) throws SQLException{
+        Employee employee = new Employee(resultSet.getInt("employee_id"),
+                resultSet.getString("first_name"),
+                resultSet.getString("second_name"),
+                resultSet.getString("email"),
+                resultSet.getInt("salary"),
+                resultSet.getDate("hire_date"),
+                resultSet.getInt("department_id"));;
+        return employee;
     }
 
 }

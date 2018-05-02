@@ -5,6 +5,7 @@ import com.bean.Employee;
 import com.dao.EmployeeDAO;
 import com.dao.implement.EmployeeDAOImpl;
 import com.exception.DAOException;
+import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.EmployeeService;
 import com.utils.ConstraintViolationsParser;
@@ -26,57 +27,57 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void saveOrUpdateEmployee(Employee employee) throws DAOException, ValidationException {
+    public void saveOrUpdateEmployee(Employee employee) throws ServiceException, ValidationException {
         Map<String,String> violationMap = ConstraintViolationsParser.getViolationsMap(employee);
         if (violationMap.size() > 0){
-            throw new ValidationException("Fail to create or update employee", violationMap);
+            throw new ValidationException("Validations problems with employee bean", violationMap);
         }
         try {
              employeeDAO.saveOrUpdate(employee);
         } catch (SQLException e) {
-            throw new DAOException("Fail to create or update employee", e);
+            throw new ServiceException("Fail to create or update employee at service layer", e);
         }
     }
 
     @Override
-    public Employee getEmployee(Integer employeeId) throws DAOException {
+    public Employee getEmployee(Integer employeeId) throws ServiceException {
         Employee employee;
         try {
             employee = employeeDAO.getEmployee(employeeId);
         } catch (SQLException e) {
-            throw new DAOException("Fail to get employee", e);
+            throw new ServiceException("Fail to get employee at service layer", e);
         }
         return employee;
     }
 
     @Override
-    public List<Employee> getAllEmployees() throws DAOException{
+    public List<Employee> getAllEmployees() throws ServiceException{
         List<Employee> employeeList;
         try {
             employeeList = employeeDAO.getAllEmployee();
         } catch (SQLException e) {
-            throw new DAOException("Fail to getAll employee", e);
+            throw new ServiceException("Fail to getAll employee at service layer", e);
         }
         return employeeList;
     }
 
     @Override
-    public List<Employee> getDepartmentsEmployees(Integer departmentId) throws DAOException{
+    public List<Employee> getDepartmentsEmployees(Integer departmentId) throws ServiceException{
         List<Employee> employeeList;
         try {
             employeeList = employeeDAO.getEmployeeByDepartment(departmentId);
         } catch (SQLException e) {
-            throw new DAOException("Fail to get department employees", e);
+            throw new ServiceException("Fail to get department employees at service layer", e);
         }
         return employeeList;
     }
 
     @Override
-    public void deleteEmployee(Integer employeeId) throws DAOException{
+    public void deleteEmployee(Integer employeeId) throws ServiceException{
         try {
             employeeDAO.deleteEmployee(employeeId);
         } catch (SQLException e) {
-            throw new DAOException("Fail to delete employee", e);
+            throw new ServiceException("Fail to delete employee at service layer", e);
         }
     }
 

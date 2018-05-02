@@ -1,21 +1,21 @@
 package com.dao;
 
 import com.bean.Employee;
+import com.exception.DAOException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface EmployeeDAO {
-    void saveOrUpdate(Employee employee) throws SQLException;
+    void saveOrUpdate(Employee employee) throws DAOException;
 
-    Employee getEmployee(Integer employeeId) throws SQLException;
+    Employee getEmployee(Integer employeeId) throws DAOException;
 
-    List<Employee> getAllEmployee() throws SQLException;
+    List<Employee> getAllEmployee() throws DAOException;
 
-    List<Employee> getEmployeeByDepartment(Integer departmentId) throws SQLException;
+    List<Employee> getEmployeeByDepartment(Integer departmentId) throws DAOException;
 
-    void deleteEmployee(Integer employeeId) throws SQLException;
+    void deleteEmployee(Integer employeeId) throws DAOException;
 
-    boolean checkUnique(String email, Integer employeeId) throws SQLException;
+    boolean checkUnique(String email, Integer employeeId) throws DAOException;
 
 }
