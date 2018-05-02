@@ -16,4 +16,5 @@ public interface IGenericDAO<T> {
     void delete(Integer employeeId) throws SQLException;
 
     boolean checkUnique(T t) throws SQLException;
+
 }

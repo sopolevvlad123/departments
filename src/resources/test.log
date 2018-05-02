@@ -28,3 +28,147 @@
 02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
 02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
 02/05/2018 12:37 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 1:53 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 1:53 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 1:55 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 1:55 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:07 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:07 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:08 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:08 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:14 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:14 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:14 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:14 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:14 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:14 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:14 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:14 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:14 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:14 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:14 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:14 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:14 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:14 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:14 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:14 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:14 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:14 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:14 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:14 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:15 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:15 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:15 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:15 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:15 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:15 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:15 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:15 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:15 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:15 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:18 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:18 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:18 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:18 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:18 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:18 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:18 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:18 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:18 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:18 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:26 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:26 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:26 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:26 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:26 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:26 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:26 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:26 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:26 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:26 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:27 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:27 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:27 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:27 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:27 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:27 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:27 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:27 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:27 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:27 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:27 [main] WARN - <SQL Error: 1062, SQLState: 23000>
+02/05/2018 2:27 [main] ERROR - <Duplicate entry 'Hoho' for key 'department_name_UNIQUE'>
+02/05/2018 2:28 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:28 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:28 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:28 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:28 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:28 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:28 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:28 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:28 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:28 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:28 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:28 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:28 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:28 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:28 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:28 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:28 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:28 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:28 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:28 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:28 [main] WARN - <SQL Error: 1062, SQLState: 23000>
+02/05/2018 2:28 [main] ERROR - <Duplicate entry 'Hohoho' for key 'department_name_UNIQUE'>
+02/05/2018 2:29 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:29 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:29 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:29 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:29 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:29 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:29 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:29 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:29 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:29 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+02/05/2018 2:40 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+02/05/2018 2:40 [main] INFO - <HHH000206: hibernate.properties not found>
+02/05/2018 2:40 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+02/05/2018 2:40 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+02/05/2018 2:40 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+02/05/2018 2:40 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+02/05/2018 2:40 [main] INFO - <HHH10001003: Autocommit mode: false>
+02/05/2018 2:40 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+02/05/2018 2:40 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+02/05/2018 2:40 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>

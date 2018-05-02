@@ -24,7 +24,7 @@ public class Department {
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "departmentId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "departmentId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {

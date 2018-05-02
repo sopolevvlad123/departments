@@ -2,16 +2,18 @@ package com.dao;
 
 import com.bean.Department;
 import com.bean.Employee;
-import com.dao.implement.HiderDao;
+import com.dao.implement.HiberDao;
 
 import java.sql.SQLException;
 
 public class DAOTest {
     public static void main(String[] args) {
-        IGenericDAO<Department> dao = new HiderDao();
-        ((HiderDao<Department>) dao).setClazz(Department.class);
+        IGenericDAO dao = new HiberDao(Employee.class);
         try {
-            System.out.println( " dao " + dao.get(59));
+            dao.saveOrUpdate(new Department("testo"));
+
+
+            System.out.println( " dao " + dao.get(68));
         } catch (SQLException e) {
             e.printStackTrace();
         }
