@@ -5,6 +5,7 @@ import com.exception.AppException;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.servletHandler.ServletHandler;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,7 +24,9 @@ public class DepartmentEmployeeListHandler implements ServletHandler {
         try {
             employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter("departmentId")));
         } catch (ServiceException e) {
-            throw new AppException("Fail to get departments employee at handler layer", e);
+            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
+            throw new AppException("Fail to get departments employee at application layer", e);
         }
         request.setAttribute("employeeList", employeeList);
         request.setAttribute("departmentId", Integer.parseInt(request.getParameter("departmentId")));

@@ -5,6 +5,7 @@ import com.exception.AppException;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.servletHandler.ServletHandler;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,9 @@ public class DeleteDepartmentHandler implements ServletHandler {
         try {
             departmentService.deleteDepartment(Integer.parseInt(request.getParameter("departmentId")));
         } catch (ServiceException e) {
-            throw new AppException("Fail to delete department at handler layer", e);
+            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
+            throw new AppException("Fail to delete department at application layer", e);
 
         }
         response.sendRedirect(GET_DEPARTMENT_LIST);

@@ -5,12 +5,14 @@ import com.dao.DepartmentDAO;
 import com.exception.DAOException;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentDAOImpl implements DepartmentDAO {
+    final static Logger logger = Logger.getLogger(DepartmentDAOImpl.class);
 
     @Override
     public void saveOrUpdate(Department department) throws DAOException {
@@ -24,6 +26,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             }
             statement.execute();
         }catch (SQLException e){
+            logger.error(e);
             throw new DAOException("Fail to save/update department",e);
         }
     }
@@ -39,6 +42,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
                 department =buildDepartment(resultSet);
             }
         }catch (SQLException e){
+            logger.error(e);
             throw new DAOException("Fail to get department",e);
         }
         return department;
@@ -54,6 +58,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
                 departmentList.add(buildDepartment(resultSet));
             }
         }catch (SQLException e){
+            logger.error(e);
             throw new DAOException("Fail to get all departments",e);
         }
         return departmentList;
@@ -66,6 +71,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             statement.setInt(1, departmentId);
             statement.execute();
         }catch (SQLException e){
+            logger.error(e);
             throw new DAOException("Fail to delete department",e);
         }
     }
@@ -83,6 +89,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             ResultSet resultSet = statement.executeQuery();
             return !resultSet.next();
         }catch (SQLException e){
+            logger.error(e);
             throw new DAOException("Fail to check unique department",e);
         }
     }

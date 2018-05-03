@@ -39,17 +39,9 @@
                     </form>
                 </td>
                 <td>
-                    <form action=<c:url value= "/saveEmployee.jsp"/> method="get">
-
+                    <form action=<c:url value= "/prepareEmployee.do"/> method="get">
                         <input type="hidden" name="employeeId" value="${employee.employeeId}"/>
-                        <input type="hidden" name="firstName" value="${employee.firstName}"/>
-                        <input type="hidden" name="lastName" value="${employee.lastName}"/>
-                        <input type="hidden" name="email" value="${employee.email}"/>
-                        <input type="hidden" name="salary" value="${employee.salary}"/>
-                        <input type="hidden" name="hireDate" value="${employee.hireDate}"/>
-
-                        <button class="btn btn-light" name="departmentId" type="submit"
-                                value="${param.departmentId}"><h6>Update Employee</h6></button>
+                        <button class="btn btn-light" name="departmentId" value="${departmentId}" type="submit">Update Employee</button>
                     </form>
                 </td>
             </tr>
@@ -60,7 +52,7 @@
 
     <div class="row justify-content-md-around">
 
-        <form action = <c:url value= "/saveEmployee.jsp"/> method="get">
+        <form action = <c:url value= "/prepareEmployee.do"/> method="get">
             <button class="btn btn-success" name="departmentId" type="submit" value="${departmentId}">
                 <h6>Create Employee</h6></button>
         </form>

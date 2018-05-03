@@ -29,4 +29,8 @@ public class RequestDataParser {
         }
         return validDate;
     }
+
+    public static  boolean isIDValid(String id){
+        return parseInteger(id) !=null;
+    }
 }

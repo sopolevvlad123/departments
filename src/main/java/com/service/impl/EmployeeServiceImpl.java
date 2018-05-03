@@ -9,12 +9,14 @@ import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.EmployeeService;
 import com.utils.ConstraintViolationsParser;
+import org.apache.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 public class EmployeeServiceImpl implements EmployeeService {
+    final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
     private static EmployeeServiceImpl instance;
     private EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
@@ -35,6 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
              employeeDAO.saveOrUpdate(employee);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to create or update employee at service layer", e);
         }
     }
@@ -45,6 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
             employee = employeeDAO.getEmployee(employeeId);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to get employee at service layer", e);
         }
         return employee;
@@ -56,6 +60,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
             employeeList = employeeDAO.getAllEmployee();
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to getAll employee at service layer", e);
         }
         return employeeList;
@@ -67,6 +72,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
             employeeList = employeeDAO.getEmployeeByDepartment(departmentId);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to get department employees at service layer", e);
         }
         return employeeList;
@@ -77,6 +83,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
             employeeDAO.deleteEmployee(employeeId);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to delete employee at service layer", e);
         }
     }

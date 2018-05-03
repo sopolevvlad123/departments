@@ -5,12 +5,16 @@ import com.dao.EmployeeDAO;
 import com.exception.DAOException;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
+    final static Logger logger = Logger.getLogger(EmployeeDAOImpl.class);
+
+
     @Override
     public void saveOrUpdate(Employee employee) throws DAOException {
         try (Connection connection = ConnectionFactory.getConnection();
@@ -28,6 +32,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             }
             statement.execute();
         } catch (SQLException e) {
+            logger.error(e);
             throw new DAOException("Fail to save/update employee", e);
         }
     }
@@ -44,6 +49,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             }
 
         } catch (SQLException e) {
+            logger.error(e);
             throw new DAOException("Fail to get employee", e);
         }
         return employee;
@@ -59,6 +65,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 employeeList.add(buildEmployee(resultSet));
             }
         } catch (SQLException e) {
+            logger.error(e);
             throw new DAOException("Fail to get all employee", e);
         }
         return employeeList;
@@ -75,6 +82,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 employeeList.add(buildEmployee(resultSet));
             }
         } catch (SQLException e) {
+            logger.error(e);
             throw new DAOException("Fail to get departments employee employee", e);
         }
         return employeeList;
@@ -87,6 +95,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             statement.setInt(1, employeeId);
             statement.execute();
         } catch (SQLException e) {
+            logger.error(e);
             throw new DAOException("Fail to delete employee", e);
         }
     }
@@ -104,6 +113,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             ResultSet resultSet = statement.executeQuery();
             return !resultSet.next();
         } catch (SQLException e) {
+            logger.error(e);
             throw new DAOException("Fail to check unique employee", e);
         }
     }

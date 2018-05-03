@@ -17,7 +17,7 @@
             <div class="col-6">
                 <input type="hidden" name="departmentId" value="${param.departmentId}"/>
                 <input class="form-control" type="text" name="departmentName" id="departmentName"
-                       value="${param.departmentName}">
+                       value="${departmentName}">
             </div>
             <div>
                 <c:out value="${violationMap.departmentName}"></c:out>

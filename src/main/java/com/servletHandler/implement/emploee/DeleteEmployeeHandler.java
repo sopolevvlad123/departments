@@ -5,6 +5,7 @@ import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.service.impl.EmployeeServiceImpl;
 import com.servletHandler.ServletHandler;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +20,9 @@ public class DeleteEmployeeHandler implements ServletHandler {
         try {
             EmployeeServiceImpl.getInstance().deleteEmployee(Integer.parseInt(request.getParameter("employeeId")));
         } catch (ServiceException e) {
-            throw new AppException("Fail to delete or update employee at handler layer", e);
+            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
+            throw new AppException("Fail to delete or update employee at application layer", e);
         }
         response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId") );
     }

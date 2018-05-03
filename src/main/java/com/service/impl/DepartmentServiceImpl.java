@@ -8,11 +8,13 @@ import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.DepartmentService;
 import com.utils.ConstraintViolationsParser;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.Map;
 
 public class DepartmentServiceImpl implements DepartmentService {
+    final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
     private static DepartmentServiceImpl instance;
     private DepartmentDAO departmentDAO = new DepartmentDAOImpl();
 
@@ -33,6 +35,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         try {
             departmentDAO.saveOrUpdate(department);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to create or update department at service layer", e);
         }
 
@@ -44,6 +47,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         try {
             department = departmentDAO.getDepartment(departmentId);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to get department at service layer", e);
         }
         return department;
@@ -54,6 +58,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         try {
             departmentList = departmentDAO.getAllDepartments();
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to get all departments at service layer", e);
         }
         return departmentList;
@@ -64,6 +69,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         try {
             departmentDAO.deleteDepartment(departmentId);
         } catch (DAOException e) {
+            logger.error(e);
             throw new ServiceException("Fail to delete department at service layer", e);
         }
 

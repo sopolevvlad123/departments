@@ -24,17 +24,20 @@ public class SaveEmployeeHandler implements ServletHandler {
             employeeService.saveOrUpdateEmployee(buildEmployee(request));
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
         } catch (ValidationException e) {
-            Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
+            returnFailInput(request);
+            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
             RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE);
             dispatcher.forward(request, response);
         } catch (ServiceException e) {
-            throw new AppException("Fail to create or update employee at handler layer", e);
+            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
+            log.error(e);
+            throw new AppException("Fail to create or update employee at application layer", e);
         }
     }
 
-    Employee buildEmployee(HttpServletRequest request) {
+    private Employee buildEmployee(HttpServletRequest request) {
         Employee employee = new Employee();
         employee.setFirstName(request.getParameter("firstName"));
         employee.setLastName(request.getParameter("lastName"));
@@ -48,5 +51,13 @@ public class SaveEmployeeHandler implements ServletHandler {
         }
 
         return employee;
+    }
+
+    private void returnFailInput(HttpServletRequest request) {
+        request.setAttribute("firstName", request.getParameter("firstName"));
+        request.setAttribute("lastName", request.getParameter("lastName"));
+        request.setAttribute("email", request.getParameter("email"));
+        request.setAttribute("salary", request.getParameter("salary"));
+        request.setAttribute("hireDate", request.getParameter("hireDate"));
     }
 }
