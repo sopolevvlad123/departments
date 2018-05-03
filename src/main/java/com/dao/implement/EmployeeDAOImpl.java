@@ -27,8 +27,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 statement.setInt(7, employee.getEmployeeId());
             }
             statement.execute();
-        }catch (SQLException e){
-            throw new DAOException("Fail to save/update employee",e);
+        } catch (SQLException e) {
+            throw new DAOException("Fail to save/update employee", e);
         }
     }
 
@@ -43,8 +43,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 employee = buildEmployee(resultSet);
             }
 
-        }catch (SQLException e){
-            throw new DAOException("Fail to get employee",e);
+        } catch (SQLException e) {
+            throw new DAOException("Fail to get employee", e);
         }
         return employee;
     }
@@ -58,8 +58,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             while (resultSet.next()) {
                 employeeList.add(buildEmployee(resultSet));
             }
-        }catch (SQLException e){
-            throw new DAOException("Fail to get all employee",e);
+        } catch (SQLException e) {
+            throw new DAOException("Fail to get all employee", e);
         }
         return employeeList;
     }
@@ -74,8 +74,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             while (resultSet.next()) {
                 employeeList.add(buildEmployee(resultSet));
             }
-        }catch (SQLException e){
-            throw new DAOException("Fail to get departments employee employee",e);
+        } catch (SQLException e) {
+            throw new DAOException("Fail to get departments employee employee", e);
         }
         return employeeList;
     }
@@ -86,8 +86,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
              PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_EMPLOYEE)) {
             statement.setInt(1, employeeId);
             statement.execute();
-        }catch (SQLException e){
-            throw new DAOException("Fail to delete employee",e);
+        } catch (SQLException e) {
+            throw new DAOException("Fail to delete employee", e);
         }
     }
 
@@ -103,18 +103,20 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             }
             ResultSet resultSet = statement.executeQuery();
             return !resultSet.next();
-        }catch (SQLException e){
-            throw new DAOException("Fail to check unique employee",e);
+        } catch (SQLException e) {
+            throw new DAOException("Fail to check unique employee", e);
         }
     }
-    private Employee buildEmployee(ResultSet resultSet) throws SQLException{
-        Employee employee = new Employee(resultSet.getInt("employee_id"),
-                resultSet.getString("first_name"),
-                resultSet.getString("second_name"),
-                resultSet.getString("email"),
-                resultSet.getInt("salary"),
-                resultSet.getDate("hire_date"),
-                resultSet.getInt("department_id"));;
+
+    private Employee buildEmployee(ResultSet resultSet) throws SQLException {
+        Employee employee = new Employee();
+        employee.setEmployeeId(resultSet.getInt("employee_id"));
+        employee.setFirstName(resultSet.getString("first_name"));
+        employee.setLastName(resultSet.getString("second_name"));
+        employee.setSalary(resultSet.getInt("salary"));
+        employee.setEmail(resultSet.getString("email"));
+        employee.setHireDate(resultSet.getDate("hire_date"));
+        employee.setDepartmentId(resultSet.getInt("department_id"));
         return employee;
     }
 

@@ -73,7 +73,7 @@ public class Employee  implements Serializable {
         return employeeId;
     }
 
-    public void setEmployeeId(Integer emploeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 

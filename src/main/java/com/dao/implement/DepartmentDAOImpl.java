@@ -88,7 +88,9 @@ public class DepartmentDAOImpl implements DepartmentDAO {
     }
 
     private Department buildDepartment(ResultSet resultSet) throws SQLException{
-        return new Department(resultSet.getInt("department_id"),
-                resultSet.getString("department_name"));
+        Department department = new Department();
+        department.setDepartmentId(resultSet.getInt("department_id"));
+        department.setDepartmentName(resultSet.getString("department_name"));
+        return department;
     }
 }
