@@ -5,17 +5,18 @@ import com.bean.Employee;
 import com.dao.implement.HiberDao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DAOTest {
     public static void main(String[] args) {
-        IGenericDAO dao = new HiberDao(Employee.class);
-        try {
-            dao.saveOrUpdate(new Department("testo"));
+        IGenericDAO<Department> dao = new HiberDao(Department.class);
+        Department department = dao.get(59);
+        System.out.println(department);
 
+/*        ArrayList<String> strings = new ArrayList<>();
+        strings.get(2).isEmpty();
+        System.out.println("dao" + dao.checkUnique("Q",null));*/
 
-            System.out.println( " dao " + dao.get(68));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

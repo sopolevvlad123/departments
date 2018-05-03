@@ -5,16 +5,16 @@ import java.util.List;
 
 public interface IGenericDAO<T> {
 
-    T get(Integer id) throws SQLException;
+    T get(Integer id) ;
 
-    void saveOrUpdate(T t) throws SQLException;
+    void saveOrUpdate(T t);
 
-    List<T> getAll() throws SQLException;
+    List<T> getAll() ;
 
-    List<T> getByParam(String param, Integer id) throws SQLException;
+    List<T> getByParam(String param, Integer id) ;
 
-    void delete(Integer employeeId) throws SQLException;
+    void delete(Integer employeeId) ;
 
-    boolean checkUnique(T t) throws SQLException;
+    boolean checkUnique(String name, Integer id) ;
 
 }

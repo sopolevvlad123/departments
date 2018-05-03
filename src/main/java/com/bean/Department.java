@@ -4,20 +4,20 @@ import com.validator.DepartmentNameValidator;
 import net.sf.oval.constraint.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "department" )
-public class Department {
+public class Department  implements Serializable {
 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "department_id")
     private Integer departmentId;
-
-    @Column(name = "department_name")
+    @Column(name = "department_name",unique = true)
     @NotNull
     @NotBlank(message = "Department name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")

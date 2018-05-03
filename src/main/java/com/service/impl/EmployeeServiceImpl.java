@@ -34,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         try {
              employeeDAO.saveOrUpdate(employee);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to create or update employee at service layer", e);
         }
     }
@@ -44,7 +44,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee;
         try {
             employee = employeeDAO.getEmployee(employeeId);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to get employee at service layer", e);
         }
         return employee;
@@ -55,7 +55,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee> employeeList;
         try {
             employeeList = employeeDAO.getAllEmployee();
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to getAll employee at service layer", e);
         }
         return employeeList;
@@ -66,7 +66,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee> employeeList;
         try {
             employeeList = employeeDAO.getEmployeeByDepartment(departmentId);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to get department employees at service layer", e);
         }
         return employeeList;
@@ -76,7 +76,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteEmployee(Integer employeeId) throws ServiceException{
         try {
             employeeDAO.deleteEmployee(employeeId);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to delete employee at service layer", e);
         }
     }

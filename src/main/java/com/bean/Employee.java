@@ -4,10 +4,11 @@ import com.validator.EmployeeEmailValidator;
 import net.sf.oval.constraint.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 @Entity
 @Table(name = "employee")
-public class Employee {
+public class Employee  implements Serializable {
 
     @Id
     @GeneratedValue

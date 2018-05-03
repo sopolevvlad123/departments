@@ -9,7 +9,6 @@ import com.exception.ValidationException;
 import com.service.DepartmentService;
 import com.utils.ConstraintViolationsParser;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
         try {
             departmentDAO.saveOrUpdate(department);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to create or update department at service layer", e);
         }
 
@@ -44,7 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         Department department;
         try {
             department = departmentDAO.getDepartment(departmentId);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to get department at service layer", e);
         }
         return department;
@@ -54,7 +53,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         List<Department> departmentList;
         try {
             departmentList = departmentDAO.getAllDepartments();
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to get all departments at service layer", e);
         }
         return departmentList;
@@ -64,7 +63,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public void deleteDepartment(Integer departmentId) throws ServiceException {
         try {
             departmentDAO.deleteDepartment(departmentId);
-        } catch (SQLException e) {
+        } catch (DAOException e) {
             throw new ServiceException("Fail to delete department at service layer", e);
         }
 

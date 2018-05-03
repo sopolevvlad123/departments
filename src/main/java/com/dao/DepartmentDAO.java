@@ -3,7 +3,6 @@ package com.dao;
 import com.bean.Department;
 import com.exception.DAOException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface DepartmentDAO {

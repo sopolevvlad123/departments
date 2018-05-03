@@ -64,23 +64,9 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-
-
-    <servlet>
-        <servlet-name>Log4jInit</servlet-name>
-        <servlet-class>com.utils.Log4jInit</servlet-class>
-        <init-param>
-            <param-name>log4jProperties</param-name>
-            <param-value>/home/belikov/IdeaProjects/dep/src/resources/log4j.properties</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Log4jInit</servlet-name>
-        <url-pattern>/Log4jInit</url-pattern>
-    </servlet-mapping>
-
-
+    <listener>
+        <listener-class>com.listener.ContextListener</listener-class>
+    </listener>
     <error-page>
         <exception-type>java.lang.Throwable</exception-type >
         <location>/WEB-INF/views/errorPage.jsp</location>

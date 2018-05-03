@@ -1,5 +1,7 @@
 package com.dao.implement;
 
+import com.bean.Department;
+import com.bean.Employee;
 import com.dao.IGenericDAO;
 import com.utils.HibernateSessionFactory;
 import org.hibernate.HibernateException;
@@ -7,48 +9,46 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import java.sql.SQLException;
+import javax.persistence.Query;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class HiberDao<T> implements IGenericDAO<T> {
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
     private Class<T> clazz;
+    private static Map<String,String> uniqueCheckHelpMap = new HashMap<>();
+
+    static {
+        uniqueCheckHelpMap.put(Department.class.getName(),"department_name");
+        uniqueCheckHelpMap.put(Employee.class.getName(), "email");
+    }
 
     public HiberDao(Class<T> clazz){
         this.clazz = clazz;
     }
     @Override
-    public T get(Integer id) throws SQLException {
-        Transaction tx = null;
-        T bean;
+    public T get(Integer id){
         try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-
-            bean = session.get(clazz, id);
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            throw e;
+             return session.get(clazz, id);
         }
-
-        return bean;
     }
 
     @Override
-    public void saveOrUpdate(T object) throws SQLException {
-        Transaction tx = null;
-        try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
+    public void saveOrUpdate(T object)  {
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
             session.saveOrUpdate(object);
-            tx.commit();
+            session.getTransaction().commit();
         } catch (HibernateException e) {
-            tx.rollback();
+            session.getTransaction().rollback();
             throw e;
         }
     }
 
     @Override
-    public List getAll() throws SQLException {
+    public List getAll()  {
         Transaction tx = null;
         List<T> beanList;
         try (Session session = sessionFactory.openSession()) {
@@ -63,12 +63,13 @@ public class HiberDao<T> implements IGenericDAO<T> {
     }
 
     @Override
-    public List<T> getByParam(String param, Integer id) throws SQLException {
+    public List<T> getByParam(String param, Integer id){
         Transaction tx = null;
         List<T> beanList;
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
-            beanList = session.createQuery("FROM " + clazz.getName() + " WHERE " + param + " = " + id).list();
+            org.hibernate.query.Query<T> query = session.createQuery("FROM " + clazz.getName() + " WHERE " + param + " = " + id,clazz);
+            beanList = query.list();
             tx.commit();
         } catch (HibernateException e) {
             tx.rollback();
@@ -79,7 +80,7 @@ public class HiberDao<T> implements IGenericDAO<T> {
 
 
     @Override
-    public void delete(Integer id) throws SQLException {
+    public void delete(Integer id)  {
         T bean = get(id);
         Transaction tx = null;
         try (Session session = sessionFactory.openSession()) {
@@ -92,19 +93,26 @@ public class HiberDao<T> implements IGenericDAO<T> {
         }
     }
 
+
+    //    String CHECK_IS_EMAIL_UNIQUE = "SELECT * FROM aimprosoft.employee where employee.email = ? and employee.employee_id <> ?;";
     @Override
-    public boolean checkUnique(T object) throws SQLException {
+    public boolean checkUnique(String name, Integer id) {
+      /*  T bean;
         Transaction tx = null;
-        T bean;
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
-            bean = session.find(clazz,object);
+            bean = session.get(clazz,name);
             tx.commit();
         } catch (HibernateException e) {
             tx.rollback();
             throw e;
         }
-        return bean == null;
+        return bean == null;*/
+      return false;
     }
+
+
+
+
 
 }
