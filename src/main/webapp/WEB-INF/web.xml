@@ -3,57 +3,6 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
 
-    <welcome-file-list>
-        <welcome-file>/departmentList.do</welcome-file>
-    </welcome-file-list>
-
-    <servlet>
-        <servlet-name>index</servlet-name>
-        <jsp-file>/WEB-INF/views/index.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>index</servlet-name>
-        <url-pattern>/index.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>saveDepartment</servlet-name>
-        <jsp-file>/WEB-INF/views/saveDepartment.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>saveDepartment</servlet-name>
-        <url-pattern>/saveDepartment.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>saveEmployee</servlet-name>
-        <jsp-file>/WEB-INF/views/saveEmployee.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>saveEmployee</servlet-name>
-        <url-pattern>/saveEmployee.jsp</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>employeeList</servlet-name>
-        <jsp-file>/WEB-INF/views/employeeList.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>employeeList</servlet-name>
-        <url-pattern>/employeeList.jsp</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>errorPage</servlet-name>
-        <jsp-file>/WEB-INF/views/errorPage.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>errorPage</servlet-name>
-        <url-pattern>/errorPage.jsp</url-pattern>
-    </servlet-mapping>
-
     <servlet>
         <servlet-name>FrontControllerServlet</servlet-name>
         <servlet-class>com.servlet.FrontControllerServlet</servlet-class>
@@ -61,20 +10,10 @@
 
     <servlet-mapping>
         <servlet-name>FrontControllerServlet</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <listener>
-        <listener-class>com.listener.ContextListener</listener-class>
-    </listener>
-    <error-page>
-        <exception-type>java.lang.Throwable</exception-type >
-        <location>/WEB-INF/views/errorPage.jsp</location>
-    </error-page>
 
-    <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/views/page404.jsp</location>
-    </error-page>
+
 
 </web-app>

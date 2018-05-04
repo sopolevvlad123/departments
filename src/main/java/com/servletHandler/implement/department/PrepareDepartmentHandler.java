@@ -16,6 +16,8 @@ import java.io.IOException;
 import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT_PAGE;
 
 public class PrepareDepartmentHandler implements ServletHandler {
+    final static Logger logger = Logger.getLogger(PrepareDepartmentHandler.class);
+
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         String departmentId = request.getParameter("departmentId");
@@ -24,13 +26,11 @@ public class PrepareDepartmentHandler implements ServletHandler {
                 Department department = departmentService.getDepartment(Integer.parseInt(departmentId));
                 request.setAttribute("departmentName", department.getDepartmentName());
             } catch (ServiceException e) {
-                Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-                log.error(e);
+                logger.error(e);
                 throw new AppException("Fail to get department at application layer", e);
             }
-            RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
-            dispatcher.forward(request, response);
         }
+        request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE).forward(request, response);
 
     }
 }

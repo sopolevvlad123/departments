@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class FrontControllerServlet extends HttpServlet {
+    final static Logger logger = Logger.getLogger(FrontControllerServlet.class);
 
     private ServletHandlerFactory servlethandlerFactory = new ServletHandlerFactory();
 
@@ -23,8 +24,7 @@ public class FrontControllerServlet extends HttpServlet {
         try {
             servletHandler.execute(request, response);
         } catch (AppException e) {
-            Logger log = (Logger)request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             throw new ServletException(e);
         }
     }

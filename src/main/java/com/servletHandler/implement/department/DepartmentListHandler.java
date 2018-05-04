@@ -17,6 +17,8 @@ import java.util.List;
 import static com.utils.ServletHandlerConstants.INDEX_PAGE;
 
 public class DepartmentListHandler implements ServletHandler {
+    final static Logger logger = Logger.getLogger(DepartmentListHandler.class);
+
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
@@ -24,12 +26,10 @@ public class DepartmentListHandler implements ServletHandler {
         try {
             departmentList = departmentService.getAllDepartments();
         } catch (ServiceException e) {
-            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             throw new AppException("Fail to get department list at application layer", e);
         }
         request.setAttribute("departmentList", departmentList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher(INDEX_PAGE);
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher(INDEX_PAGE).forward(request, response);
     }
 }

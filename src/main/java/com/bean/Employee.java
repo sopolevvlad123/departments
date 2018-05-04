@@ -16,21 +16,21 @@ public class Employee  implements Serializable {
     private Integer employeeId;
 
     @Column(name = "first_name")
-    @NotNull(message = "Incorrect value")
+    @NotNull(message = "Incorrect  first name value")
     @NotBlank(message = "First Name should not be blank")
     @MaxLength(value = 10, message = " Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "First Name should contain ONLY letters and numbers")
     private String firstName;
 
     @Column(name = "second_name")
-    @NotNull(message = "Incorrect value")
+    @NotNull(message = "Incorrect last name value")
     @NotBlank(message = "Last Name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Last Name should contain ONLY letters and numbers")
     private String lastName;
 
     @Column(name = "email")
-    @NotNull(message = "Incorrect value")
+    @NotNull(message = "Incorrect email value")
     @NotBlank(message = "Email should not be blank")
     @MaxLength(value = 20, message = "Maximum length is 20 symbols")
     @Email(message = "Email is incorrect")
@@ -43,7 +43,7 @@ public class Employee  implements Serializable {
     private Integer salary;
 
     @Column(name = "hire_date")
-    @NotNull(message = "Incorrect date   value")
+    @NotNull(message = "Incorrect date value")
     @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
 

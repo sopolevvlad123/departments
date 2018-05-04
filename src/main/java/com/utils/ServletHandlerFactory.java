@@ -1,6 +1,7 @@
 package com.utils;
 
 import com.servletHandler.ServletHandler;
+import com.servletHandler.implement.Page404Handler;
 import com.servletHandler.implement.department.*;
 import com.servletHandler.implement.emploee.DepartmentEmployeeListHandler;
 import com.servletHandler.implement.emploee.SaveEmployeeHandler;
@@ -26,11 +27,14 @@ public class ServletHandlerFactory {
         servletHandlerMap.put(DELETE_EMPLOYEE, new DeleteEmployeeHandler());
         servletHandlerMap.put(PREPARE_EMPLOYEE,new PrepareEmployeeHandler());
         servletHandlerMap.put(PREPARE_DEPARTMENT,new PrepareDepartmentHandler());
+        servletHandlerMap.put(TO_404_PAGE,new Page404Handler());
+
     }
 
     public ServletHandler getHandler(String url) {
-        if (url == null){
-            return servletHandlerMap.get(PAGE_404);
+        System.out.println("url -- " + url);
+        if (servletHandlerMap.get(url) == null){
+            return servletHandlerMap.get(TO_404_PAGE);
         }
         return servletHandlerMap.get(url);
     }

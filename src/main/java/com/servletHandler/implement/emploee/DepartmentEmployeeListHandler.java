@@ -17,6 +17,8 @@ import java.util.List;
 import static com.utils.ServletHandlerConstants.EMPLOYEE_LIST_PAGE;
 
 public class DepartmentEmployeeListHandler implements ServletHandler {
+    final static Logger logger = Logger.getLogger(DepartmentEmployeeListHandler.class);
+
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
@@ -24,13 +26,11 @@ public class DepartmentEmployeeListHandler implements ServletHandler {
         try {
             employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter("departmentId")));
         } catch (ServiceException e) {
-            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             throw new AppException("Fail to get departments employee at application layer", e);
         }
         request.setAttribute("employeeList", employeeList);
         request.setAttribute("departmentId", Integer.parseInt(request.getParameter("departmentId")));
-        RequestDispatcher dispatcher = request.getRequestDispatcher(EMPLOYEE_LIST_PAGE);
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher(EMPLOYEE_LIST_PAGE).forward(request, response);
     }
 }

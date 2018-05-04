@@ -16,6 +16,7 @@ import java.io.IOException;
 import static com.utils.ServletHandlerConstants.SAVE_EMPLOYEE_PAGE;
 
 public class PrepareEmployeeHandler implements ServletHandler {
+    final static Logger logger = Logger.getLogger(PrepareEmployeeHandler.class);
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
@@ -30,13 +31,10 @@ public class PrepareEmployeeHandler implements ServletHandler {
                 request.setAttribute("hireDate", employee.getHireDate());
                 request.setAttribute("departmentId", employee.getDepartmentId());
             } catch (ServiceException e) {
-                Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-                log.error(e);
+                logger.error(e);
                 throw new AppException("Fail to get employee at application layer", e);
             }
         }
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE);
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE).forward(request, response);
     }
 }

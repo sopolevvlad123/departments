@@ -18,21 +18,22 @@ import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT_PAGE;
 
 public class SaveDepartmentHandler implements ServletHandler {
+    final static Logger logger = Logger.getLogger(SaveDepartmentHandler.class);
+
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
+
         try {
             departmentService.saveOrUpdate(buildDepartment(request));
             response.sendRedirect(GET_DEPARTMENT_LIST);
         } catch (ValidationException e) {
             returnFailInput(request);
-            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
             request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE).forward(request, response);
         } catch (ServiceException e) {
-            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             throw new AppException("Fail to create or update department at application layer", e);
         }
     }

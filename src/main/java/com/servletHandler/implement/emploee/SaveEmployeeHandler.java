@@ -18,6 +18,8 @@ import java.io.IOException;
 import static com.utils.ServletHandlerConstants.*;
 
 public class SaveEmployeeHandler implements ServletHandler {
+    final static Logger logger = Logger.getLogger(SaveEmployeeHandler.class);
+
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         try {
@@ -25,13 +27,11 @@ public class SaveEmployeeHandler implements ServletHandler {
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
         } catch (ValidationException e) {
             returnFailInput(request);
-            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
             request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE).forward(request, response);
         } catch (ServiceException e) {
-            Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
-            log.error(e);
+            logger.error(e);
             throw new AppException("Fail to create or update employee at application layer", e);
         }
     }

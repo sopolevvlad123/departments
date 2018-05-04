@@ -18,7 +18,7 @@ public class Department  implements Serializable {
     @Column(name = "department_id")
     private Integer departmentId;
     @Column(name = "department_name",unique = true)
-    @NotNull
+    @NotNull(message = "Incorrect department name value")
     @NotBlank(message = "Department name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")

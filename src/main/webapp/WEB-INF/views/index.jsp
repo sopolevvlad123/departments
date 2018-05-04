@@ -23,7 +23,7 @@
                 <th scope="row"><c:out value="${department.departmentId}"></c:out></th>
                 <td><c:out value="${department.departmentName}"></c:out></td>
                 <td>
-                    <form action="/deleteDepartment.do" method="post">
+                    <form action=<c:url value="/deleteDepartment.do"/> method="post">
                         <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Delete</h6></button>
                     </form>
@@ -36,7 +36,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action="/getDepartmentsEmployees.do" method="get">
+                    <form action=<c:url value="/getDepartmentsEmployees.do" />  method="get">
                         <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Employees</h6></button>
                     </form>

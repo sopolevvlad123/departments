@@ -63,9 +63,15 @@
         <input type="hidden" name="departmentId" value="${param.departmentId}"/>
         <div class="row justify-content-md-between">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-success" href=
-            <c:url value="/getDepartmentsEmployees.do?departmentId=${param.departmentId}"/> role="button">Employee
-                List</a>
+
+        </div>
+
+    </form>
+
+    <form action=<c:url value= "/getDepartmentsEmployees.do"/>  method="get">
+        <div class="form-group row">
+            <button class="btn btn-success" name="departmentId" type="departmentId"
+                    value="${param.departmentId}"><h6>Employee List</h6></button>
         </div>
 
     </form>
