@@ -20,7 +20,7 @@ public class DepartmentListHandler implements ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
-        List<Department> departmentList = null;
+        List<Department> departmentList;
         try {
             departmentList = departmentService.getAllDepartments();
         } catch (ServiceException e) {

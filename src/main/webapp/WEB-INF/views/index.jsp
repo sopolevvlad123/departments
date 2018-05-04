@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-<h1 class="d-flex justify-content-center"> Aimprosoft Department</h1>
+    <h1 class="d-flex justify-content-center"> Aimprosoft Department</h1>
     <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -29,14 +29,15 @@
                     </form>
                 </td>
                 <td>
-                    <form action=<c:url value= "/prepareDepartment.do"/> method="get">
+                    <form action=
+                              <c:url value="/prepareDepartment.do"/> method="get">
                         <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Update</h6></button>
                     </form>
                 </td>
                 <td>
                     <form action="/getDepartmentsEmployees.do" method="get">
-                            <button class="btn btn-light" name="departmentId" type="submit"
+                        <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Employees</h6></button>
                     </form>
                 </td>
@@ -46,8 +47,10 @@
     </table>
 
     <div class="row justify-content-md-around">
-        <a class="btn btn-success" href= <c:url value= "/departmentList.do"/>  role="button">Get Departments</a>
-        <a class="btn btn-success" href= <c:url value= "/prepareDepartment.do"/> role="button">Create Department</a>
+        <a class="btn btn-success" href=
+        <c:url value="/departmentList.do"/>  role="button">Get Departments</a>
+        <a class="btn btn-success" href=
+        <c:url value="/prepareDepartment.do"/> role="button">Create Department</a>
     </div>
 </div>
 </body>

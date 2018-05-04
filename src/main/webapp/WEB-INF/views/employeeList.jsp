@@ -18,7 +18,6 @@
             <th scope="col">SALARY</th>
             <th scope="col">HIRE DATE</th>
             <th scope="col" colspan="2">ACTIONS</th>
-
         </tr>
         </thead>
         <tbody>
@@ -32,7 +31,6 @@
                 <td><c:out value="${employee.hireDate}"></c:out></td>
                 <td>
                     <form action=<c:url value= "/deleteEmployee.do"/>  method="post">
-
                         <input type="hidden" name="departmentId" value="${param.departmentId}"/>
                         <button class="btn btn-light" name="employeeId" type="submit"
                                 value="${employee.employeeId}"><h6>Delete Employee</h6></button>
@@ -46,23 +44,17 @@
                 </td>
             </tr>
         </c:forEach>
-
         </tbody>
     </table>
-
     <div class="row justify-content-md-around">
-
         <form action = <c:url value= "/prepareEmployee.do"/> method="get">
             <button class="btn btn-success" name="departmentId" type="submit" value="${departmentId}">
                 <h6>Create Employee</h6></button>
         </form>
-
         <div>
             <a class="btn btn-success" href=<c:url value= "/departmentList.do"/> role="button">Main Page</a>
         </div>
     </div>
-
 </div>
-
 </body>
 </html>

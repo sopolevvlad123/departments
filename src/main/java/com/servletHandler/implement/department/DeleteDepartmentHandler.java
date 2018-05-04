@@ -18,13 +18,13 @@ public class DeleteDepartmentHandler implements ServletHandler {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, AppException {
+
         try {
             departmentService.deleteDepartment(Integer.parseInt(request.getParameter("departmentId")));
         } catch (ServiceException e) {
             Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
             throw new AppException("Fail to delete department at application layer", e);
-
         }
         response.sendRedirect(GET_DEPARTMENT_LIST);
     }

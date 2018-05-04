@@ -381,3 +381,11 @@
 03/05/2018 7:05 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
 03/05/2018 7:05 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
 03/05/2018 7:05 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+04/05/2018 11:34 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+04/05/2018 11:44 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+04/05/2018 11:47 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+04/05/2018 11:53 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+04/05/2018 11:53 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+04/05/2018 11:53 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+04/05/2018 11:53 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+04/05/2018 11:54 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>

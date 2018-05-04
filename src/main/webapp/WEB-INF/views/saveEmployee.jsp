@@ -21,7 +21,6 @@
             <div>
                 <c:out value="${violationMap.firstName}"></c:out>
             </div>
-
         </div>
         <div class="form-group row">
             <label for="lastName" class="col-2 col-form-label">Last Name</label>
@@ -32,7 +31,6 @@
                 <c:out value="${violationMap.lastName}"></c:out>
             </div>
         </div>
-
         <div class="form-group row">
             <label for="email" class="col-2 col-form-label">Email</label>
             <div class="col-6">
@@ -42,7 +40,6 @@
                 <c:out value="${violationMap.email}"></c:out>
             </div>
         </div>
-
         <div class="form-group row">
             <label for="salary" class="col-2 col-form-label">Salary</label>
             <div class="col-6">
@@ -52,7 +49,6 @@
                 <c:out value="${violationMap.salary}"></c:out>
             </div>
         </div>
-
         <div class="form-group row">
             <label for="hireDate" class="col-2 col-form-label">Hire Date</label>
             <div class="col-6">

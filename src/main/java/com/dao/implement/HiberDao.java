@@ -9,12 +9,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import javax.persistence.Query;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class HiberDao<T> implements IGenericDAO<T> {
+
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
     private Class<T> clazz;
     private static Map<String,String> uniqueCheckHelpMap = new HashMap<>();
@@ -27,6 +27,7 @@ public class HiberDao<T> implements IGenericDAO<T> {
     public HiberDao(Class<T> clazz){
         this.clazz = clazz;
     }
+
     @Override
     public T get(Integer id){
         try (Session session = sessionFactory.openSession()) {
@@ -36,7 +37,7 @@ public class HiberDao<T> implements IGenericDAO<T> {
 
     @Override
     public void saveOrUpdate(T object)  {
-        Session session = sessionFactory.openSession();
+       Session session = sessionFactory.openSession();
         try {
             session.beginTransaction();
             session.saveOrUpdate(object);
@@ -93,22 +94,9 @@ public class HiberDao<T> implements IGenericDAO<T> {
         }
     }
 
-
-    //    String CHECK_IS_EMAIL_UNIQUE = "SELECT * FROM aimprosoft.employee where employee.email = ? and employee.employee_id <> ?;";
     @Override
     public boolean checkUnique(String name, Integer id) {
-      /*  T bean;
-        Transaction tx = null;
-        try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-            bean = session.get(clazz,name);
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            throw e;
-        }
-        return bean == null;*/
-      return false;
+        return false;
     }
 
 

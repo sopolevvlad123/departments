@@ -5,6 +5,7 @@ import com.exception.AppException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.servletHandler.ServletHandler;
+import com.utils.RequestDataParser;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +16,6 @@ import java.io.IOException;
 
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT_PAGE;
-
 
 public class SaveDepartmentHandler implements ServletHandler {
 
@@ -29,8 +29,7 @@ public class SaveDepartmentHandler implements ServletHandler {
             Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
-            RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
-            dispatcher.forward(request, response);
+            request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE).forward(request, response);
         } catch (ServiceException e) {
             Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
@@ -41,7 +40,7 @@ public class SaveDepartmentHandler implements ServletHandler {
      private Department buildDepartment(HttpServletRequest request) {
         Department department = new Department();
         department.setDepartmentName(request.getParameter("departmentName"));
-        if (!(request.getParameter("departmentId").isEmpty())) {
+        if (RequestDataParser.isIDValid(request.getParameter("departmentId"))) {
             department.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
         }
         return department;

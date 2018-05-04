@@ -28,9 +28,9 @@ public class PrepareDepartmentHandler implements ServletHandler {
                 log.error(e);
                 throw new AppException("Fail to get department at application layer", e);
             }
+            RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
+            dispatcher.forward(request, response);
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE);
-        dispatcher.forward(request, response);
     }
 }

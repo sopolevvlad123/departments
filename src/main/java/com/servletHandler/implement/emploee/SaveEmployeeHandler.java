@@ -28,8 +28,7 @@ public class SaveEmployeeHandler implements ServletHandler {
             Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
             request.setAttribute("violationMap", e.getViolationsMap());
-            RequestDispatcher dispatcher = request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE);
-            dispatcher.forward(request, response);
+            request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE).forward(request, response);
         } catch (ServiceException e) {
             Logger log = (Logger) request.getSession().getServletContext().getAttribute("appLogger");
             log.error(e);
@@ -46,7 +45,7 @@ public class SaveEmployeeHandler implements ServletHandler {
         employee.setHireDate(RequestDataParser.parseDate(request.getParameter("hireDate")));
         employee.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
 
-        if (!(request.getParameter("employeeId").isEmpty())) {
+        if (RequestDataParser.isIDValid(request.getParameter("employeeId"))) {
             employee.setEmployeeId(Integer.parseInt(request.getParameter("employeeId")));
         }
 
