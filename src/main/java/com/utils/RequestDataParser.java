@@ -1,8 +1,7 @@
 package com.utils;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 import java.util.regex.Pattern;
 
 public class RequestDataParser {
@@ -16,18 +15,14 @@ public class RequestDataParser {
         return Integer.parseInt(num);
     }
 
-    public static Date parseDate(String date) {
-        if (date == null) {
-            return new Date(0,0,0);
-        }
-        sdf.setLenient(false);
-        Date validDate;
-        try {
-             validDate = sdf.parse(date);
-        } catch (ParseException e) {
-            return new Date(0,0,0);
-        }
-        return validDate;
+
+    public static Date parseDate(String date){
+     try{
+         return Date.valueOf(date);
+     }catch (IllegalArgumentException e){
+         return null;
+     }
+
     }
 
     public static  boolean isIDValid(String id){

@@ -5,13 +5,13 @@ import net.sf.oval.constraint.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 @Entity
 @Table(name = "employee")
 public class Employee  implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
     private Integer employeeId;
 
@@ -43,10 +43,9 @@ public class Employee  implements Serializable {
     private Integer salary;
 
     @Column(name = "hire_date")
-    @NotNull(message = "Incorrect date value")
+   @NotNull(message = "Incorrect date value")
     @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
-
     @Column(name = "department_id")
     private Integer departmentId;
 

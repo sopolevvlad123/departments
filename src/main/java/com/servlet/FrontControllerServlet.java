@@ -1,9 +1,7 @@
 package com.servlet;
 
 import com.exception.AppException;
-import com.exception.DAOException;
 import com.servletHandler.ServletHandler;
-import com.utils.HibernateSessionFactory;
 import com.utils.ServletHandlerFactory;
 import org.apache.log4j.Logger;
 
@@ -12,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+import static com.utils.ServletHandlerConstants.ERROR_PAGE;
 
 public class FrontControllerServlet extends HttpServlet {
     final static Logger logger = Logger.getLogger(FrontControllerServlet.class);
@@ -25,7 +25,8 @@ public class FrontControllerServlet extends HttpServlet {
             servletHandler.execute(request, response);
         } catch (AppException e) {
             logger.error(e);
-            throw new ServletException(e);
+            request.setAttribute("error", e);
+            request.getRequestDispatcher(ERROR_PAGE).forward(request, response);
         }
     }
 

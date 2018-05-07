@@ -13,7 +13,7 @@ public interface IGenericDAO<T> {
 
     List<T> getByParam(String param, Integer id) ;
 
-    void delete(Integer employeeId) ;
+    void delete(Integer id) ;
 
     boolean checkUnique(String name, Integer id) ;
 

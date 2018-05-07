@@ -1,4 +1,4 @@
-package com.dao.implement;
+package com.dao.implement.JDBCImpl;
 
 import com.bean.Department;
 import com.dao.DepartmentDAO;

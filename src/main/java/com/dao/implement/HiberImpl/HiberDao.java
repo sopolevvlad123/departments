@@ -1,4 +1,4 @@
-package com.dao.implement;
+package com.dao.implement.HiberImpl;
 
 import com.bean.Department;
 import com.bean.Employee;

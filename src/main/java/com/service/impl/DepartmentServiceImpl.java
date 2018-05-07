@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.bean.Department;
 import com.dao.DepartmentDAO;
-import com.dao.implement.DepartmentDAOImpl;
+import com.dao.implement.HiberImpl.HiberDepartmentDAOImpl;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class DepartmentServiceImpl implements DepartmentService {
     final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
     private static DepartmentServiceImpl instance;
-    private DepartmentDAO departmentDAO = new DepartmentDAOImpl();
+    private DepartmentDAO departmentDAO = new HiberDepartmentDAOImpl();
 
     private DepartmentServiceImpl(){}
     public static DepartmentServiceImpl getInstance(){

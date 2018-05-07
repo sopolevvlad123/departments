@@ -3,7 +3,7 @@ package com.validator;
 
 import com.bean.Department;
 import com.dao.DepartmentDAO;
-import com.dao.implement.DepartmentDAOImpl;
+import com.dao.implement.JDBCImpl.DepartmentDAOImpl;
 import net.sf.oval.constraint.CheckWithCheck;
 
 import java.sql.SQLException;

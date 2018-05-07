@@ -13,7 +13,7 @@
     <div class="jumbotron" style="padding: 180px">
         <h1 class="text-center">Error page<p></p>
             <p>
-                <small class="text-center"><c:out value="${pageContext.errorData.throwable.message}"></c:out>
+                <small class="text-center"><c:out value="${error.message}"></c:out>
                 </small>
             </p>
         </h1>

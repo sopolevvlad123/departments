@@ -3,7 +3,7 @@ package com.service.impl;
 
 import com.bean.Employee;
 import com.dao.EmployeeDAO;
-import com.dao.implement.EmployeeDAOImpl;
+import com.dao.implement.HiberImpl.HiberEmployeeDAOImpl;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
@@ -11,14 +11,14 @@ import com.service.EmployeeService;
 import com.utils.ConstraintViolationsParser;
 import org.apache.log4j.Logger;
 
-import java.sql.SQLException;
+import javax.persistence.PersistenceException;
 import java.util.List;
 import java.util.Map;
 
 public class EmployeeServiceImpl implements EmployeeService {
     final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
     private static EmployeeServiceImpl instance;
-    private EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+    private EmployeeDAO employeeDAO = new HiberEmployeeDAOImpl();
 
     private EmployeeServiceImpl(){}
     public static EmployeeServiceImpl getInstance(){
@@ -36,7 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         try {
              employeeDAO.saveOrUpdate(employee);
-        } catch (DAOException e) {
+        } catch (DAOException | PersistenceException e) {
             logger.error(e);
             throw new ServiceException("Fail to create or update employee at service layer", e);
         }

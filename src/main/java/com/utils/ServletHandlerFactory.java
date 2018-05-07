@@ -27,14 +27,13 @@ public class ServletHandlerFactory {
         servletHandlerMap.put(DELETE_EMPLOYEE, new DeleteEmployeeHandler());
         servletHandlerMap.put(PREPARE_EMPLOYEE,new PrepareEmployeeHandler());
         servletHandlerMap.put(PREPARE_DEPARTMENT,new PrepareDepartmentHandler());
-        servletHandlerMap.put(TO_404_PAGE,new Page404Handler());
+        servletHandlerMap.put(PAGE_404,new Page404Handler());
 
     }
 
     public ServletHandler getHandler(String url) {
-        System.out.println("url -- " + url);
         if (servletHandlerMap.get(url) == null){
-            return servletHandlerMap.get(TO_404_PAGE);
+            return servletHandlerMap.get(PAGE_404);
         }
         return servletHandlerMap.get(url);
     }

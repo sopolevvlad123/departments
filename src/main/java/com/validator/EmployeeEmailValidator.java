@@ -2,7 +2,7 @@ package com.validator;
 
 import com.bean.Employee;
 import com.dao.EmployeeDAO;
-import com.dao.implement.EmployeeDAOImpl;
+import com.dao.implement.JDBCImpl.EmployeeDAOImpl;
 import net.sf.oval.constraint.CheckWithCheck;
 
 import java.sql.SQLException;
