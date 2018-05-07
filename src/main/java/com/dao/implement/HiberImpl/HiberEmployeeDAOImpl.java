@@ -18,7 +18,6 @@ public class HiberEmployeeDAOImpl implements EmployeeDAO {
     @Override
     public void saveOrUpdate(Employee employee) throws DAOException {
         Session session = sessionFactory.openSession();
-        System.out.println(" >HIIIIII ---- " + employee);
         try {
             session.beginTransaction();
             session.saveOrUpdate(employee);
@@ -38,32 +37,18 @@ public class HiberEmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public List<Employee> getAllEmployee() throws DAOException {
-        Transaction tx = null;
-        List<Employee> beanList;
         try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-            beanList = session.createQuery("FROM " + Employee.class.getName()).list();
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            throw e;
+            return session.createQuery("FROM Employee").list();
         }
-        return beanList;
     }
 
     @Override
     public List<Employee> getEmployeeByDepartment(Integer departmentId) throws DAOException {
-        Transaction tx = null;
-        List<Employee> beanList;
         try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-            beanList = session.createQuery("FROM " + Employee.class.getName() + " WHERE department_id" + " = " + departmentId).list();
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            throw e;
+            Query query = session.createQuery("FROM  Employee  WHERE departmentId =: departmentId");
+            query.setParameter("departmentId",departmentId);
+            return query.list();
         }
-        return beanList;
     }
 
     @Override
@@ -85,13 +70,21 @@ public class HiberEmployeeDAOImpl implements EmployeeDAO {
         Transaction tx = null;
         List<Employee> resultList;
         boolean result = false;
+        System.out.println("Check Unique from hiber");
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
-            Query query = session.createQuery("from Employee where email = :email and employeeId <> :employeeId ");
-            query.setParameter("email", email);
-            query.setParameter("employeeId", employeeId);
+            Query query;
+            if (employeeId == null) {
+                query = session.createQuery("from Employee where email = :email");
+                query.setParameter("email", email);
+            } else {
+                query = session.createQuery("from Employee where email = :email and employeeId <> :employeeId ");
+                query.setParameter("email", email);
+                query.setParameter("employeeId", employeeId);
+            }
             resultList = query.list();
-            result =  (resultList.size() == 0);
+            System.out.println("resultSet" + resultList);
+            result = (resultList.size() == 0);
             tx.commit();
         } catch (HibernateException e) {
             tx.rollback();

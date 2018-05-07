@@ -8,6 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -66,6 +67,33 @@ public class HiberDepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public boolean checkUnique(String departmentName, Integer departmentId) throws DAOException {
-        return false;
+        Transaction tx = null;
+        List<Department> resultList;
+        boolean result = false;
+        System.out.println("Check Unique department  from hiber");
+        try (Session session = sessionFactory.openSession()) {
+            tx = session.beginTransaction();
+            Query query;
+            if (departmentId == null){
+                 query = session.createQuery("from Department where departmentName = :departmentName");
+                query.setParameter("departmentName", departmentName);
+            }else {
+                 query = session.createQuery("from Department where departmentName = :departmentName and departmentId <> :departmentId ");
+                query.setParameter("departmentName", departmentName);
+                query.setParameter("departmentId", departmentId);
+            }
+
+            resultList = query.list();
+            System.out.println("dep result set"  );
+
+
+            System.out.println("resultSet" + resultList);
+            result =  (resultList.size() == 0);
+            tx.commit();
+        } catch (HibernateException e) {
+            tx.rollback();
+            throw e;
+        }
+        return result;
     }
 }
