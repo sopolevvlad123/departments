@@ -32,7 +32,7 @@ public class HiberDepartmentDAOImpl implements DepartmentDAO {
     @Override
     public Department getDepartment(Integer departmentId) throws DAOException {
         try (Session session = sessionFactory.openSession()) {
-            return session.get(Department.class,departmentId);
+            return session.get(Department.class, departmentId);
         }
     }
 
@@ -42,7 +42,7 @@ public class HiberDepartmentDAOImpl implements DepartmentDAO {
         List<Department> beanList;
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
-            beanList =  session.createQuery("FROM Department ").list();
+            beanList = session.createQuery("FROM Department ").list();
             tx.commit();
         } catch (HibernateException e) {
             tx.rollback();
@@ -67,33 +67,19 @@ public class HiberDepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public boolean checkUnique(String departmentName, Integer departmentId) throws DAOException {
-        Transaction tx = null;
         List<Department> resultList;
-        boolean result = false;
-        System.out.println("Check Unique department  from hiber");
+        Query query;
         try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-            Query query;
-            if (departmentId == null){
-                 query = session.createQuery("from Department where departmentName = :departmentName");
+            if (departmentId == null) {
+                query = session.createQuery("from Department where departmentName = :departmentName");
                 query.setParameter("departmentName", departmentName);
-            }else {
-                 query = session.createQuery("from Department where departmentName = :departmentName and departmentId <> :departmentId ");
+            } else {
+                query = session.createQuery("from Department where departmentName = :departmentName and departmentId <> :departmentId ");
                 query.setParameter("departmentName", departmentName);
                 query.setParameter("departmentId", departmentId);
             }
-
             resultList = query.list();
-            System.out.println("dep result set"  );
-
-
-            System.out.println("resultSet" + resultList);
-            result =  (resultList.size() == 0);
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            throw e;
+            return (resultList.size() == 0);
         }
-        return result;
     }
 }

@@ -4,6 +4,7 @@ package com.service.impl;
 import com.bean.Employee;
 import com.dao.EmployeeDAO;
 import com.dao.implement.HiberImpl.HiberEmployeeDAOImpl;
+import com.dao.implement.JDBCImpl.EmployeeDAOImpl;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
@@ -36,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         try {
              employeeDAO.saveOrUpdate(employee);
-        } catch (DAOException | PersistenceException e) {
+        } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to create or update employee at service layer", e);
         }

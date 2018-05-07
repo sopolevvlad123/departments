@@ -45,7 +45,7 @@ public class HiberEmployeeDAOImpl implements EmployeeDAO {
     @Override
     public List<Employee> getEmployeeByDepartment(Integer departmentId) throws DAOException {
         try (Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery("FROM  Employee  WHERE departmentId =: departmentId");
+            Query query = session.createQuery("FROM  Employee  WHERE departmentId =:departmentId");
             query.setParameter("departmentId",departmentId);
             return query.list();
         }
@@ -67,13 +67,9 @@ public class HiberEmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public boolean checkUnique(String email, Integer employeeId) throws DAOException {
-        Transaction tx = null;
         List<Employee> resultList;
-        boolean result = false;
-        System.out.println("Check Unique from hiber");
+        Query query;
         try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-            Query query;
             if (employeeId == null) {
                 query = session.createQuery("from Employee where email = :email");
                 query.setParameter("email", email);
@@ -83,14 +79,7 @@ public class HiberEmployeeDAOImpl implements EmployeeDAO {
                 query.setParameter("employeeId", employeeId);
             }
             resultList = query.list();
-            System.out.println("resultSet" + resultList);
-            result = (resultList.size() == 0);
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            throw e;
+            return  (resultList.size() == 0);
         }
-        return result;
-
     }
 }

@@ -3,6 +3,7 @@ package com.service.impl;
 import com.bean.Department;
 import com.dao.DepartmentDAO;
 import com.dao.implement.HiberImpl.HiberDepartmentDAOImpl;
+import com.dao.implement.JDBCImpl.DepartmentDAOImpl;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
