@@ -33,13 +33,13 @@ public class AbstractHiberDao implements DAO {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            Object deletedObject = session.load(Object.class, id);
+            Object deletedObject = session.get(Object.class, id);
             if (deletedObject != null) {
                 session.delete(deletedObject);
             }
             transaction.commit();
         } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
+            //if (transaction != null) transaction.rollback();
             logger.error(e);
             throw new DAOException("Fail to delete bean by Hibernate",e);
         }

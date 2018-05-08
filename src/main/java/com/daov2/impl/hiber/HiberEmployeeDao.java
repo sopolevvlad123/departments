@@ -30,7 +30,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     @Override
     public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM Employee ").list();
+            return session.createQuery("FROM Employee where departmentId =:departmentId").list();
         }catch (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get employees of the department # " + departmentId +" by Hibernate",e);

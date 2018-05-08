@@ -3,6 +3,7 @@ package com.service.impl;
 
 import com.bean.Employee;
 import com.daov2.EmployeeDAO;
+import com.daov2.impl.hiber.HiberEmployeeDao;
 import com.daov2.impl.jdbc.JDBCEmployeeDao;
 import com.exception.DAOException;
 import com.exception.ServiceException;
@@ -17,7 +18,7 @@ import java.util.Map;
 public class EmployeeServiceImpl implements EmployeeService {
     final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
     private static EmployeeServiceImpl instance;
-    private EmployeeDAO employeeDAO = new JDBCEmployeeDao();
+    private EmployeeDAO employeeDAO = new HiberEmployeeDao();
 
     private EmployeeServiceImpl(){}
     public static EmployeeServiceImpl getInstance(){
