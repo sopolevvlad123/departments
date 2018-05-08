@@ -1434,3 +1434,178 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'aimprosoft.hib
 08/05/2018 1:03 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to delete bean by Hibernate>
 08/05/2018 1:03 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
 08/05/2018 1:03 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+08/05/2018 1:11 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:11 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:12 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:12 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:12 [http-nio-8080-exec-4] ERROR - <org.hibernate.UnknownEntityTypeException: Unable to locate persister: java.lang.Object>
+08/05/2018 1:12 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to delete bean by Hibernate>
+08/05/2018 1:12 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+08/05/2018 1:12 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+08/05/2018 1:18 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:18 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:26 [http-nio-8080-exec-1] WARN - <HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:26 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:26 [http-nio-8080-exec-4] ERROR - <org.hibernate.QueryException: Named parameter [departmentId] not set>
+08/05/2018 1:26 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to get employees of the department # 62 by Hibernate>
+08/05/2018 1:26 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to get department employees at service layer>
+08/05/2018 1:26 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to get departments employee at application layer>
+08/05/2018 1:27 [http-nio-8080-exec-6] ERROR - <org.hibernate.QueryException: Named parameter [departmentId] not set>
+08/05/2018 1:27 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to get employees of the department # 89 by Hibernate>
+08/05/2018 1:27 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to get department employees at service layer>
+08/05/2018 1:27 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to get departments employee at application layer>
+08/05/2018 1:27 [http-nio-8080-exec-8] ERROR - <org.hibernate.UnknownEntityTypeException: Unable to locate persister: java.lang.Object>
+08/05/2018 1:27 [http-nio-8080-exec-8] ERROR - <com.exception.DAOException: Fail to delete bean by Hibernate>
+08/05/2018 1:27 [http-nio-8080-exec-8] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+08/05/2018 1:27 [http-nio-8080-exec-8] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:29 [http-nio-8080-exec-1] WARN - <HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:29 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:29 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:29 [http-nio-8080-exec-4] ERROR - <org.hibernate.UnknownEntityTypeException: Unable to locate persister: java.lang.Object>
+08/05/2018 1:29 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to delete bean by Hibernate>
+08/05/2018 1:29 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+08/05/2018 1:29 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:36 [http-nio-8080-exec-1] WARN - <HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:36 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:36 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:36 [http-nio-8080-exec-4] ERROR - <org.hibernate.QueryException: Named parameter [departmentId] not set>
+08/05/2018 1:36 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to get employees of the department # 99 by Hibernate>
+08/05/2018 1:36 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to get department employees at service layer>
+08/05/2018 1:36 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to get departments employee at application layer>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:37 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:37 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:37 [http-nio-8080-exec-4] ERROR - <org.hibernate.QueryException: Named parameter [departmentId] not set>
+08/05/2018 1:37 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to get employees of the department # 62 by Hibernate>
+08/05/2018 1:37 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to get department employees at service layer>
+08/05/2018 1:37 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to get departments employee at application layer>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:39 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:39 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:39 [http-nio-8080-exec-4] ERROR - <org.hibernate.QueryException: Named parameter [departmentId] not set>
+08/05/2018 1:39 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to get employees of the department # 62 by Hibernate>
+08/05/2018 1:39 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to get department employees at service layer>
+08/05/2018 1:39 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to get departments employee at application layer>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:44 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:44 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:46 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:46 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:49 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:49 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:50 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:50 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 1:51 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 1:51 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 1:51 [http-nio-8080-exec-4] ERROR - <org.hibernate.UnknownEntityTypeException: Unable to locate persister: java.lang.Object>
+08/05/2018 1:51 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to delete bean by Hibernate>
+08/05/2018 1:51 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+08/05/2018 1:51 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 2:06 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>

@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class AbstractHiberDao implements DAO {
+public  abstract class AbstractHiberDao implements DAO {
     final static Logger logger = Logger.getLogger(AbstractHiberDao.class);
 
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
@@ -28,20 +28,4 @@ public class AbstractHiberDao implements DAO {
         }
     }
 
-    @Override
-    public void delete(Integer id) throws DAOException {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Object deletedObject = session.get(Object.class, id);
-            if (deletedObject != null) {
-                session.delete(deletedObject);
-            }
-            transaction.commit();
-        } catch (HibernateException e) {
-            //if (transaction != null) transaction.rollback();
-            logger.error(e);
-            throw new DAOException("Fail to delete bean by Hibernate",e);
-        }
-    }
 }

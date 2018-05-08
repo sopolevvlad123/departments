@@ -1,5 +1,6 @@
 package com.daov2.impl.hiber;
 
+import com.bean.Department;
 import com.bean.Employee;
 import com.daov2.EmployeeDAO;
 import com.exception.DAOException;
@@ -16,25 +17,33 @@ import java.util.List;
 public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     final static Logger logger = Logger.getLogger(HiberEmployeeDao.class);
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
+
     @Override
     public Employee getEmployeeByID(Integer employeeId) throws DAOException {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            return session.get(Employee.class,employeeId);
-        }catch (HibernateException e) {
+            return session.get(Employee.class, employeeId);
+        } catch (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to get Employee by ID by Hibernate",e);
+            throw new DAOException("Fail to get Employee by ID by Hibernate", e);
         }
 
     }
 
     @Override
     public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
+        Transaction transaction = null;
+        List<Employee> employeeList;
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM Employee where departmentId =:departmentId").list();
-        }catch (HibernateException e) {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("FROM Employee where departmentId=:departmentId");
+            query.setParameter("departmentId", departmentId);
+            employeeList = query.list();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
             logger.error(e);
-            throw new DAOException("Fail to get employees of the department # " + departmentId +" by Hibernate",e);
+            throw new DAOException("Fail to get employees of the department # " + departmentId + " by Hibernate", e);
         }
+        return employeeList;
     }
 
     @Override
@@ -44,14 +53,31 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             Query query = session.createQuery("FROM Employee where email=:email");
-            query.setParameter("email",email);
+            query.setParameter("email", email);
             employee = (Employee) query.uniqueResult();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
             logger.error(e);
-            throw new DAOException("Fail to get employee by email " + email,e);
+            throw new DAOException("Fail to get employee by email " + email + " by Hibernate", e);
         }
         return employee;
+    }
+
+    @Override
+    public void delete(Integer id) throws DAOException {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            Employee employee = session.load(Employee.class,id);
+            if (employee != null) {
+                session.delete(employee);
+            }
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            logger.error(e);
+            throw new DAOException("Fail to delete employee " + id + " by Hibernate", e);
+        }
     }
 }

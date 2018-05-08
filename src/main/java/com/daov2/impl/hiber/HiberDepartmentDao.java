@@ -23,7 +23,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
             return session.get(Department.class, departmentId);
         }catch (HibernateException e){
             logger.error(e);
-            throw new DAOException("Fail to get department by ID " + departmentId,e);
+            throw new DAOException("Fail to get department by ID " + departmentId + " by Hibernate",e);
         }
     }
 
@@ -50,8 +50,25 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
             logger.error(e);
-            throw new DAOException("Fail to get department by name " + departmentName,e);
+            throw new DAOException("Fail to get department by name " + departmentName + " by Hibernate",e);
         }
         return department;
+    }
+
+    @Override
+    public void delete(Integer id) throws DAOException {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            Department department = session.load(Department.class,id);
+            if (department != null) {
+                session.delete(department);
+            }
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            logger.error(e);
+            throw new DAOException("Fail to delete department " + id + " by Hibernate", e);
+        }
     }
 }
