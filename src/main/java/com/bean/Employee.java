@@ -6,9 +6,10 @@ import net.sf.oval.constraint.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+
 @Entity
-@Table(name = "employee")
-public class Employee  implements Serializable {
+@Table(name = "employee",schema = "aimprosoft")
+public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,11 +44,17 @@ public class Employee  implements Serializable {
     private Integer salary;
 
     @Column(name = "hire_date")
-   @NotNull(message = "Incorrect date value")
+    @NotNull(message = "Incorrect date value")
     @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
     @Column(name = "department_id")
     private Integer departmentId;
+
+    @ManyToOne
+    @JoinColumn(name="department_id",
+            insertable=false, updatable=false,
+            nullable=false)
+    private Department department;
 
     public Employee() {
     }
@@ -65,7 +72,6 @@ public class Employee  implements Serializable {
         this(firstName, lastName, email, salary, hireDate, departmentId);
         this.employeeId = employeeId;
     }
-
 
 
     public Integer getEmployeeId() {
@@ -124,6 +130,13 @@ public class Employee  implements Serializable {
         this.departmentId = departmentId;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     @Override
     public boolean equals(Object o) {

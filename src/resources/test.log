@@ -1609,3 +1609,776 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'aimprosoft.hib
 08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
 08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
 08/05/2018 2:06 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 2:12 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 2:12 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 3:36 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 3:53 [http-nio-8080-exec-7] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 3:53 [http-nio-8080-exec-7] ERROR - <Unknown column 'employee0_.department_department_id' in 'field list'>
+08/05/2018 3:53 [http-nio-8080-exec-8] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 3:53 [http-nio-8080-exec-8] ERROR - <Unknown column 'employee0_.department_department_id' in 'field list'>
+08/05/2018 3:53 [http-nio-8080-exec-2] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 3:53 [http-nio-8080-exec-2] ERROR - <Unknown column 'employee0_.department_department_id' in 'field list'>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 3:54 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 3:54 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 3:54 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 3:54 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.department_department_id' in 'field list'>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 3:55 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 3:55 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 3:56 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 3:56 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 3:56 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 3:56 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.department_department_id' in 'field list'>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 3:59 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 3:59 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:00 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:00 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:02 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:02 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:02 [http-nio-8080-exec-7] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:02 [http-nio-8080-exec-7] ERROR - <Unknown column 'employee0_.department_department_id' in 'field list'>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:04 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:04 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:04 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:04 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:05 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:05 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:06 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:06 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:07 [http-nio-8080-exec-7] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:07 [http-nio-8080-exec-7] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:07 [http-nio-8080-exec-8] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:07 [http-nio-8080-exec-8] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:07 [http-nio-8080-exec-9] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:07 [http-nio-8080-exec-9] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:07 [http-nio-8080-exec-10] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:07 [http-nio-8080-exec-10] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:07 [http-nio-8080-exec-1] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:07 [http-nio-8080-exec-1] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:07 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:07 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:07 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:07 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:35 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:35 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:35 [http-nio-8080-exec-4] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:35 [http-nio-8080-exec-4] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:37 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:37 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:37 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:37 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:39 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:39 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:40 [http-nio-8080-exec-5] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:40 [http-nio-8080-exec-5] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:41 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:41 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:41 [http-nio-8080-exec-8] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 4:41 [http-nio-8080-exec-8] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:42 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:42 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:44 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:44 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:45 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:45 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:45 [http-nio-8080-exec-8] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+08/05/2018 4:45 [http-nio-8080-exec-8] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:210)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:284)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:553)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:662)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:103)
+	at com.daov2.impl.hiber.HiberEmployeeDao.getEmployeeByEmail(HiberEmployeeDao.java:50)
+	at com.validator.EmployeeEmailValidator.isSatisfied(EmployeeEmailValidator.java:20)
+	at net.sf.oval.constraint.CheckWithCheck.isSatisfied(CheckWithCheck.java:79)
+	at net.sf.oval.Validator._checkConstraint(Validator.java:571)
+	at net.sf.oval.Validator.checkConstraint(Validator.java:845)
+	at net.sf.oval.Validator._validateObjectInvariants(Validator.java:602)
+	at net.sf.oval.Validator.validateInvariants(Validator.java:1384)
+	at net.sf.oval.Validator.validate(Validator.java:1308)
+	at com.validator.Validator.getViolationsList(Validator.java:12)
+	at com.utils.ConstraintViolationsParser.getViolationsMap(ConstraintViolationsParser.java:16)
+	at com.service.impl.EmployeeServiceImpl.saveOrUpdateEmployee(EmployeeServiceImpl.java:33)
+	at com.servletHandler.implement.emploee.SaveEmployeeHandler.execute(SaveEmployeeHandler.java:27)
+	at com.servlet.FrontControllerServlet.service(FrontControllerServlet.java:25)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+08/05/2018 4:46 [http-nio-8080-exec-9] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+08/05/2018 4:46 [http-nio-8080-exec-9] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:210)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:284)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:553)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:662)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:103)
+	at com.daov2.impl.hiber.HiberEmployeeDao.getEmployeeByEmail(HiberEmployeeDao.java:50)
+	at com.validator.EmployeeEmailValidator.isSatisfied(EmployeeEmailValidator.java:20)
+	at net.sf.oval.constraint.CheckWithCheck.isSatisfied(CheckWithCheck.java:79)
+	at net.sf.oval.Validator._checkConstraint(Validator.java:571)
+	at net.sf.oval.Validator.checkConstraint(Validator.java:845)
+	at net.sf.oval.Validator._validateObjectInvariants(Validator.java:602)
+	at net.sf.oval.Validator.validateInvariants(Validator.java:1384)
+	at net.sf.oval.Validator.validate(Validator.java:1308)
+	at com.validator.Validator.getViolationsList(Validator.java:12)
+	at com.utils.ConstraintViolationsParser.getViolationsMap(ConstraintViolationsParser.java:16)
+	at com.service.impl.EmployeeServiceImpl.saveOrUpdateEmployee(EmployeeServiceImpl.java:33)
+	at com.servletHandler.implement.emploee.SaveEmployeeHandler.execute(SaveEmployeeHandler.java:27)
+	at com.servlet.FrontControllerServlet.service(FrontControllerServlet.java:25)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+08/05/2018 4:46 [http-nio-8080-exec-3] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+08/05/2018 4:46 [http-nio-8080-exec-3] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:210)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:284)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:553)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:662)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:103)
+	at com.daov2.impl.hiber.HiberEmployeeDao.getEmployeeByEmail(HiberEmployeeDao.java:50)
+	at com.validator.EmployeeEmailValidator.isSatisfied(EmployeeEmailValidator.java:20)
+	at net.sf.oval.constraint.CheckWithCheck.isSatisfied(CheckWithCheck.java:79)
+	at net.sf.oval.Validator._checkConstraint(Validator.java:571)
+	at net.sf.oval.Validator.checkConstraint(Validator.java:845)
+	at net.sf.oval.Validator._validateObjectInvariants(Validator.java:602)
+	at net.sf.oval.Validator.validateInvariants(Validator.java:1384)
+	at net.sf.oval.Validator.validate(Validator.java:1308)
+	at com.validator.Validator.getViolationsList(Validator.java:12)
+	at com.utils.ConstraintViolationsParser.getViolationsMap(ConstraintViolationsParser.java:16)
+	at com.service.impl.EmployeeServiceImpl.saveOrUpdateEmployee(EmployeeServiceImpl.java:33)
+	at com.servletHandler.implement.emploee.SaveEmployeeHandler.execute(SaveEmployeeHandler.java:27)
+	at com.servlet.FrontControllerServlet.service(FrontControllerServlet.java:25)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:47 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:47 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:47 [http-nio-8080-exec-6] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+08/05/2018 4:47 [http-nio-8080-exec-6] ERROR - <line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID>
+line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:210)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:284)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:553)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:662)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:103)
+	at com.daov2.impl.hiber.HiberEmployeeDao.getEmployeeByEmail(HiberEmployeeDao.java:50)
+	at com.validator.EmployeeEmailValidator.isSatisfied(EmployeeEmailValidator.java:20)
+	at net.sf.oval.constraint.CheckWithCheck.isSatisfied(CheckWithCheck.java:79)
+	at net.sf.oval.Validator._checkConstraint(Validator.java:571)
+	at net.sf.oval.Validator.checkConstraint(Validator.java:845)
+	at net.sf.oval.Validator._validateObjectInvariants(Validator.java:602)
+	at net.sf.oval.Validator.validateInvariants(Validator.java:1384)
+	at net.sf.oval.Validator.validate(Validator.java:1308)
+	at com.validator.Validator.getViolationsList(Validator.java:12)
+	at com.utils.ConstraintViolationsParser.getViolationsMap(ConstraintViolationsParser.java:16)
+	at com.service.impl.EmployeeServiceImpl.saveOrUpdateEmployee(EmployeeServiceImpl.java:33)
+	at com.servletHandler.implement.emploee.SaveEmployeeHandler.execute(SaveEmployeeHandler.java:27)
+	at com.servlet.FrontControllerServlet.service(FrontControllerServlet.java:25)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:50 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:50 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:50 [http-nio-8080-exec-8] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 4:50 [http-nio-8080-exec-8] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 4:50 [http-nio-8080-exec-8] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 4:51 [http-nio-8080-exec-1] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 4:51 [http-nio-8080-exec-1] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:55 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:55 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:55 [http-nio-8080-exec-6] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 4:55 [http-nio-8080-exec-6] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 4:55 [http-nio-8080-exec-6] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:57 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:57 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 4:57 [http-nio-8080-exec-6] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 4:57 [http-nio-8080-exec-6] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 4:57 [http-nio-8080-exec-6] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 4:59 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 4:59 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 5:00 [http-nio-8080-exec-7] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 5:00 [http-nio-8080-exec-7] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 5:00 [http-nio-8080-exec-7] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:04 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 6:04 [http-nio-8080-exec-4] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 6:04 [http-nio-8080-exec-4] ERROR - <Unknown column 'employee0_.departmentId' in 'field list'>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:04 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:04 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 6:05 [http-nio-8080-exec-7] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:05 [http-nio-8080-exec-7] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 6:05 [http-nio-8080-exec-7] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 6:05 [http-nio-8080-exec-9] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:05 [http-nio-8080-exec-9] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 6:05 [http-nio-8080-exec-9] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:07 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:07 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 6:08 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+08/05/2018 6:08 [http-nio-8080-exec-8] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:08 [http-nio-8080-exec-8] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 6:08 [http-nio-8080-exec-8] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:09 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:09 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 6:09 [http-nio-8080-exec-6] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:09 [http-nio-8080-exec-6] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 6:09 [http-nio-8080-exec-6] ERROR - <HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]>
+08/05/2018 6:15 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:15 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:15 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:15 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:15 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:15 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:15 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:15 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:15 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:15 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:15 [main] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:15 [main] ERROR - <Column 'department_id' cannot be null>
+08/05/2018 6:20 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:20 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:20 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:20 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:20 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:20 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:20 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:20 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:20 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:20 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:20 [main] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:20 [main] ERROR - <Column 'first_name' cannot be null>
+08/05/2018 6:24 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:24 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:24 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:24 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:24 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:24 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:24 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:24 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:24 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:24 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:24 [main] WARN - <SQL Error: 1048, SQLState: 23000>
+08/05/2018 6:24 [main] ERROR - <Column 'hire_date' cannot be null>
+08/05/2018 6:25 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:25 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:25 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:25 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:25 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:25 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:25 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:25 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:25 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:25 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:26 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:26 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:26 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:26 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:26 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:26 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:26 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:26 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:26 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:26 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:27 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:27 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:27 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:27 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:27 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:27 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:27 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:27 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:27 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:27 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:27 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:27 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:27 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:27 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:27 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:27 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:27 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:27 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:27 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:27 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:28 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:28 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:28 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:28 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:28 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:28 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:28 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:28 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:28 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:28 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:29 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:29 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:29 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:29 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:29 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:29 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:29 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:29 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:29 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:29 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:34 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:34 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:34 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:34 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:34 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:34 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:34 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:34 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:34 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:34 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:35 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:35 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:35 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:35 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:35 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:35 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:35 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:35 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:35 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:35 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:37 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:37 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:37 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:37 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:37 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:37 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:37 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:37 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:37 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:37 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:37 [main] WARN - <SQL Error: 1062, SQLState: 23000>
+08/05/2018 6:37 [main] ERROR - <Duplicate entry 'sand' for key 'department_name_UNIQUE'>
+08/05/2018 6:38 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:38 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:38 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:38 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:38 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:38 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:38 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:38 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:38 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:38 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:38 [main] WARN - <SQL Error: 1062, SQLState: 23000>
+08/05/2018 6:38 [main] ERROR - <Duplicate entry 'sand' for key 'department_name_UNIQUE'>
+08/05/2018 6:39 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:39 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:39 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:39 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:39 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:39 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:39 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:39 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:39 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:39 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:39 [main] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 6:39 [main] ERROR - <Unknown column 'departmentId' in 'field list'>
+08/05/2018 6:49 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:49 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:49 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:49 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:49 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:49 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:49 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:49 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:49 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:49 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:49 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:49 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:49 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:49 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:49 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:49 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:49 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:49 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:49 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:49 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:49 [main] WARN - <SQL Error: 1054, SQLState: 42S22>
+08/05/2018 6:49 [main] ERROR - <Unknown column 'departmentId' in 'field list'>
+08/05/2018 6:52 [main] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:52 [main] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:52 [main] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:52 [main] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:52 [main] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:52 [main] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:52 [main] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:52 [main] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:52 [main] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:52 [main] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:52 [main] WARN - <SQL Error: 1452, SQLState: 23000>
+08/05/2018 6:52 [main] ERROR - <Cannot add or update a child row: a foreign key constraint fails (`aimprosoft`.`employee`, CONSTRAINT `department_id` FOREIGN KEY (`department_id`) REFERENCES `department` (`department_id`) ON DELETE CASCADE ON UPDATE CASCADE)>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 6:54 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 7:00 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 7:00 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+08/05/2018 7:02 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+08/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+08/05/2018 7:03 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with employee bean>

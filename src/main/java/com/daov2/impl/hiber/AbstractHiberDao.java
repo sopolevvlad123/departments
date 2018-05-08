@@ -20,6 +20,7 @@ public  abstract class AbstractHiberDao implements DAO {
         try (Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
             session.saveOrUpdate(object);
+            System.out.println("from save or update" + object);
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();

@@ -1,20 +1,22 @@
 package com.dao;
 
+import com.exception.DAOException;
+
 import java.sql.SQLException;
 import java.util.List;
 
 public interface IGenericDAO<T> {
 
-    T get(Integer id) ;
+    T get(Integer id) throws DAOException;
 
-    void saveOrUpdate(T t);
+    void saveOrUpdate(T t) throws DAOException;
 
-    List<T> getAll() ;
+    List<T> getAll() throws DAOException;
 
-    List<T> getByParam(String param, Integer id) ;
+    List<T> getByParam(String param, Integer id) throws DAOException ;
 
-    void delete(Integer id) ;
+    void delete(Integer id) throws DAOException ;
 
-    T getByName(String name) ;
+    T getByUniqueField(String field) throws DAOException ;
 
 }

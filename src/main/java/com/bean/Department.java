@@ -2,6 +2,7 @@ package com.bean;
 
 import com.validator.DepartmentNameValidator;
 import net.sf.oval.constraint.*;
+import org.hibernate.annotations.IndexColumn;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,9 +11,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "department" )
+@Table(name = "department",schema = "aimprosoft")
 public class Department  implements Serializable {
-
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "department_id")
@@ -24,7 +24,8 @@ public class Department  implements Serializable {
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "departmentId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.LAZY,mappedBy = "department")
+    //@JoinColumn(name="department_id")
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {

@@ -9,3 +9,4 @@ out/artifacts/dep_war_exploded/WEB-INF/views/
 out/artifacts/dep_war_exploded/WEB-INF/web.xml
 src/test/
 **.log
+/src/main/java/com/daov2/DAOSandbox.java

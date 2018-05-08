@@ -3,6 +3,7 @@ package com.daov2.impl.hiber;
 import com.bean.Department;
 import com.daov2.DepartmentDAO;
 import com.exception.DAOException;
+import com.utils.HibernateConstants;
 import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -30,7 +31,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
     @Override
     public List<Department> getAllDepartments() throws DAOException {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM Department").list();
+            return session.createQuery(HibernateConstants.FROM_DEPARTMENT).list();
         }catch  (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get all Departments by Hibernate",e);
@@ -39,16 +40,12 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
 
     @Override
     public Department getDepartmentByName(String departmentName) throws DAOException {
-        Transaction transaction = null;
         Department department;
         try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM Department where departmentName=:departmentName");
+            Query query = session.createQuery(HibernateConstants.FROM_DEPARTMENT_BY_NAME);
             query.setParameter("departmentName", departmentName);
             department = (Department) query.uniqueResult();
-            transaction.commit();
         } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
             logger.error(e);
             throw new DAOException("Fail to get department by name " + departmentName + " by Hibernate",e);
         }

@@ -1,9 +1,9 @@
 package com.daov2.impl.hiber;
 
-import com.bean.Department;
 import com.bean.Employee;
 import com.daov2.EmployeeDAO;
 import com.exception.DAOException;
+import com.utils.HibernateConstants;
 import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -31,15 +31,12 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
 
     @Override
     public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
-        Transaction transaction = null;
         List<Employee> employeeList;
         try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
             Query query = session.createQuery("FROM Employee where departmentId=:departmentId");
             query.setParameter("departmentId", departmentId);
             employeeList = query.list();
         } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
             logger.error(e);
             throw new DAOException("Fail to get employees of the department # " + departmentId + " by Hibernate", e);
         }
@@ -48,16 +45,12 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
 
     @Override
     public Employee getEmployeeByEmail(String email) throws DAOException {
-        Transaction transaction = null;
         Employee employee;
         try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM Employee where email=:email");
+            Query query = session.createQuery(HibernateConstants.FROM_EMPLOYEE_BY_EMAIL);
             query.setParameter("email", email);
             employee = (Employee) query.uniqueResult();
-            transaction.commit();
         } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
             logger.error(e);
             throw new DAOException("Fail to get employee by email " + email + " by Hibernate", e);
         }

@@ -24,6 +24,7 @@ public class SaveEmployeeHandler implements ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         try {
+            System.out.println("From body");
             employeeService.saveOrUpdateEmployee(buildEmployee(request));
             response.sendRedirect(GET_DEP_EMPLOYEES + "?" + "departmentId=" + request.getParameter("departmentId"));
         } catch (ValidationException e) {
@@ -49,7 +50,6 @@ public class SaveEmployeeHandler implements ServletHandler {
         if (RequestDataParser.isIDValid(request.getParameter("employeeId"))) {
             employee.setEmployeeId(Integer.parseInt(request.getParameter("employeeId")));
         }
-
         return employee;
     }
 
