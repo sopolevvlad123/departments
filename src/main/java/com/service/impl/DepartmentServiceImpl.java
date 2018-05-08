@@ -1,9 +1,8 @@
 package com.service.impl;
 
 import com.bean.Department;
-import com.dao.DepartmentDAO;
-import com.dao.implement.HiberImpl.HiberDepartmentDAOImpl;
-import com.dao.implement.JDBCImpl.DepartmentDAOImpl;
+import com.daov2.DepartmentDAO;
+import com.daov2.impl.jdbc.JDBCDepartmentDao;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
@@ -17,7 +16,7 @@ import java.util.Map;
 public class DepartmentServiceImpl implements DepartmentService {
     final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
     private static DepartmentServiceImpl instance;
-    private DepartmentDAO departmentDAO = new DepartmentDAOImpl();
+    private DepartmentDAO departmentDAO = new JDBCDepartmentDao();
 
     private DepartmentServiceImpl(){}
     public static DepartmentServiceImpl getInstance(){
@@ -46,7 +45,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public Department getDepartment(Integer departmentId) throws ServiceException{
         Department department;
         try {
-            department = departmentDAO.getDepartment(departmentId);
+            department = departmentDAO.getDepartmentByID(departmentId);
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to get department at service layer", e);
@@ -68,7 +67,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void deleteDepartment(Integer departmentId) throws ServiceException {
         try {
-            departmentDAO.deleteDepartment(departmentId);
+            departmentDAO.delete(departmentId);
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to delete department at service layer", e);

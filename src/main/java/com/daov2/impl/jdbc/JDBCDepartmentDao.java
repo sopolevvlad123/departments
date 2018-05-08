@@ -1,40 +1,104 @@
 package com.daov2.impl.jdbc;
 
 import com.bean.Department;
-import com.dao.implement.JDBCImpl.DepartmentDAOImpl;
-import com.daov2.DepDAO;
+import com.daov2.DepartmentDAO;
 import com.exception.DAOException;
+import com.utils.ConnectionFactory;
+import com.utils.SQLConstants;
 import org.apache.log4j.Logger;
 
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
-public class JDBCDepartmentDao implements DepDAO {
+public class JDBCDepartmentDao implements DepartmentDAO {
     final static Logger logger = Logger.getLogger(JDBCDepartmentDao.class);
-    private DepartmentDAOImpl departmentDAO = new DepartmentDAOImpl();
 
     @Override
     public Department getDepartmentByID(Integer departmentId) throws DAOException {
-        return departmentDAO.getDepartment(departmentId);
+        Department department = null;
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_DEPARTMENT_BY_ID)) {
+            statement.setInt(1, departmentId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                department = buildDepartment(resultSet);
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new DAOException("Fail to get department by ID " + departmentId + " by JDBC", e);
+        }
+        return department;
     }
 
     @Override
     public List<Department> getAllDepartments() throws DAOException {
-        return departmentDAO.getAllDepartments();
+        List<Department> departmentList = new ArrayList<>();
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_ALL_DEPARTMENTS)) {
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                departmentList.add(buildDepartment(resultSet));
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new DAOException("Fail to get all departments by JDBC", e);
+        }
+        return departmentList;
     }
 
     @Override
-    public Department getDepartmentByName(String departmentName) {
-        return null;
+    public Department getDepartmentByName(String departmentName) throws DAOException {
+        Department department = null;
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_DEPARTMENT_BY_NAME)) {
+            statement.setString(1, departmentName);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                department = buildDepartment(resultSet);
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new DAOException("Fail to get department by name " + departmentName + " by JDBC", e);
+        }
+        return department;
     }
 
     @Override
     public void saveOrUpdate(Object object) throws DAOException {
         Department department = (Department) object;
-        departmentDAO.saveOrUpdate(department);
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SAVE_OR_UPDATE_DEPARTMENT)) {
+            statement.setString(1, department.getDepartmentName());
+            if (department.getDepartmentId() == null) {
+                statement.setNull(2, Types.INTEGER);
+            } else {
+                statement.setInt(2, department.getDepartmentId());
+            }
+            statement.execute();
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new DAOException("Fail to save/update department " + department + " by JDBC", e);
+        }
     }
 
     @Override
     public void delete(Integer id) throws DAOException {
-        departmentDAO.deleteDepartment(id);
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_DEPARTMENT)) {
+            statement.setInt(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new DAOException("Fail to delete department " + id + " by JDBC", e);
+        }
+    }
+
+    private Department buildDepartment(ResultSet resultSet) throws SQLException {
+        Department department = new Department();
+        department.setDepartmentId(resultSet.getInt("department_id"));
+        department.setDepartmentName(resultSet.getString("department_name"));
+        return department;
     }
 }
+

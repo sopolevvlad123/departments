@@ -13,8 +13,6 @@ public interface EmployeeService {
 
     Employee getEmployee(Integer employeeId) throws ServiceException;
 
-    List<Employee> getAllEmployees() throws ServiceException;
-
     List<Employee> getDepartmentsEmployees(Integer departmentId) throws ServiceException;
 
     void deleteEmployee(Integer employeeId) throws ServiceException;

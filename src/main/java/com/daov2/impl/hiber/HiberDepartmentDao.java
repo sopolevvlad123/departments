@@ -1,7 +1,7 @@
 package com.daov2.impl.hiber;
 
 import com.bean.Department;
-import com.daov2.DepDAO;
+import com.daov2.DepartmentDAO;
 import com.exception.DAOException;
 import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
@@ -13,7 +13,7 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class HiberDepartmentDao extends AbstractHiberDao implements DepDAO {
+public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDAO {
     final static Logger logger = Logger.getLogger(HiberDepartmentDao.class);
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
 

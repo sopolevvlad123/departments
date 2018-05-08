@@ -1365,3 +1365,12 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'aimprosoft.hib
 07/05/2018 6:36 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
 07/05/2018 6:46 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
 07/05/2018 6:46 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+08/05/2018 12:19 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+08/05/2018 12:19 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+08/05/2018 12:20 [http-nio-8080-exec-10] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+08/05/2018 12:28 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+08/05/2018 12:37 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+08/05/2018 12:39 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+08/05/2018 12:42 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+08/05/2018 12:46 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+08/05/2018 12:46 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with employee bean>

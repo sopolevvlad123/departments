@@ -5,7 +5,7 @@ import com.exception.DAOException;
 
 import java.util.List;
 
-public interface DepDAO extends DAO {
+public interface DepartmentDAO extends DAO {
 
     Department getDepartmentByID(Integer departmentId) throws DAOException;
 
