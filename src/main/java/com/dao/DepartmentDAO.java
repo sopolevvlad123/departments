@@ -14,7 +14,7 @@ public interface DepartmentDAO {
 
     void deleteDepartment(Integer departmentId) throws DAOException;
 
-    boolean checkUnique(String departmentName, Integer departmentId) throws DAOException;
+    Department getDepartmentByName(String departmentName) throws DAOException;
 
 
 }

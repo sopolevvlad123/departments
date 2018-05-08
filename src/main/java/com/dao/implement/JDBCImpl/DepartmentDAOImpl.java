@@ -77,22 +77,22 @@ public class DepartmentDAOImpl implements DepartmentDAO {
     }
 
     @Override
-    public boolean checkUnique(String departmentName, Integer departmentId) throws DAOException {
+    public Department getDepartmentByName(String departmentName) throws DAOException {
+        Department department = null;
         try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_DEP_NAME_UNIQUE_WITH_ID)) {
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_DEPARTMENT_BY_NAME)) {
             statement.setString(1, departmentName);
-            if (departmentId == null) {
-                statement.setNull(2, Types.INTEGER);
-            } else {
-                statement.setInt(2, departmentId);
-            }
             ResultSet resultSet = statement.executeQuery();
-            return !resultSet.next();
+            while (resultSet.next()) {
+                department = buildDepartment(resultSet);
+            }
         }catch (SQLException e){
             logger.error(e);
-            throw new DAOException("Fail to check unique department",e);
+            throw new DAOException("Fail to get department by name",e);
         }
+        return department;
     }
+
 
     private Department buildDepartment(ResultSet resultSet) throws SQLException{
         Department department = new Department();

@@ -66,20 +66,8 @@ public class HiberDepartmentDAOImpl implements DepartmentDAO {
     }
 
     @Override
-    public boolean checkUnique(String departmentName, Integer departmentId) throws DAOException {
-        List<Department> resultList;
-        Query query;
-        try (Session session = sessionFactory.openSession()) {
-            if (departmentId == null) {
-                query = session.createQuery("from Department where departmentName = :departmentName");
-                query.setParameter("departmentName", departmentName);
-            } else {
-                query = session.createQuery("from Department where departmentName = :departmentName and departmentId <> :departmentId ");
-                query.setParameter("departmentName", departmentName);
-                query.setParameter("departmentId", departmentId);
-            }
-            resultList = query.list();
-            return (resultList.size() == 0);
-        }
+    public Department getDepartmentByName(String departmentName) throws DAOException {
+        return null;
     }
+
 }

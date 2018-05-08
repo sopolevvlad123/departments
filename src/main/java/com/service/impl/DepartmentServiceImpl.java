@@ -17,7 +17,7 @@ import java.util.Map;
 public class DepartmentServiceImpl implements DepartmentService {
     final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
     private static DepartmentServiceImpl instance;
-    private DepartmentDAO departmentDAO = new HiberDepartmentDAOImpl();
+    private DepartmentDAO departmentDAO = new DepartmentDAOImpl();
 
     private DepartmentServiceImpl(){}
     public static DepartmentServiceImpl getInstance(){

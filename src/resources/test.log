@@ -1326,3 +1326,42 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'aimprosoft.hib
 07/05/2018 3:16 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
 07/05/2018 3:17 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
 07/05/2018 3:18 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000206: hibernate.properties not found>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+07/05/2018 3:36 [http-nio-8080-exec-1] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH10001003: Autocommit mode: false>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+07/05/2018 3:36 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH000206: hibernate.properties not found>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+07/05/2018 6:26 [http-nio-8080-exec-5] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH10001003: Autocommit mode: false>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+07/05/2018 6:26 [http-nio-8080-exec-5] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+07/05/2018 6:27 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+07/05/2018 6:27 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+07/05/2018 6:27 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+07/05/2018 6:27 [http-nio-8080-exec-8] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH000206: hibernate.properties not found>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+07/05/2018 6:32 [http-nio-8080-exec-5] WARN - <HHH10001002: Using Hibernate built-in connection pool (not for production use!)>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/aimprosoft]>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH10001001: Connection properties: {user=root, password=****}>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH10001003: Autocommit mode: false>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH000115: Hibernate connection pool size: 10 (min=1)>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+07/05/2018 6:32 [http-nio-8080-exec-5] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+07/05/2018 6:36 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+07/05/2018 6:36 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+07/05/2018 6:46 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+07/05/2018 6:46 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with employee bean>

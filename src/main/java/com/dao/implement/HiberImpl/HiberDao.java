@@ -95,12 +95,9 @@ public class HiberDao<T> implements IGenericDAO<T> {
     }
 
     @Override
-    public boolean checkUnique(String name, Integer id) {
-        return false;
+    public T getByName(String name) {
+        return null;
     }
-
-
-
 
 
 }

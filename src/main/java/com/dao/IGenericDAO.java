@@ -15,6 +15,6 @@ public interface IGenericDAO<T> {
 
     void delete(Integer id) ;
 
-    boolean checkUnique(String name, Integer id) ;
+    T getByName(String name) ;
 
 }

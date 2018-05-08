@@ -101,22 +101,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean checkUnique(String email, Integer employeeId) throws DAOException {
+    public Employee getEmployeeByEmail(String email) throws DAOException {
+        Employee employee = null;
         try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement statement = connection.prepareStatement(SQLConstants.CHECK_IS_EMAIL_UNIQUE)) {
+             PreparedStatement statement = connection.prepareStatement(SQLConstants.SELECT_EMPLOYEE_BY_EMAIL)) {
             statement.setString(1, email);
-            if (employeeId == null) {
-                statement.setNull(2, Types.INTEGER);
-            } else {
-                statement.setInt(2, employeeId);
-            }
             ResultSet resultSet = statement.executeQuery();
-            return !resultSet.next();
+            while (resultSet.next()) {
+                employee = buildEmployee(resultSet);
+            }
+
         } catch (SQLException e) {
             logger.error(e);
-            throw new DAOException("Fail to check unique employee", e);
+            throw new DAOException("Fail to get employee by email", e);
         }
+        return employee;
     }
+
 
     private Employee buildEmployee(ResultSet resultSet) throws SQLException {
         Employee employee = new Employee();

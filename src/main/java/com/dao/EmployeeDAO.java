@@ -16,6 +16,6 @@ public interface EmployeeDAO {
 
     void deleteEmployee(Integer employeeId) throws DAOException;
 
-    boolean checkUnique(String email, Integer employeeId) throws DAOException;
+    Employee getEmployeeByEmail(String email) throws DAOException;
 
 }

@@ -19,7 +19,7 @@ import java.util.Map;
 public class EmployeeServiceImpl implements EmployeeService {
     final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
     private static EmployeeServiceImpl instance;
-    private EmployeeDAO employeeDAO = new HiberEmployeeDAOImpl();
+    private EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
     private EmployeeServiceImpl(){}
     public static EmployeeServiceImpl getInstance(){
