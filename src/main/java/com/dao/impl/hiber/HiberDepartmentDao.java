@@ -11,12 +11,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDAO {
     final static Logger logger = Logger.getLogger(HiberDepartmentDao.class);
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
+
 
     @Override
     public Department getDepartmentByID(Integer departmentId) throws DAOException {

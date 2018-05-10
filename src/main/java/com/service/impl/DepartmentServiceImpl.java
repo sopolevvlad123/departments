@@ -3,7 +3,6 @@ package com.service.impl;
 import com.bean.Department;
 import com.dao.DepartmentDAO;
 import com.dao.impl.hiber.HiberDepartmentDao;
-import com.dao.impl.jdbc.JDBCDepartmentDao;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
@@ -15,13 +14,16 @@ import java.util.List;
 import java.util.Map;
 
 public class DepartmentServiceImpl implements DepartmentService {
-    final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
+    private final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
     private static DepartmentServiceImpl instance;
+
     private DepartmentDAO departmentDAO = new HiberDepartmentDao();
 
-    private DepartmentServiceImpl(){}
-    public static DepartmentServiceImpl getInstance(){
-        if (instance == null){
+    private DepartmentServiceImpl() {
+    }
+
+    public static DepartmentServiceImpl getInstance() {
+        if (instance == null) {
             instance = new DepartmentServiceImpl();
         }
         return instance;
@@ -29,8 +31,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void saveOrUpdate(Department department) throws ServiceException, ValidationException {
-        Map<String,String> violationMap = ConstraintViolationsParser.getViolationsMap(department);
-        if (violationMap.size() > 0){
+        Map<String, String> violationMap = ConstraintViolationsParser.getViolationsMap(department);
+        if (violationMap.size() > 0) {
             throw new ValidationException("Validations problems with department bean", violationMap);
         }
         try {
@@ -43,7 +45,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department getDepartment(Integer departmentId) throws ServiceException{
+    public Department getDepartment(Integer departmentId) throws ServiceException {
         Department department;
         try {
             department = departmentDAO.getDepartmentByID(departmentId);
@@ -54,7 +56,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return department;
     }
 
-    public List<Department> getAllDepartments() throws ServiceException{
+    public List<Department> getAllDepartments() throws ServiceException {
         List<Department> departmentList;
         try {
             departmentList = departmentDAO.getAllDepartments();

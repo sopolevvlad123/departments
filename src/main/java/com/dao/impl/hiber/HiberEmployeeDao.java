@@ -11,9 +11,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     final static Logger logger = Logger.getLogger(HiberEmployeeDao.class);
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
@@ -62,7 +64,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            Employee employee = session.load(Employee.class,id);
+            Employee employee = session.load(Employee.class, id);
             if (employee != null) {
                 session.delete(employee);
             }

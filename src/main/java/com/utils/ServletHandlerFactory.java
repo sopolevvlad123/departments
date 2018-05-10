@@ -7,12 +7,14 @@ import com.servletHandler.implement.emploee.DepartmentEmployeeListHandler;
 import com.servletHandler.implement.emploee.SaveEmployeeHandler;
 import com.servletHandler.implement.emploee.DeleteEmployeeHandler;
 import com.servletHandler.implement.emploee.PrepareEmployeeHandler;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.utils.ServletHandlerConstants.*;
-
+@Component("factory")
 public class ServletHandlerFactory {
 
     private Map<String, ServletHandler> servletHandlerMap = new HashMap<>();
