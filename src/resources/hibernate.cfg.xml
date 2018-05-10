@@ -16,6 +16,5 @@
         <mapping class="com.bean.Department" />
         <mapping class="com.bean.Employee"   />
 
-
     </session-factory>
 </hibernate-configuration>

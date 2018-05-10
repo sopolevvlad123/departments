@@ -1,9 +1,7 @@
-package com.dao.implement.HiberImpl;
+package com.sandbox;
 
 import com.bean.Department;
 import com.bean.Employee;
-import com.dao.IGenericDAO;
-import com.daov2.impl.hiber.HiberDepartmentDao;
 import com.exception.DAOException;
 import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
@@ -46,7 +44,9 @@ public class HiberDao<T> implements IGenericDAO<T> {
     public void saveOrUpdate(T object) throws DAOException {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()){
+/*
             transaction = session.beginTransaction();
+*/
             session.saveOrUpdate(object);
             transaction.commit();
         } catch (HibernateException e) {

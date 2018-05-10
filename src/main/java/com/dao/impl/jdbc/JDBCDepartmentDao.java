@@ -1,7 +1,7 @@
-package com.daov2.impl.jdbc;
+package com.dao.impl.jdbc;
 
 import com.bean.Department;
-import com.daov2.DepartmentDAO;
+import com.dao.DepartmentDAO;
 import com.exception.DAOException;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;

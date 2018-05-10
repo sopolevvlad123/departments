@@ -1,4 +1,4 @@
-package com.daov2;
+package com.dao;
 
 import com.bean.Employee;
 import com.exception.DAOException;

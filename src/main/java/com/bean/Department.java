@@ -2,7 +2,6 @@ package com.bean;
 
 import com.validator.DepartmentNameValidator;
 import net.sf.oval.constraint.*;
-import org.hibernate.annotations.IndexColumn;
 
 import javax.persistence.*;
 import java.io.Serializable;

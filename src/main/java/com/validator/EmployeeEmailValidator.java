@@ -1,9 +1,9 @@
 package com.validator;
 
 import com.bean.Employee;
-import com.daov2.EmployeeDAO;
-import com.daov2.impl.hiber.HiberEmployeeDao;
-import com.daov2.impl.jdbc.JDBCEmployeeDao;
+import com.dao.EmployeeDAO;
+import com.dao.impl.hiber.HiberEmployeeDao;
+import com.dao.impl.jdbc.JDBCEmployeeDao;
 import com.exception.DAOException;
 import net.sf.oval.constraint.CheckWithCheck;
 import org.apache.log4j.Logger;

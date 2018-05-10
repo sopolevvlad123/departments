@@ -1,9 +1,9 @@
 package com.service.impl;
 
 import com.bean.Department;
-import com.daov2.DepartmentDAO;
-import com.daov2.impl.hiber.HiberDepartmentDao;
-import com.daov2.impl.jdbc.JDBCDepartmentDao;
+import com.dao.DepartmentDAO;
+import com.dao.impl.hiber.HiberDepartmentDao;
+import com.dao.impl.jdbc.JDBCDepartmentDao;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;

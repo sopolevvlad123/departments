@@ -2,9 +2,9 @@ package com.service.impl;
 
 
 import com.bean.Employee;
-import com.daov2.EmployeeDAO;
-import com.daov2.impl.hiber.HiberEmployeeDao;
-import com.daov2.impl.jdbc.JDBCEmployeeDao;
+import com.dao.EmployeeDAO;
+import com.dao.impl.hiber.HiberEmployeeDao;
+import com.dao.impl.jdbc.JDBCEmployeeDao;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;

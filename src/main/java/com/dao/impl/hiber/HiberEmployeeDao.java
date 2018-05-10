@@ -1,7 +1,7 @@
-package com.daov2.impl.hiber;
+package com.dao.impl.hiber;
 
 import com.bean.Employee;
-import com.daov2.EmployeeDAO;
+import com.dao.EmployeeDAO;
 import com.exception.DAOException;
 import com.utils.HibernateConstants;
 import com.utils.HibernateSessionFactory;
@@ -33,7 +33,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
         List<Employee> employeeList;
         try (Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery("FROM Employee where departmentId=:departmentId");
+            Query query = session.createQuery(HibernateConstants.FROM_EMPLOYEE_BY_DEP_ID);
             query.setParameter("departmentId", departmentId);
             employeeList = query.list();
         } catch (HibernateException e) {

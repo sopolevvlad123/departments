@@ -1,6 +1,6 @@
-package com.daov2.impl.hiber;
+package com.dao.impl.hiber;
 
-import com.daov2.DAO;
+import com.dao.DAO;
 import com.exception.DAOException;
 import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
@@ -20,7 +20,6 @@ public  abstract class AbstractHiberDao implements DAO {
         try (Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
             session.saveOrUpdate(object);
-            System.out.println("from save or update" + object);
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();

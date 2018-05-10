@@ -1,4 +1,4 @@
-package com.dao;
+package com.sandbox;
 
 import com.exception.DAOException;
 

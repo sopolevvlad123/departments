@@ -1,7 +1,7 @@
-package com.daov2.impl.hiber;
+package com.dao.impl.hiber;
 
 import com.bean.Department;
-import com.daov2.DepartmentDAO;
+import com.dao.DepartmentDAO;
 import com.exception.DAOException;
 import com.utils.HibernateConstants;
 import com.utils.HibernateSessionFactory;
