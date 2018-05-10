@@ -24,7 +24,6 @@ public class Department  implements Serializable {
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
     @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.LAZY,mappedBy = "department")
-    //@JoinColumn(name="department_id")
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {
