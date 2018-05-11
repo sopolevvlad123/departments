@@ -53,12 +53,25 @@ public interface SQLConstants {
             "    REFERENCES `aimprosoft`.`department` (`department_id`)\n" +
             "    ON DELETE NO ACTION\n" +
             "    ON UPDATE NO ACTION);";
-    String CREATE_DEPARTMENT_TABLE = "CREATE TABLE `aimprosoft`.`department` (\\n\" +\n" +
-            "                   \"  `department_id` INT NOT NULL AUTO_INCREMENT,\\n\" +\n" +
-            "                   \"  `name` VARCHAR(45) NOT NULL,\\n\" +\n" +
-            "                   \"  PRIMARY KEY (`department_id`),\\n\" +\n" +
-            "                   \"  UNIQUE INDEX `employee_id_UNIQUE` (`department_id` ASC),\\n\" +\n" +
-            "                   \"  UNIQUE INDEX `email_UNIQUE` (`name` ASC));\\n";
+
+    /*CREATE TABLE `aimprosoft`.`department` (
+  `department_id` INT NOT NULL AUTO_INCREMENT,
+  `department_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`department_id`),
+  UNIQUE INDEX `department_name_UNIQUE` (`department_name` ASC));
+*/
+
+
+
+
+
+
+    /*CREATE TABLE `aimprosoft`.`department` (
+  `department_id` INT NOT NULL AUTO_INCREMENT,
+  `department_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`department_id`),
+  UNIQUE INDEX `department_name_UNIQUE` (`department_name` ASC));
+*/
 
 
 }

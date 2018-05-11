@@ -8,20 +8,25 @@ import com.service.impl.DepartmentServiceImpl;
 import net.sf.oval.constraint.CheckWithCheck;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public  class DepartmentNameValidator implements CheckWithCheck.SimpleCheck{
     final static Logger logger = Logger.getLogger(DepartmentNameValidator.class);
 
-   /* @Autowired
-    private DepartmentServiceImpl departmentServiceImpl;*/
-   DepartmentService departmentServiceImpl= new DepartmentServiceImpl();
+    @Autowired
+    private DepartmentServiceImpl departmentServiceImpl;
+   // DepartmentService departmentServiceImpl= new DepartmentServiceImpl();
 
+    {
+        System.out.println("DepartmentNameValidator------------------");
+        System.out.println(departmentServiceImpl);
+    }
     @Override
     public boolean isSatisfied(Object validateObj, Object value) {
         boolean result = false;
         Department validatedDepartment = (Department) validateObj;
         try {
-            System.out.println(" from is satis " + departmentServiceImpl);
            Department dbDepartment = departmentServiceImpl.getDepartmentByName(validatedDepartment.getDepartmentName());
             result = dbDepartment == null ? true : dbDepartment.getDepartmentId().equals(validatedDepartment.getDepartmentId());
         } catch (ServiceException e) {
@@ -29,4 +34,6 @@ public  class DepartmentNameValidator implements CheckWithCheck.SimpleCheck{
         }
         return result;
     }
+
+
 }

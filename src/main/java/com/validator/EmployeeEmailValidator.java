@@ -6,7 +6,9 @@ import com.service.EmployeeService;
 import net.sf.oval.constraint.CheckWithCheck;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EmployeeEmailValidator implements CheckWithCheck.SimpleCheck {
     final static Logger logger = Logger.getLogger(EmployeeEmailValidator.class);
     @Autowired

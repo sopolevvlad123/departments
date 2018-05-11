@@ -12,7 +12,7 @@ public class Validator {
     private net.sf.oval.Validator ovalValidator;
 
     public  List<ConstraintViolation> getViolationsList(Object valObj) {
-        System.out.println("oval valid" + ovalValidator.validate(valObj));
+        System.out.println("oval valid  -- " + ovalValidator.validate(valObj));
         return ovalValidator.validate(valObj);
     }
 

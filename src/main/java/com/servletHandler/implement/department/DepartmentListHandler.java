@@ -30,11 +30,7 @@ public class DepartmentListHandler implements ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         List<Department> departmentList;
-        try {
-            System.out.println("depList -- " + DepartmentServiceImpl.getDepartmentByName("wefw1"));
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
+
         try {
             departmentList = DepartmentServiceImpl.getAllDepartments();
         } catch (ServiceException e) {

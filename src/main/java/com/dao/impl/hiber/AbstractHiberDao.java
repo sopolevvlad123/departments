@@ -2,17 +2,18 @@ package com.dao.impl.hiber;
 
 import com.dao.DAO;
 import com.exception.DAOException;
-import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public  abstract class AbstractHiberDao implements DAO {
     final static Logger logger = Logger.getLogger(AbstractHiberDao.class);
 
-    private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
+    @Autowired
+    SessionFactory sessionFactory;
 
     @Override
     public void saveOrUpdate(Object object) throws DAOException {

@@ -16,7 +16,7 @@ public class ConstraintViolationsParser {
 
     public  Map<String,String> getViolationsMap(Object object) {
         System.out.println("sout from ConstraintViolationsParser " + object);
-        System.out.println("sout from cons valid obj" +  validator);
+        System.out.println("sout from cons valid obj " +  validator);
 
         Map<String, String> violationMap = new HashMap<>();
         List<ConstraintViolation> violations = validator.getViolationsList(object);

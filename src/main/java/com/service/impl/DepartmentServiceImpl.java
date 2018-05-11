@@ -27,7 +27,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void saveOrUpdate(Department department) throws ServiceException, ValidationException {
-        System.out.println("sout from save dep ");
         Map<String, String> violationMap = constraintViolationsParser.getViolationsMap(department);
         if (violationMap.size() > 0) {
             throw new ValidationException("Validations problems with department bean", violationMap);
@@ -54,7 +53,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     public List<Department> getAllDepartments() throws ServiceException {
-        System.out.println("from dep service getAllDepartments" + hiberDepartmentDao);
+        System.out.println("from dep service getAllDepartments hiberDepartmentDao " + hiberDepartmentDao);
 
         List<Department> departmentList;
         try {
@@ -79,10 +78,10 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department getDepartmentByName(String name) throws ServiceException {
+        DepartmentDAO departmentDAO = new HiberDepartmentDao();
         Department department;
         try {
-            System.out.println("from dep service" + hiberDepartmentDao);
-            department = hiberDepartmentDao.getDepartmentByName(name);
+            department = departmentDAO.getDepartmentByName("dddd");
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to get department by name at service layer", e);
