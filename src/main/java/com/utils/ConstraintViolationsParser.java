@@ -3,15 +3,21 @@ package com.utils;
 import com.validator.Validator;
 import net.sf.oval.ConstraintViolation;
 import net.sf.oval.context.FieldContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Component
 public class ConstraintViolationsParser {
+    @Autowired
+    private  Validator validator;
 
-    public static Map<String,String> getViolationsMap(Object object) {
-        Validator validator = new Validator();
+    public  Map<String,String> getViolationsMap(Object object) {
+        System.out.println("sout from ConstraintViolationsParser " + object);
+        System.out.println("sout from cons valid obj" +  validator);
+
         Map<String, String> violationMap = new HashMap<>();
         List<ConstraintViolation> violations = validator.getViolationsList(object);
         if (violations.size() > 0) {

@@ -7,6 +7,7 @@ import com.servletHandler.implement.emploee.DepartmentEmployeeListHandler;
 import com.servletHandler.implement.emploee.SaveEmployeeHandler;
 import com.servletHandler.implement.emploee.DeleteEmployeeHandler;
 import com.servletHandler.implement.emploee.PrepareEmployeeHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Component;
 
@@ -14,22 +15,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.utils.ServletHandlerConstants.*;
-@Component("factory")
 public class ServletHandlerFactory {
 
     private Map<String, ServletHandler> servletHandlerMap = new HashMap<>();
 
+
+
+
+/*
     public ServletHandlerFactory() {
-        servletHandlerMap.put(DEFAULT_URL, new DepartmentListHandler());
-        servletHandlerMap.put(GET_DEPARTMENT_LIST, new DepartmentListHandler());
-        servletHandlerMap.put(DELETE_DEPARTMENT, new DeleteDepartmentHandler());
-        servletHandlerMap.put(SAVE_DEPARTMENT, new SaveDepartmentHandler());
-        servletHandlerMap.put(GET_DEP_EMPLOYEES, new DepartmentEmployeeListHandler());
-        servletHandlerMap.put(SAVE_EMPLOYEE, new SaveEmployeeHandler());
-        servletHandlerMap.put(DELETE_EMPLOYEE, new DeleteEmployeeHandler());
-        servletHandlerMap.put(PREPARE_EMPLOYEE,new PrepareEmployeeHandler());
-        servletHandlerMap.put(PREPARE_DEPARTMENT,new PrepareDepartmentHandler());
-        servletHandlerMap.put(PAGE_404,new Page404Handler());
+        servletHandlerMap.put(DEFAULT_URL, departmentListHandler);
+        servletHandlerMap.put(GET_DEPARTMENT_LIST, departmentListHandler);
+        servletHandlerMap.put(DELETE_DEPARTMENT, deleteDepartmentHandler);
+        servletHandlerMap.put(SAVE_DEPARTMENT, saveDepartmentHandler);
+        servletHandlerMap.put(GET_DEP_EMPLOYEES, departmentEmployeeListHandler);
+        servletHandlerMap.put(SAVE_EMPLOYEE, saveEmployeeHandler);
+        servletHandlerMap.put(DELETE_EMPLOYEE,deleteEmployeeHandler);
+        servletHandlerMap.put(PREPARE_EMPLOYEE,prepareEmployeeHandler);
+        servletHandlerMap.put(PREPARE_DEPARTMENT,prepareDepartmentHandler);
+        servletHandlerMap.put(PAGE_404,page404Handler);
 
     }
 
@@ -38,5 +42,5 @@ public class ServletHandlerFactory {
             return servletHandlerMap.get(PAGE_404);
         }
         return servletHandlerMap.get(url);
-    }
+    }*/
 }

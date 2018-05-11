@@ -16,4 +16,6 @@ public interface DepartmentService {
     List<Department> getAllDepartments() throws ServiceException;
 
     void deleteDepartment(Integer departmentId) throws ServiceException;
+
+    Department getDepartmentByName(String name) throws ServiceException;
 }

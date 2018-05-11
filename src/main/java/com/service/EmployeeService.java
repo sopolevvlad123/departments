@@ -17,5 +17,7 @@ public interface EmployeeService {
 
     void deleteEmployee(Integer employeeId) throws ServiceException;
 
+    Employee getEmployeeByEmail(String email) throws ServiceException;
+
 
 }

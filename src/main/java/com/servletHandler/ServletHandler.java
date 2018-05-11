@@ -6,16 +6,15 @@ import com.service.DepartmentService;
 import com.service.EmployeeService;
 import com.service.impl.DepartmentServiceImpl;
 import com.service.impl.EmployeeServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+@Component
 public interface  ServletHandler {
-
-     DepartmentService   departmentService   = DepartmentServiceImpl.getInstance();
-     EmployeeService     employeeService     = EmployeeServiceImpl.getInstance();
 
      void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException, AppException;
 

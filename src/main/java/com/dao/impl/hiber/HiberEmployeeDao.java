@@ -8,7 +8,6 @@ import com.utils.HibernateSessionFactory;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
@@ -18,11 +17,10 @@ import java.util.List;
 @Component
 public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     final static Logger logger = Logger.getLogger(HiberEmployeeDao.class);
-    private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
 
     @Override
     public Employee getEmployeeByID(Integer employeeId) throws DAOException {
-        try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
+        try (Session session = HibernateSessionFactory.getSession()) {
             return session.get(Employee.class, employeeId);
         } catch (HibernateException e) {
             logger.error(e);
@@ -34,7 +32,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     @Override
     public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
         List<Employee> employeeList;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = HibernateSessionFactory.getSession()) {
             Query query = session.createQuery(HibernateConstants.FROM_EMPLOYEE_BY_DEP_ID);
             query.setParameter("departmentId", departmentId);
             employeeList = query.list();
@@ -48,7 +46,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     @Override
     public Employee getEmployeeByEmail(String email) throws DAOException {
         Employee employee;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = HibernateSessionFactory.getSession()) {
             Query query = session.createQuery(HibernateConstants.FROM_EMPLOYEE_BY_EMAIL);
             query.setParameter("email", email);
             employee = (Employee) query.uniqueResult();
@@ -62,7 +60,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     @Override
     public void delete(Integer id) throws DAOException {
         Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = HibernateSessionFactory.getSession()) {
             transaction = session.beginTransaction();
             Employee employee = session.load(Employee.class, id);
             if (employee != null) {

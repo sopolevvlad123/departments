@@ -6,11 +6,13 @@ import com.exception.DAOException;
 import com.utils.ConnectionFactory;
 import com.utils.SQLConstants;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JDBCEmployeeDao implements EmployeeDAO {
     final static Logger logger = Logger.getLogger(JDBCEmployeeDao.class);
 

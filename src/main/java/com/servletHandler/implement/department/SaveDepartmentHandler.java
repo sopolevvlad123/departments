@@ -4,9 +4,12 @@ import com.bean.Department;
 import com.exception.AppException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
+import com.service.DepartmentService;
 import com.servletHandler.ServletHandler;
 import com.utils.RequestDataParser;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,17 +18,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
+import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT;
 import static com.utils.ServletHandlerConstants.SAVE_DEPARTMENT_PAGE;
 
+
+@Component(SAVE_DEPARTMENT)
 public class SaveDepartmentHandler implements ServletHandler {
     final static Logger logger = Logger.getLogger(SaveDepartmentHandler.class);
-
+    @Autowired
+    private DepartmentService departmentServiceImpl;
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
 
         try {
-            departmentService.saveOrUpdate(buildDepartment(request));
+            departmentServiceImpl.saveOrUpdate(buildDepartment(request));
             response.sendRedirect(GET_DEPARTMENT_LIST);
         } catch (ValidationException e) {
             returnFailInput(request);

@@ -2,11 +2,13 @@ package com.utils;
 
 
 import com.exception.DAOException;
+import org.springframework.stereotype.Component;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
+@Component
 public class ConnectionFactory {
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String connectionString = "jdbc:mysql://127.0.0.1:3306/aimprosoft";
