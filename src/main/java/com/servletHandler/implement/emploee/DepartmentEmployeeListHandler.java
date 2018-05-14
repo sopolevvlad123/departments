@@ -35,7 +35,6 @@ public class DepartmentEmployeeListHandler implements ServletHandler {
             logger.error(e);
             throw new AppException("Fail to get departments employee at application layer", e);
         }
-        System.out.println("employee list " + employeeList);
         request.setAttribute("employeeList", employeeList);
         request.setAttribute("departmentId", Integer.parseInt(request.getParameter("departmentId")));
         request.getRequestDispatcher(EMPLOYEE_LIST_PAGE).forward(request, response);
