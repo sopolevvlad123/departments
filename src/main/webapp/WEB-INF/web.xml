@@ -3,16 +3,6 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
 
-<!--    <servlet>
-        <servlet-name>FrontControllerServlet</servlet-name>
-        <servlet-class>com.servlet.FrontControllerServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>FrontControllerServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>-->
-
     <servlet>
         <servlet-name>springHandler</servlet-name>
         <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
