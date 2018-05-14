@@ -20,7 +20,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
 
     @Autowired
-    private HiberDepartmentDao hiberDepartmentDao;
+    private DepartmentDAO hiberDepartmentDao;
 
     @Autowired
     private ConstraintViolationsParser constraintViolationsParser;
@@ -53,8 +53,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     public List<Department> getAllDepartments() throws ServiceException {
-        System.out.println("from dep service getAllDepartments hiberDepartmentDao " + hiberDepartmentDao);
-
         List<Department> departmentList;
         try {
             departmentList = hiberDepartmentDao.getAllDepartments();

@@ -14,7 +14,6 @@ public  abstract class AbstractHiberDao implements DAO {
 
     @Autowired
     SessionFactory sessionFactory;
-
     @Override
     public void saveOrUpdate(Object object) throws DAOException {
         Transaction transaction = null;
