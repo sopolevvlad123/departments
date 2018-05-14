@@ -8,21 +8,20 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 public  abstract class AbstractHiberDao implements DAO {
     final static Logger logger = Logger.getLogger(AbstractHiberDao.class);
 
     @Autowired
     SessionFactory sessionFactory;
+
     @Override
+    @Transactional
     public void saveOrUpdate(Object object) throws DAOException {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
-            session.saveOrUpdate(object);
-            transaction.commit();
+        try {
+            sessionFactory.getCurrentSession().saveOrUpdate(object);
         } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
             logger.error(e);
             throw new DAOException("Fail to save/update -- " + object.getClass() + " by Hibernate",e);
         }

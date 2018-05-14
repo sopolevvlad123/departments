@@ -2,7 +2,6 @@ package com.service.impl;
 
 import com.bean.Department;
 import com.dao.DepartmentDAO;
-import com.dao.impl.hiber.HiberDepartmentDao;
 import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
@@ -11,11 +10,13 @@ import com.utils.ConstraintViolationsParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
 
 @Component
+@Transactional
 public class DepartmentServiceImpl implements DepartmentService {
     private final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
 
@@ -41,6 +42,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Department getDepartment(Integer departmentId) throws ServiceException {
         Department department;
         try {
@@ -52,6 +54,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return department;
     }
 
+    @Override
     public List<Department> getAllDepartments() throws ServiceException {
         List<Department> departmentList;
         try {
@@ -64,17 +67,17 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void deleteDepartment(Integer departmentId) throws ServiceException {
+    public void deleteDepartment(Integer departmentId) throws ServiceException{
         try {
             hiberDepartmentDao.delete(departmentId);
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to delete department at service layer", e);
         }
-
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Department getDepartmentByName(String name) throws ServiceException {
         Department department;
         try {

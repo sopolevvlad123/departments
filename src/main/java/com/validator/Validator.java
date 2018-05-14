@@ -19,6 +19,9 @@ public class Validator {
 
 
     public List<ConstraintViolation> getViolationsList(Object valObj) {
+        AnnotationsConfigurer myConfigurer = new AnnotationsConfigurer();
+        myConfigurer.addCheckInitializationListener(BeanInjectingCheckInitializationListener.INSTANCE);
+        validator = new net.sf.oval.Validator(myConfigurer);
         return validator.validate(valObj);
     }
 

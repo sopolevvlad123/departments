@@ -24,8 +24,8 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
 
     @Override
     public Employee getEmployeeByID(Integer employeeId) throws DAOException {
-        try (Session session = sessionFactory.openSession()) {
-            return session.get(Employee.class, employeeId);
+        try {
+            return sessionFactory.getCurrentSession().get(Employee.class, employeeId);
         } catch (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get Employee by ID by Hibernate", e);
@@ -35,44 +35,37 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
 
     @Override
     public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
-        List<Employee> employeeList;
-        try (Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery(HibernateConstants.FROM_EMPLOYEE_BY_DEP_ID);
+        try {
+            Query query = sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_EMPLOYEE_BY_DEP_ID);
             query.setParameter("departmentId", departmentId);
-            employeeList = query.list();
+            return query.list();
         } catch (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get employees of the department # " + departmentId + " by Hibernate", e);
         }
-        return employeeList;
     }
 
     @Override
     public Employee getEmployeeByEmail(String email) throws DAOException {
-        Employee employee;
-        try (Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery(HibernateConstants.FROM_EMPLOYEE_BY_EMAIL);
+        try  {
+            Query query = sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_EMPLOYEE_BY_EMAIL);
             query.setParameter("email", email);
-            employee = (Employee) query.uniqueResult();
+            return (Employee) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get employee by email " + email + " by Hibernate", e);
         }
-        return employee;
+
     }
 
     @Override
     public void delete(Integer id) throws DAOException {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Employee employee = session.load(Employee.class, id);
+        try  {
+            Employee employee = sessionFactory.getCurrentSession().load(Employee.class, id);
             if (employee != null) {
-                session.delete(employee);
+                sessionFactory.getCurrentSession().delete(employee);
             }
-            transaction.commit();
         } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
             logger.error(e);
             throw new DAOException("Fail to delete employee " + id + " by Hibernate", e);
         }

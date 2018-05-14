@@ -14,7 +14,7 @@ public  class DepartmentNameValidator implements CheckWithCheck.SimpleCheck{
     final static Logger logger = Logger.getLogger(DepartmentNameValidator.class);
 
     @Autowired
-    private DepartmentServiceImpl departmentServiceImpl;
+    private DepartmentService departmentServiceImpl;
 
     @Override
     public boolean isSatisfied(Object validateObj, Object value) {

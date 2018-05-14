@@ -19,10 +19,11 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
     final static Logger logger = Logger.getLogger(HiberDepartmentDao.class);
     @Autowired
     private SessionFactory sessionFactory;
+
     @Override
     public Department getDepartmentByID(Integer departmentId) throws DAOException {
-        try (Session session = sessionFactory.openSession()) {
-            return session.get(Department.class, departmentId);
+        try  {
+            return sessionFactory.getCurrentSession().get(Department.class, departmentId);
         }catch (HibernateException e){
             logger.error(e);
             throw new DAOException("Fail to get department by ID " + departmentId + " by Hibernate",e);
@@ -31,8 +32,8 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
 
     @Override
     public List<Department> getAllDepartments() throws DAOException {
-        try (Session session =  sessionFactory.openSession()) {
-            return session.createQuery(HibernateConstants.FROM_DEPARTMENT).list();
+        try  {
+            return sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_DEPARTMENT).list();
         }catch  (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get all Departments by Hibernate",e);
@@ -42,8 +43,8 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
     @Override
     public Department getDepartmentByName(String departmentName) throws DAOException {
         Department department;
-        try (Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery(HibernateConstants.FROM_DEPARTMENT_BY_NAME);
+        try  {
+            Query query = sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_DEPARTMENT_BY_NAME);
             query.setParameter("departmentName", departmentName);
             department = (Department) query.uniqueResult();
         } catch (HibernateException e) {
@@ -55,18 +56,16 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
 
     @Override
     public void delete(Integer id) throws DAOException {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Department department = session.load(Department.class,id);
-            if (department != null) {
-                session.delete(department);
-            }
-            transaction.commit();
-        } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
-            logger.error(e);
-            throw new DAOException("Fail to delete department " + id + " by Hibernate", e);
-        }
+       try {
+           Department department = sessionFactory.getCurrentSession().load(Department.class, id);
+           if (department != null) {
+               sessionFactory.getCurrentSession().delete(department);
+           }
+       }catch (HibernateException e){
+           logger.error(e);
+           throw new DAOException("Fail to get delete department " + id + " by Hibernate",e);
+
+       }
+
     }
 }
