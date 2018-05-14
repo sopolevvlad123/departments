@@ -3220,3 +3220,25 @@ line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
 14/05/2018 5:02 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
 14/05/2018 5:02 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
 14/05/2018 5:03 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+14/05/2018 5:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+14/05/2018 5:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+14/05/2018 5:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+14/05/2018 5:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+14/05/2018 5:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+14/05/2018 5:11 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+14/05/2018 5:11 [http-nio-8080-exec-5] ERROR - <com.exception.ServiceException: save employee>
+14/05/2018 5:11 [http-nio-8080-exec-5] ERROR - <com.exception.AppException: Fail to create or update department at application layer>
+14/05/2018 5:11 [http-nio-8080-exec-8] ERROR - <com.exception.ServiceException: save employee>
+14/05/2018 5:11 [http-nio-8080-exec-8] ERROR - <com.exception.AppException: Fail to create or update department at application layer>
+14/05/2018 5:11 [http-nio-8080-exec-1] ERROR - <com.exception.ServiceException: save employee>
+14/05/2018 5:11 [http-nio-8080-exec-1] ERROR - <com.exception.AppException: Fail to create or update department at application layer>
+14/05/2018 5:16 [http-nio-8080-exec-7] ERROR - <com.exception.ServiceException: save employee>
+14/05/2018 5:16 [http-nio-8080-exec-7] ERROR - <com.exception.AppException: Fail to create or update department at application layer>
+14/05/2018 5:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+14/05/2018 5:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+14/05/2018 5:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+14/05/2018 5:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+14/05/2018 5:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+14/05/2018 5:39 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+14/05/2018 5:39 [http-nio-8080-exec-8] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+14/05/2018 6:05 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>

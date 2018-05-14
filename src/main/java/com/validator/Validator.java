@@ -9,16 +9,16 @@ import java.util.List;
 
 @Component
 public class Validator {
-    net.sf.oval.Validator validator;
+    private static net.sf.oval.Validator validator;
 
-    {
+    static {
         AnnotationsConfigurer myConfigurer = new AnnotationsConfigurer();
         myConfigurer.addCheckInitializationListener(BeanInjectingCheckInitializationListener.INSTANCE);
         validator = new net.sf.oval.Validator(myConfigurer);
     }
 
 
-    public List<ConstraintViolation> getViolationsList(Object valObj) {
+    public  static List<ConstraintViolation> getViolationsList(Object valObj) {
         AnnotationsConfigurer myConfigurer = new AnnotationsConfigurer();
         myConfigurer.addCheckInitializationListener(BeanInjectingCheckInitializationListener.INSTANCE);
         validator = new net.sf.oval.Validator(myConfigurer);

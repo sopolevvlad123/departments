@@ -11,13 +11,14 @@ import com.utils.ConstraintViolationsParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
 
 @Component
-@Transactional(rollbackFor = DAOException.class)
+@Transactional(rollbackFor = ServiceException.class)
 public class EmployeeServiceImpl implements EmployeeService {
     final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
     @Autowired
@@ -41,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
     public Employee getEmployee(Integer employeeId) throws ServiceException {
         Employee employee;
         try {
@@ -56,7 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
     public List<Employee> getDepartmentsEmployees(Integer departmentId) throws ServiceException{
         List<Employee> employeeList;
         try {
@@ -79,7 +80,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
     public Employee getEmployeeByEmail(String email) throws ServiceException {
         Employee employee;
         try {

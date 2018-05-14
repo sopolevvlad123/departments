@@ -10,13 +10,14 @@ import com.utils.ConstraintViolationsParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
 
 @Component
-@Transactional
+@Transactional(rollbackFor = ServiceException.class)
 public class DepartmentServiceImpl implements DepartmentService {
     private final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
 
@@ -42,7 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
     public Department getDepartment(Integer departmentId) throws ServiceException {
         Department department;
         try {
@@ -55,6 +56,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
     public List<Department> getAllDepartments() throws ServiceException {
         List<Department> departmentList;
         try {
@@ -77,7 +79,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
     public Department getDepartmentByName(String name) throws ServiceException {
         Department department;
         try {

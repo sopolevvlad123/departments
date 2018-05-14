@@ -26,7 +26,7 @@ public class SpringRequestHandler implements HttpRequestHandler {
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
            ((ServletHandler) applicationContext.getBean(request.getRequestURI())).execute(request,response);
-        } catch (AppException e) {
+        } catch (Throwable e) {
             logger.error(e);
             request.setAttribute("error", e);
             request.getRequestDispatcher(ERROR_PAGE).forward(request, response);
