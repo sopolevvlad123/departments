@@ -2,7 +2,7 @@ package com.utils;
 
 public interface SQLConstants {
 
-    String SAVE_OR_UPDATE_EMPLOYEE ="REPLACE INTO `aimprosoft`.`employee` (`email`, `first_name`, " +
+    String SAVE_OR_UPDATE_EMPLOYEE = "REPLACE INTO `aimprosoft`.`employee` (`email`, `first_name`, " +
             "`second_name`, `salary`, `hire_date`, `department_id`,`employee_id`) VALUES (?, ?, ?, ?, ?, ?, ?);\n";
     String INSERT_EMPLOYEE = "INSERT INTO `aimprosoft`.`employee` (`email`, `first_name`, " +
             "`second_name`, `salary`, `hire_date`, `department_id`) VALUES (?, ?, ?, ?, ?, ?);\n";
@@ -35,43 +35,32 @@ public interface SQLConstants {
             "and department.department_id <> ?;";
 
 
-    String mainURL = "http://localhost:8080/";
-    String CREATE_EMPLOYEE_TABLE = "CREATE TABLE `aimprosoft`.`employee` (\n" +
-            "  `employee_id` INT NOT NULL AUTO_INCREMENT,\n" +
-            "  `email` VARCHAR(45) NOT NULL,\n" +
-            "  `first_name` VARCHAR(45) NOT NULL,\n" +
-            "  `second_name` VARCHAR(45) NOT NULL,\n" +
-            "  `salary` INT NOT NULL,\n" +
-            "  `hire_date` DATE NOT NULL,\n" +
-            "  `department_id` INT NOT NULL,\n" +
-            "  PRIMARY KEY (`employee_id`),\n" +
-            "  UNIQUE INDEX `employee_id_UNIQUE` (`employee_id` ASC),\n" +
-            "  UNIQUE INDEX `email_UNIQUE` (`email` ASC),\n" +
-            "  INDEX `department_id_idx` (`department_id` ASC),\n" +
-            "  CONSTRAINT `department_id`\n" +
-            "    FOREIGN KEY (`department_id`)\n" +
-            "    REFERENCES `aimprosoft`.`department` (`department_id`)\n" +
-            "    ON DELETE NO ACTION\n" +
-            "    ON UPDATE NO ACTION);";
 
-    /*CREATE TABLE `aimprosoft`.`department` (
-  `department_id` INT NOT NULL AUTO_INCREMENT,
-  `department_name` VARCHAR(45) NULL,
-  PRIMARY KEY (`department_id`),
-  UNIQUE INDEX `department_name_UNIQUE` (`department_name` ASC));
+
+    /*CREATE TABLE `aimprosoft`.`employee` (
+ `employee_id` INT NOT NULL AUTO_INCREMENT,
+ `first_name` VARCHAR(45) NOT NULL,
+ `last_name` VARCHAR(45) NOT NULL,
+ `email` VARCHAR(45) NOT NULL,
+ `salary` INT NOT NULL,
+ `hire_date` DATE NOT NULL,
+ `department_id` INT NOT NULL,
+ PRIMARY KEY (`employee_id`),
+ UNIQUE INDEX `email_UNIQUE` (`email` ASC),
+ INDEX `department_id_idx` (`department_id` ASC),
+ CONSTRAINT `department_id`
+ FOREIGN KEY (`department_id`)
+ REFERENCES `aimprosoft`.`department` (`department_id`)
+ ON DELETE CASCADE
+ ON UPDATE CASCADE);
 */
 
-
-
-
-
-
     /*CREATE TABLE `aimprosoft`.`department` (
-  `department_id` INT NOT NULL AUTO_INCREMENT,
-  `department_name` VARCHAR(45) NULL,
-  PRIMARY KEY (`department_id`),
-  UNIQUE INDEX `department_name_UNIQUE` (`department_name` ASC));
-*/
+    `department_id` INT NOT NULL AUTO_INCREMENT,
+    `department_name` VARCHAR(45) NULL,
+    PRIMARY KEY (`department_id`),
+    UNIQUE INDEX `department_name_UNIQUE` (`department_name` ASC));
+    */
 
 
 }

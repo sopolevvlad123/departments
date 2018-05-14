@@ -78,10 +78,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department getDepartmentByName(String name) throws ServiceException {
-        DepartmentDAO departmentDAO = new HiberDepartmentDao();
         Department department;
         try {
-            department = departmentDAO.getDepartmentByName("dddd");
+            department = hiberDepartmentDao.getDepartmentByName(name);
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to get department by name at service layer", e);

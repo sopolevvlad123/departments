@@ -23,7 +23,8 @@ public class Department  implements Serializable {
     @MatchPattern(pattern = "\\w+\\.?", message = "Name should contain ONLY letters and numbers")
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
-    @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.EAGER,mappedBy = "department")
+
+    @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.EAGER ,mappedBy = "department")
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {

@@ -1,6 +1,5 @@
 package com.validator;
 
-
 import com.bean.Department;
 import com.exception.ServiceException;
 import com.service.DepartmentService;
@@ -16,12 +15,7 @@ public  class DepartmentNameValidator implements CheckWithCheck.SimpleCheck{
 
     @Autowired
     private DepartmentServiceImpl departmentServiceImpl;
-   // DepartmentService departmentServiceImpl= new DepartmentServiceImpl();
 
-    {
-        System.out.println("DepartmentNameValidator------------------");
-        System.out.println(departmentServiceImpl);
-    }
     @Override
     public boolean isSatisfied(Object validateObj, Object value) {
         boolean result = false;

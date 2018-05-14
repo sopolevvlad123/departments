@@ -35,23 +35,8 @@ public class SpringRequestHandler implements HttpRequestHandler {
     @Autowired
     private ApplicationContext applicationContext;
 
-    @Autowired
-    private DepartmentDAO hiberDepartmentDao;
-
-
-
-
     @Override
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List list = Arrays.asList(applicationContext.getBeanDefinitionNames());
-        //System.out.println("Bean list" + list);
-        System.out.println(applicationContext.getBean("sessionFactory"));
-        try {
-            System.out.println("departments -- " + hiberDepartmentDao.getAllDepartments());
-        } catch (DAOException e) {
-            e.printStackTrace();
-        }
-
         try {
            ((ServletHandler) applicationContext.getBean(request.getRequestURI())).execute(request,response);
         } catch (AppException e) {

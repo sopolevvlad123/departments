@@ -23,7 +23,7 @@ public class Employee implements Serializable {
     @MatchPattern(pattern = "\\w+\\.?", message = "First Name should contain ONLY letters and numbers")
     private String firstName;
 
-    @Column(name = "second_name")
+    @Column(name = "last_name")
     @NotNull(message = "Incorrect last name value")
     @NotBlank(message = "Last Name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")
