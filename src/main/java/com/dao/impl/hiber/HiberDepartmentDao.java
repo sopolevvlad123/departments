@@ -24,7 +24,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
             return sessionFactory.getCurrentSession().get(Department.class, departmentId);
         }catch (HibernateException e){
             logger.error(e);
-            throw new DAOException("Fail to get department by ID " + departmentId + " by Hibernate",e);
+            throw new DAOException("Fail to get department by ID " + departmentId + " by Hibernate");
         }
     }
 
@@ -34,7 +34,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
             return sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_DEPARTMENT).list();
         }catch  (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to get all Departments by Hibernate",e);
+            throw new DAOException("Fail to get all Departments by Hibernate");
         }
     }
 
@@ -47,7 +47,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
             department = (Department) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to get department by name " + departmentName + " by Hibernate",e);
+            throw new DAOException("Fail to get department by name " + departmentName + " by Hibernate");
         }
         return department;
     }
@@ -61,9 +61,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
            }
        }catch (HibernateException e){
            logger.error(e);
-           throw new DAOException("Fail to get delete department " + id + " by Hibernate",e);
-
+           throw new DAOException("Fail to get delete department " + id + " by Hibernate");
        }
-
     }
 }

@@ -6,9 +6,7 @@ import com.exception.DAOException;
 import com.utils.HibernateConstants;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,7 +26,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
             return sessionFactory.getCurrentSession().get(Employee.class, employeeId);
         } catch (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to get Employee by ID by Hibernate", e);
+            throw new DAOException("Fail to get Employee by ID by Hibernate");
         }
 
     }
@@ -41,7 +39,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
             return query.list();
         } catch (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to get employees of the department # " + departmentId + " by Hibernate", e);
+            throw new DAOException("Fail to get employees of the department # " + departmentId + " by Hibernate");
         }
     }
 
@@ -53,7 +51,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
             return (Employee) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to get employee by email " + email + " by Hibernate", e);
+            throw new DAOException("Fail to get employee by email " + email + " by Hibernate");
         }
 
     }
@@ -67,7 +65,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
             }
         } catch (HibernateException e) {
             logger.error(e);
-            throw new DAOException("Fail to delete employee " + id + " by Hibernate", e);
+            throw new DAOException("Fail to delete employee " + id + " by Hibernate");
         }
     }
 }

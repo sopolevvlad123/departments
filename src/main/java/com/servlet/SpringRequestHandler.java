@@ -1,6 +1,8 @@
 package com.servlet;
 
+import com.exception.AppException;
 import com.servletHandler.ServletHandler;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -25,12 +27,20 @@ public class SpringRequestHandler implements HttpRequestHandler {
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
            ((ServletHandler) applicationContext.getBean(request.getRequestURI())).execute(request,response);
-        } catch (Throwable e) {
+        } catch (AppException e) {
             logger.error(e);
-            e.printStackTrace();
-            request.setAttribute("error", e);
+            request.setAttribute("error", ExceptionUtils.getRootCause(e));
+            request.getRequestDispatcher(ERROR_PAGE).forward(request, response);
+        }catch (Throwable e){
+            request.setAttribute("error", new Exception("Some problems happened, sorry"));
             request.getRequestDispatcher(ERROR_PAGE).forward(request, response);
         }
 
+
     }
+
+
+
+
+
 }

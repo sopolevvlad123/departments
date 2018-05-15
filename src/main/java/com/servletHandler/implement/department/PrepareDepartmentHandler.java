@@ -5,12 +5,11 @@ import com.exception.AppException;
 import com.exception.ServiceException;
 import com.service.DepartmentService;
 import com.servletHandler.ServletHandler;
-import com.utils.RequestDataParser;
+import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,7 +27,7 @@ public class PrepareDepartmentHandler implements ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         String departmentId = request.getParameter("departmentId");
-        if (RequestDataParser.isIDValid(departmentId)) {
+        if (DataParser.isIDValid(departmentId)) {
             try {
                 Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
                 request.setAttribute("departmentName", department.getDepartmentName());

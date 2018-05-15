@@ -3389,3 +3389,185 @@ line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
 15/05/2018 2:28 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
 15/05/2018 2:29 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
 15/05/2018 2:30 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:13 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:13 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException>
+15/05/2018 6:13 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+15/05/2018 6:13 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+15/05/2018 6:13 [http-nio-8080-exec-5] ERROR - <com.exception.DAOException>
+15/05/2018 6:13 [http-nio-8080-exec-5] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+15/05/2018 6:13 [http-nio-8080-exec-5] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:13 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:13 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException>
+15/05/2018 6:13 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+15/05/2018 6:13 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+15/05/2018 6:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:15 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:16 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: TEEEEEEEEEST>
+15/05/2018 6:16 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+15/05/2018 6:16 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+15/05/2018 6:20 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:20 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:20 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:20 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:20 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:20 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:20 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: TEEEEEEEEEST>
+15/05/2018 6:20 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+15/05/2018 6:20 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+15/05/2018 6:22 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:22 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:22 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:22 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:22 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:22 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:22 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: TEEEEEEEEEST>
+15/05/2018 6:22 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to delete department at service layer>
+15/05/2018 6:22 [http-nio-8080-exec-4] ERROR - <com.exception.AppException: Fail to delete department at application layer>
+15/05/2018 6:25 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:25 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:25 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:25 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:25 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:25 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:25 [http-nio-8080-exec-7] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:25 [http-nio-8080-exec-7] ERROR - <com.exception.DAOException: Fail to save/update -- class com.bean.Employee by Hibernate>
+15/05/2018 6:25 [http-nio-8080-exec-7] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:25 [http-nio-8080-exec-7] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:28 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:28 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:28 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:28 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:28 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:28 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:28 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:28 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- class com.bean.Employee by Hibernate>
+15/05/2018 6:28 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:28 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:30 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:30 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:30 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:30 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:30 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:30 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:30 [http-nio-8080-exec-7] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:30 [http-nio-8080-exec-7] ERROR - <com.exception.DAOException: Fail to save/update -- com.bean.Employee by Hibernate>
+15/05/2018 6:30 [http-nio-8080-exec-7] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:30 [http-nio-8080-exec-7] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:31 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:31 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:31 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:31 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:31 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:31 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:31 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:31 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee{employeeId=17, firstName='ww', lastName='www', email='sww@sd.dd', salary=3123, hireDate=2018-05-01, departmentId=1} by Hibernate>
+15/05/2018 6:31 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:31 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:37 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:37 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:37 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:37 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:37 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:37 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:37 [http-nio-8080-exec-7] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:37 [http-nio-8080-exec-7] ERROR - <java.lang.IllegalStateException: No match found>
+15/05/2018 6:42 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:42 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:42 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:42 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:42 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:42 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:42 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#18]>
+15/05/2018 6:42 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:42 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:42 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:43 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:43 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:43 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:43 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:43 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:43 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:43 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:43 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:43 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:43 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:44 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:44 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:44 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:44 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:44 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:44 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:44 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:44 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:44 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:44 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:48 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#18]>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:48 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#18]>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:48 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:49 [http-nio-8080-exec-10] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#18]>
+15/05/2018 6:49 [http-nio-8080-exec-10] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:49 [http-nio-8080-exec-10] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:49 [http-nio-8080-exec-10] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:51 [http-nio-8080-exec-8] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#17]>
+15/05/2018 6:51 [http-nio-8080-exec-8] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:51 [http-nio-8080-exec-8] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:51 [http-nio-8080-exec-8] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:57 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:57 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Employee#18]>
+15/05/2018 6:57 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update -- Employee by Hibernate>
+15/05/2018 6:57 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update employee at service layer>
+15/05/2018 6:57 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update employee at application layer>
+15/05/2018 6:57 [http-nio-8080-exec-9] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Department#39]>
+15/05/2018 6:57 [http-nio-8080-exec-9] ERROR - <com.exception.DAOException: Fail to save/update -- Department by Hibernate>
+15/05/2018 6:57 [http-nio-8080-exec-9] ERROR - <com.exception.ServiceException: Fail to create or update department at service layer>
+15/05/2018 6:57 [http-nio-8080-exec-9] ERROR - <com.exception.AppException: Fail to create or update department at application layer>
+15/05/2018 6:57 [http-nio-8080-exec-2] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Department#39]>
+15/05/2018 6:57 [http-nio-8080-exec-2] ERROR - <com.exception.DAOException: Fail to save/update -- Department by Hibernate>
+15/05/2018 6:57 [http-nio-8080-exec-2] ERROR - <com.exception.ServiceException: Fail to create or update department at service layer>
+15/05/2018 6:57 [http-nio-8080-exec-2] ERROR - <com.exception.AppException: Fail to create or update department at application layer>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+15/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+15/05/2018 6:57 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+15/05/2018 6:58 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Department#39]>
+15/05/2018 6:58 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update Department by Hibernate>
+15/05/2018 6:58 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update department at service layer>
+15/05/2018 6:58 [http-nio-8080-exec-6] ERROR - <com.exception.AppException: Fail to create or update department at application layer>

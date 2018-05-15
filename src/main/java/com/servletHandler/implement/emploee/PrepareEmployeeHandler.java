@@ -5,12 +5,11 @@ import com.exception.AppException;
 import com.exception.ServiceException;
 import com.service.EmployeeService;
 import com.servletHandler.ServletHandler;
-import com.utils.RequestDataParser;
+import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +26,7 @@ public class PrepareEmployeeHandler implements ServletHandler {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         String employeeId = request.getParameter("employeeId");
-        if (RequestDataParser.isIDValid(employeeId)) {
+        if (DataParser.isIDValid(employeeId)) {
             try {
                 Employee employee = employeeService.getEmployee(Integer.parseInt(employeeId));
                 request.setAttribute("firstName", employee.getFirstName());

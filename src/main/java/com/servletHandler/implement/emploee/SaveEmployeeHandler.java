@@ -6,7 +6,7 @@ import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.EmployeeService;
 import com.servletHandler.ServletHandler;
-import com.utils.RequestDataParser;
+import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -47,11 +47,11 @@ public class SaveEmployeeHandler implements ServletHandler {
         employee.setFirstName(request.getParameter("firstName"));
         employee.setLastName(request.getParameter("lastName"));
         employee.setEmail(request.getParameter("email"));
-        employee.setSalary(RequestDataParser.parseInteger(request.getParameter("salary")));
-        employee.setHireDate(RequestDataParser.parseDate(request.getParameter("hireDate")));
+        employee.setSalary(DataParser.parseInteger(request.getParameter("salary")));
+        employee.setHireDate(DataParser.parseDate(request.getParameter("hireDate")));
         employee.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
 
-        if (RequestDataParser.isIDValid(request.getParameter("employeeId"))) {
+        if (DataParser.isIDValid(request.getParameter("employeeId"))) {
             employee.setEmployeeId(Integer.parseInt(request.getParameter("employeeId")));
         }
         return employee;

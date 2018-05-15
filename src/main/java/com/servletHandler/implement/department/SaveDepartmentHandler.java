@@ -6,12 +6,11 @@ import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.DepartmentService;
 import com.servletHandler.ServletHandler;
-import com.utils.RequestDataParser;
+import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -48,7 +47,7 @@ public class SaveDepartmentHandler implements ServletHandler {
      private Department buildDepartment(HttpServletRequest request) {
         Department department = new Department();
         department.setDepartmentName(request.getParameter("departmentName"));
-        if (RequestDataParser.isIDValid(request.getParameter("departmentId"))) {
+        if (DataParser.isIDValid(request.getParameter("departmentId"))) {
             department.setDepartmentId(Integer.parseInt(request.getParameter("departmentId")));
         }
         return department;
