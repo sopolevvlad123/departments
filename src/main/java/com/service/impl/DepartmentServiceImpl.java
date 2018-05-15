@@ -43,7 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public Department getDepartment(Integer departmentId) throws ServiceException {
         Department department;
         try {
@@ -56,7 +56,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public List<Department> getAllDepartments() throws ServiceException {
         List<Department> departmentList;
         try {
@@ -69,7 +69,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void deleteDepartment(Integer departmentId) throws ServiceException{
+    public void deleteDepartment(Integer departmentId) throws ServiceException {
         try {
             hiberDepartmentDao.delete(departmentId);
         } catch (DAOException e) {
@@ -79,7 +79,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public Department getDepartmentByName(String name) throws ServiceException {
         Department department;
         try {
