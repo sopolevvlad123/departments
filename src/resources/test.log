@@ -3388,3 +3388,4 @@ line 1:1: unexpected token: FROM_EMPLOYEE_BY_DEP_ID
 15/05/2018 2:28 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
 15/05/2018 2:28 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
 15/05/2018 2:29 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+15/05/2018 2:30 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with employee bean>

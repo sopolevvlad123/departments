@@ -1,6 +1,5 @@
 package com.servlet;
 
-import com.exception.AppException;
 import com.servletHandler.ServletHandler;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
