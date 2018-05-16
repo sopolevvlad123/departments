@@ -9,8 +9,10 @@ import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -30,15 +32,19 @@ public class DepartmentController {
     private DepartmentService departmentServiceImpl;
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public void saveOrUpdateDepartment(HttpServletRequest request, HttpServletResponse response) throws AppException, IOException, ServletException {
+    public String saveOrUpdateDepartment(@RequestParam(DEPARTMENT_ID) String departmentId,
+                                         @RequestParam(DEPARTMENT_NAME) String departmentName,
+                                         Model model)
+            throws AppException {
         try {
-            departmentServiceImpl.saveOrUpdate(buildDepartment(request));
-            response.sendRedirect(GET_DEPARTMENT_LIST);
+            departmentServiceImpl.saveOrUpdate(buildDepartment(departmentName, departmentId));
+            model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
+            return "redirect:" + GET_DEPARTMENT_LIST;
         } catch (ValidationException e) {
-            returnFailInput(request);
+            model.addAttribute(DEPARTMENT_NAME, departmentName);
             logger.error(e);
-            request.setAttribute(VIOLATIONS_MAP, e.getViolationsMap());
-            request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE).forward(request, response);
+            model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
+            return "saveDepartment";
         } catch (ServiceException e) {
             logger.error(e);
             throw new AppException("Fail to create or update department at application layer", e);
@@ -46,43 +52,39 @@ public class DepartmentController {
     }
 
     @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
-    public void prepareDepartment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
-        String departmentId = request.getParameter(DEPARTMENT_ID);
+    public String prepareDepartment(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
+                                    Model model) throws  AppException {
         if (DataParser.isIDValid(departmentId)) {
             try {
                 Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
-                request.setAttribute(DEPARTMENT_NAME, department.getDepartmentName());
+                model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
             } catch (ServiceException e) {
                 logger.error(e);
                 throw new AppException("Fail to get department at application layer", e);
             }
         }
-        request.getRequestDispatcher(SAVE_DEPARTMENT_PAGE).forward(request, response);
-
+        return "saveDepartment";
     }
 
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)
-    public void deleteDepartment(HttpServletRequest request, HttpServletResponse response) throws IOException, AppException {
+    public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws AppException {
         try {
-            departmentServiceImpl.deleteDepartment(Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
+            departmentServiceImpl.deleteDepartment(Integer.parseInt(departmentId));
         } catch (ServiceException e) {
             logger.error(e);
             throw new AppException("Fail to delete department at application layer", e);
         }
-        response.sendRedirect(GET_DEPARTMENT_LIST);
+        return "redirect:" + GET_DEPARTMENT_LIST;
     }
 
 
-    private Department buildDepartment(HttpServletRequest request) {
+    private Department buildDepartment(String departmentName, String departmentId) {
         Department department = new Department();
-        department.setDepartmentName(request.getParameter(DEPARTMENT_NAME));
-        if (DataParser.isIDValid(request.getParameter(DEPARTMENT_ID))) {
-            department.setDepartmentId(Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
+        department.setDepartmentName(departmentName);
+        if (DataParser.isIDValid(departmentId)) {
+            department.setDepartmentId(Integer.parseInt(departmentId));
         }
         return department;
     }
 
-    private void returnFailInput(HttpServletRequest request) {
-        request.setAttribute(DEPARTMENT_NAME, request.getParameter(DEPARTMENT_NAME));
-    }
 }

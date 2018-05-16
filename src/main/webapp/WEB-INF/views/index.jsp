@@ -49,6 +49,8 @@
     <div class="row justify-content-md-around">
         <a class="btn btn-success" href=
         <c:url value="/departmentList.do"/>  role="button">Get Departments</a>
+
+
         <a class="btn btn-success" href=
         <c:url value="/prepareDepartment.do"/> role="button">Create Department</a>
     </div>

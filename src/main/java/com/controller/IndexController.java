@@ -30,7 +30,6 @@ public class IndexController {
             throw new AppException("Fail to get department list at application layer", e);
         }
         model.addAttribute("departmentList", departmentList);
-        System.out.println("INDEX CONTROLL");
         return "index";
     }
 }
