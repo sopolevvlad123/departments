@@ -10,15 +10,13 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
+import org.springframework.web.servlet.ModelAndView;
 
 import static com.utils.ServletHandlerConstants.*;
 
@@ -32,16 +30,17 @@ public class DepartmentController {
     private DepartmentService departmentServiceImpl;
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public String saveOrUpdateDepartment(@RequestParam(DEPARTMENT_ID) String departmentId,
-                                         @RequestParam(DEPARTMENT_NAME) String departmentName,
-                                         Model model)
+    public String saveOrUpdateDepartment( @ModelAttribute("department")Department department,
+                                         BindingResult result, ModelMap model)
             throws AppException {
         try {
-            departmentServiceImpl.saveOrUpdate(buildDepartment(departmentName, departmentId));
+            System.out.println(department);
+            departmentServiceImpl.saveOrUpdate(department);
             model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
             return "redirect:" + GET_DEPARTMENT_LIST;
+
         } catch (ValidationException e) {
-            model.addAttribute(DEPARTMENT_NAME, departmentName);
+            model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
             logger.error(e);
             model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
             return "saveDepartment";
@@ -51,10 +50,10 @@ public class DepartmentController {
         }
     }
 
-    @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
+  /*  @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
     public String prepareDepartment(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
                                     Model model) throws  AppException {
-        if (DataParser.isIDValid(departmentId)) {
+       *//* if (DataParser.isIDValid(departmentId)) {
             try {
                 Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
                 model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
@@ -62,8 +61,27 @@ public class DepartmentController {
                 logger.error(e);
                 throw new AppException("Fail to get department at application layer", e);
             }
-        }
+        }*//*
         return "saveDepartment";
+    }
+*/
+    @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
+    public ModelAndView showForm(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
+                                 Model model) throws AppException {
+        Department department = new Department();
+        if (DataParser.isIDValid(departmentId)) {
+            try {
+
+                department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
+                System.out.println("sout from prepare  " + department);
+                model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
+            } catch (ServiceException e) {
+                logger.error(e);
+                throw new AppException("Fail to get department at application layer", e);
+            }
+        }
+
+        return new ModelAndView("saveDepartment", "department", department);
     }
 
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)

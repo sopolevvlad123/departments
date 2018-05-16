@@ -81,7 +81,7 @@ public class EmployeeController {
         return GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + departmentId;
     }
 
-    @RequestMapping(value = PREPARE_EMPLOYEE, method = RequestMethod.GET)
+  /*  @RequestMapping(value = PREPARE_EMPLOYEE, method = RequestMethod.GET)
     public void prepareEmployee(@ModelAttribute Employee employee
                                 Model model) throws ServletException, IOException, AppException {
         if (DataParser.isIDValid(employeeId)) {

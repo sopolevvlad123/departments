@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -74,7 +73,6 @@
             <button class="btn btn-success" name="departmentId" type="departmentId"
                     value="${param.departmentId}"><h6>Employee List</h6></button>
         </div>
-
     </form>
 
 </div>
