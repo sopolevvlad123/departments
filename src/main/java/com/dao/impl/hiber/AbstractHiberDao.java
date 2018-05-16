@@ -16,7 +16,8 @@ public  abstract class AbstractHiberDao implements DAO {
     @Override
     public void saveOrUpdate(Object object) throws DAOException {
         try {
-            sessionFactory.getCurrentSession().saveOrUpdate(object);
+            System.out.println("save update " + object);
+            sessionFactory.getCurrentSession().merge(object);
         } catch (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to save/update " + object.getClass().getSimpleName() + " by Hibernate");

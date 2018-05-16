@@ -290,3 +290,238 @@
 16/05/2018 6:50 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
 16/05/2018 6:50 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
 16/05/2018 6:50 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:51 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:51 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:51 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 6:51 [http-nio-8080-exec-10] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 6:51 [http-nio-8080-exec-1] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:53 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:54 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:54 [http-nio-8080-exec-5] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Department#57]>
+16/05/2018 6:54 [http-nio-8080-exec-5] ERROR - <com.exception.DAOException: Fail to save/update Department by Hibernate>
+16/05/2018 6:54 [http-nio-8080-exec-5] ERROR - <com.exception.ServiceException: Fail to create or update department at service layer>
+16/05/2018 6:54 [http-nio-8080-exec-6] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Department#57]>
+16/05/2018 6:54 [http-nio-8080-exec-6] ERROR - <com.exception.DAOException: Fail to save/update Department by Hibernate>
+16/05/2018 6:54 [http-nio-8080-exec-6] ERROR - <com.exception.ServiceException: Fail to create or update department at service layer>
+16/05/2018 6:54 [http-nio-8080-exec-8] ERROR - <org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [com.bean.Department#57]>
+16/05/2018 6:54 [http-nio-8080-exec-8] ERROR - <com.exception.DAOException: Fail to save/update Department by Hibernate>
+16/05/2018 6:54 [http-nio-8080-exec-8] ERROR - <com.exception.ServiceException: Fail to create or update department at service layer>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:55 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:55 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:56 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:56 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:57 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 6:58 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 6:58 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 6:59 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 6:59 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:00 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:02 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:03 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:03 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:03 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:03 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:04 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:07 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-10] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-1] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-7] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-8] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:07 [http-nio-8080-exec-6] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:08 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:08 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:08 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:08 [http-nio-8080-exec-10] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:08 [http-nio-8080-exec-1] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:08 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:08 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:08 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:10 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:10 [http-nio-8080-exec-2] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:10 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:10 [http-nio-8080-exec-4] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:10 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:11 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:11 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:11 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:14 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:14 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:15 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:15 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:18 [RMI TCP Connection(3)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:18 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:29 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:29 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:29 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:32 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:32 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:32 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:32 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:33 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:33 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:38 [http-nio-8080-exec-4] ERROR - <HHH000346: Error during managed flush [deleted object would be re-saved by cascade (remove deleted object from associations): [com.bean.Employee#1]]>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:39 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [http-nio-8080-exec-1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [http-nio-8080-exec-1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [http-nio-8080-exec-2] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [http-nio-8080-exec-2] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [http-nio-8080-exec-3] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [http-nio-8080-exec-3] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+16/05/2018 7:45 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+16/05/2018 7:45 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+16/05/2018 7:46 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+16/05/2018 7:46 [http-nio-8080-exec-10] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+16/05/2018 7:46 [http-nio-8080-exec-3] ERROR - <com.exception.ValidationException: Validations problems with employee bean>
+16/05/2018 7:46 [http-nio-8080-exec-1] ERROR - <com.exception.ValidationException: Validations problems with employee bean>

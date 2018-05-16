@@ -11,7 +11,7 @@
     <div class="row d-flex justify-content-center">
         <h2>Save Department Form</h2>
     </div>
-    <%--<form action=<c:url value="/saveDepartment.do"/> modelAttribute="department"  method=post>
+  <%--  <form action=<c:url value="/saveDepartment.do"/> method = "post">
         <div class="form-group row">
             <label for="departmentName" class="col-2 col-form-label">Department Name</label>
             <div class="col-6">
@@ -27,20 +27,18 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-success" href= <c:url value="/departmentList.do"/> role="button" >Main Page</a>
         </div>
-    </form>
---%>
+    </form>--%>
 
 
     <table>
 
-    <form:form method="POST" action="/saveDepartment.do" modelAttribute="department">
+   <form:form method="POST" action="/saveDepartment.do" modelAttribute="department">
         <div class="form-group row">
             <label for="departmentName" class="col-2 col-form-label">Department Name</label>
             <div class="col-6">
-                <input type="hidden" name="departmentId" value="${param.departmentId}"/>
 
                 <form:input path="departmentName"/>
-                <td><form:hidden path = "departmentId" value = "${param.departmentId}"/></td>
+               <form:hidden path = "departmentId" value = "${department.departmentId}"/>
 
 
             </div>

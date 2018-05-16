@@ -30,17 +30,12 @@ public class DepartmentController {
     private DepartmentService departmentServiceImpl;
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public String saveOrUpdateDepartment( @ModelAttribute("department")Department department,
-                                         BindingResult result, ModelMap model)
-            throws AppException {
+    public String saveOrUpdateDepartment( @ModelAttribute("department")Department department, BindingResult result, ModelMap model) throws AppException {
         try {
-            System.out.println(department);
             departmentServiceImpl.saveOrUpdate(department);
             model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
             return "redirect:" + GET_DEPARTMENT_LIST;
-
         } catch (ValidationException e) {
-            model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
             logger.error(e);
             model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
             return "saveDepartment";
@@ -50,38 +45,20 @@ public class DepartmentController {
         }
     }
 
-  /*  @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
-    public String prepareDepartment(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
-                                    Model model) throws  AppException {
-       *//* if (DataParser.isIDValid(departmentId)) {
-            try {
-                Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
-                model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
-            } catch (ServiceException e) {
-                logger.error(e);
-                throw new AppException("Fail to get department at application layer", e);
-            }
-        }*//*
-        return "saveDepartment";
-    }
-*/
     @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
-    public ModelAndView showForm(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
+    public String getDepartmentForm(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
                                  Model model) throws AppException {
         Department department = new Department();
         if (DataParser.isIDValid(departmentId)) {
             try {
-
                 department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
-                System.out.println("sout from prepare  " + department);
-                model.addAttribute(DEPARTMENT_NAME, department.getDepartmentName());
             } catch (ServiceException e) {
                 logger.error(e);
                 throw new AppException("Fail to get department at application layer", e);
             }
         }
-
-        return new ModelAndView("saveDepartment", "department", department);
+        model.addAttribute("department", department);
+        return "saveDepartment";
     }
 
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)
@@ -96,13 +73,5 @@ public class DepartmentController {
     }
 
 
-    private Department buildDepartment(String departmentName, String departmentId) {
-        Department department = new Department();
-        department.setDepartmentName(departmentName);
-        if (DataParser.isIDValid(departmentId)) {
-            department.setDepartmentId(Integer.parseInt(departmentId));
-        }
-        return department;
-    }
 
 }

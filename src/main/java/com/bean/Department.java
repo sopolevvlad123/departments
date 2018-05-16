@@ -2,8 +2,6 @@ package com.bean;
 
 import com.validator.DepartmentNameValidator;
 import net.sf.oval.constraint.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,7 +24,7 @@ public class Department  implements Serializable {
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
 
-    @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.EAGER ,mappedBy = "department")
+    @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.LAZY ,mappedBy = "department")
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {
