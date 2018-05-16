@@ -14,18 +14,6 @@
     <context:component-scan base-package="com" />
     <context:annotation-config/>
 
-   <!-- <bean name="ovalValidator" class="net.sf.oval.Validator">
-        <constructor-arg index="0"  ref="annotationsConfigurer"></constructor-arg>
-    </bean>
-
-    <bean name="beanInject" class="net.sf.oval.integration.spring.BeanInjectingCheckInitializationListener"></bean>
-
-
-
-    <bean name="annotationsConfigurer" class="net.sf.oval.configuration.annotation.AnnotationsConfigurer">
-        <lookup-method name="addCheckInitializationListener" bean="net.sf.oval.configuration.annotation.AnnotationsConfigurer.INSTANCE" ></lookup-method>
-    </bean>-->
-
         <bean class="net.sf.oval.integration.spring.SpringInjector" />
 
     <bean id="sessionFactory"
