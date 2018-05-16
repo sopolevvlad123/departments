@@ -5,13 +5,12 @@ import com.exception.AppException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.DepartmentService;
-import com.utils.RequestDataParser;
+import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -48,9 +47,8 @@ public class DepartmentController {
 
     @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
     public void prepareDepartment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
-
         String departmentId = request.getParameter(DEPARTMENT_ID);
-        if (RequestDataParser.isIDValid(departmentId)) {
+        if (DataParser.isIDValid(departmentId)) {
             try {
                 Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
                 request.setAttribute(DEPARTMENT_NAME, department.getDepartmentName());
@@ -78,7 +76,7 @@ public class DepartmentController {
     private Department buildDepartment(HttpServletRequest request) {
         Department department = new Department();
         department.setDepartmentName(request.getParameter(DEPARTMENT_NAME));
-        if (RequestDataParser.isIDValid(request.getParameter(DEPARTMENT_ID))) {
+        if (DataParser.isIDValid(request.getParameter(DEPARTMENT_ID))) {
             department.setDepartmentId(Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
         }
         return department;

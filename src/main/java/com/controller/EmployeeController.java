@@ -5,13 +5,12 @@ import com.exception.AppException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
 import com.service.EmployeeService;
-import com.utils.RequestDataParser;
+import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -74,7 +73,7 @@ public class EmployeeController {
     @RequestMapping(value = PREPARE_EMPLOYEE, method = RequestMethod.GET)
     public void prepareEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
         String employeeId = request.getParameter(EMPLOYEE_ID);
-        if (RequestDataParser.isIDValid(employeeId)) {
+        if (DataParser.isIDValid(employeeId)) {
             try {
                 Employee employee = employeeService.getEmployee(Integer.parseInt(employeeId));
                 request.setAttribute(FIRST_NAME, employee.getFirstName());
@@ -96,11 +95,11 @@ public class EmployeeController {
         employee.setFirstName(request.getParameter(FIRST_NAME));
         employee.setLastName(request.getParameter(LAST_NAME));
         employee.setEmail(request.getParameter(EMAIL));
-        employee.setSalary(RequestDataParser.parseInteger(request.getParameter(SALARY)));
-        employee.setHireDate(RequestDataParser.parseDate(request.getParameter(HIRE_DATE)));
+        employee.setSalary(DataParser.parseInteger(request.getParameter(SALARY)));
+        employee.setHireDate(DataParser.parseDate(request.getParameter(HIRE_DATE)));
         employee.setDepartmentId(Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
 
-        if (RequestDataParser.isIDValid(request.getParameter(EMPLOYEE_ID))) {
+        if (DataParser.isIDValid(request.getParameter(EMPLOYEE_ID))) {
             employee.setEmployeeId(Integer.parseInt(request.getParameter(EMPLOYEE_ID)));
         }
         return employee;

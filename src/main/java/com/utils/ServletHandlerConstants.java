@@ -20,4 +20,21 @@ public interface ServletHandlerConstants {
     String INDEX_PAGE = "WEB-INF/views/index.jsp";
     String PAGE_404 ="/WEB-INF/views/page404.jsp";
 
+
+
+    String DEPARTMENT_ID = "departmentId";
+    String DEPARTMENT_NAME = "departmentName";
+    String DEPARTMENT_LIST = "departmentList";
+
+
+    String EMPLOYEE_ID = "employeeId";
+    String FIRST_NAME = "firstName";
+    String LAST_NAME = "lastName";
+    String EMAIL = "email";
+    String HIRE_DATE = "hireDate";
+    String SALARY = "salary";
+    String EMPLOYEE_LIST = "employeeList";
+
+    String VIOLATIONS_MAP = "violationMap";
+
 }
