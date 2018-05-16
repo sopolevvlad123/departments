@@ -52,4 +52,9 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <bean id="templateEngine"
+          class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver" />
+    </bean>
+
 </beans>

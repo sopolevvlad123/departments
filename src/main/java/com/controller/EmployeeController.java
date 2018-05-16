@@ -9,14 +9,18 @@ import com.utils.DataParser;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 import static com.utils.ServletHandlerConstants.*;
@@ -30,15 +34,22 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @RequestMapping(value = SAVE_EMPLOYEE, method = RequestMethod.POST)
-    public void saveEmployee(HttpServletRequest request, HttpServletResponse response) throws IOException, AppException, ServletException {
+    public String saveEmployee(@RequestParam(value = FIRST_NAME) String firstName,
+                               @RequestParam(value = LAST_NAME)  String lastName,
+                               @RequestParam(value = EMAIL) String email,
+                               @RequestParam(value = SALARY) String salary,
+                               @RequestParam(value = HIRE_DATE) String hireDate,
+                               @RequestParam(value = DEPARTMENT_ID) String departmentId,
+                               @RequestParam(value = EMPLOYEE_ID, required = false) String employeeId,
+                               Model model) throws  AppException {
         try {
-            employeeService.saveOrUpdateEmployee(buildEmployee(request));
-            response.sendRedirect(GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + request.getParameter(DEPARTMENT_ID));
+            employeeService.saveOrUpdateEmployee(buildEmployee(firstName,lastName,email,salary,hireDate,departmentId,employeeId));
+            return GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + departmentId;
         } catch (ValidationException e) {
-            returnFailInput(request);
+            sendFailInput(firstName, lastName, email, salary, hireDate, model);
             logger.error(e);
-            request.setAttribute(VIOLATIONS_MAP, e.getViolationsMap());
-            request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE).forward(request, response);
+            model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
+            return "saveEmployee";
         } catch (ServiceException e) {
             logger.error(e);
             throw new AppException("Fail to create or update employee at application layer", e);
@@ -46,33 +57,33 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = GET_DEP_EMPLOYEES, method = RequestMethod.GET)
-    public void getDepEmployees(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
+    public String getDepEmployees(@RequestParam(value = DEPARTMENT_ID) String departmentId,Model model) throws ServletException, IOException, AppException {
         List<Employee> employeeList;
         try {
-            employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
+            employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(departmentId));
         } catch (ServiceException e) {
             logger.error(e);
             throw new AppException("Fail to get departments employee at application layer", e);
         }
-        request.setAttribute(EMPLOYEE_LIST, employeeList);
-        request.setAttribute(DEPARTMENT_ID, Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
-        request.getRequestDispatcher(EMPLOYEE_LIST_PAGE).forward(request, response);
+        model.addAttribute(EMPLOYEE_LIST, employeeList);
+        model.addAttribute(DEPARTMENT_ID, departmentId);
+        return "employeeList";
     }
 
     @RequestMapping(value = DELETE_EMPLOYEE, method = RequestMethod.POST)
-    public void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws IOException, AppException {
+    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId,@RequestParam(value = EMPLOYEE_ID) String employeeId) throws IOException, AppException {
         try {
-            employeeService.deleteEmployee(Integer.parseInt(request.getParameter(EMPLOYEE_ID)));
+            employeeService.deleteEmployee(Integer.parseInt(employeeId));
         } catch (ServiceException e) {
             logger.error(e);
             throw new AppException("Fail to delete or update employee at application layer", e);
         }
-        response.sendRedirect(GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + request.getParameter(DEPARTMENT_ID));
+        return GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + departmentId;
     }
 
     @RequestMapping(value = PREPARE_EMPLOYEE, method = RequestMethod.GET)
-    public void prepareEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AppException {
-        String employeeId = request.getParameter(EMPLOYEE_ID);
+    public void prepareEmployee(@ModelAttribute Employee employee
+                                Model model) throws ServletException, IOException, AppException {
         if (DataParser.isIDValid(employeeId)) {
             try {
                 Employee employee = employeeService.getEmployee(Integer.parseInt(employeeId));
@@ -88,28 +99,29 @@ public class EmployeeController {
             }
         }
         request.getRequestDispatcher(SAVE_EMPLOYEE_PAGE).forward(request, response);
-    }
+    }*/
 
-    private Employee buildEmployee(HttpServletRequest request) {
+    private Employee buildEmployee(String firstName, String lastName, String email,
+                                   String salary, String hireDate, String departmentId, String employeeId) {
         Employee employee = new Employee();
-        employee.setFirstName(request.getParameter(FIRST_NAME));
-        employee.setLastName(request.getParameter(LAST_NAME));
-        employee.setEmail(request.getParameter(EMAIL));
-        employee.setSalary(DataParser.parseInteger(request.getParameter(SALARY)));
-        employee.setHireDate(DataParser.parseDate(request.getParameter(HIRE_DATE)));
-        employee.setDepartmentId(Integer.parseInt(request.getParameter(DEPARTMENT_ID)));
-
-        if (DataParser.isIDValid(request.getParameter(EMPLOYEE_ID))) {
-            employee.setEmployeeId(Integer.parseInt(request.getParameter(EMPLOYEE_ID)));
+        employee.setFirstName(firstName);
+        employee.setLastName(lastName);
+        employee.setEmail(email);
+        employee.setSalary(Integer.parseInt(salary));
+        employee.setHireDate(Date.valueOf(hireDate));
+        employee.setDepartmentId(Integer.parseInt(departmentId));
+        if ((DataParser.isIDValid(employeeId))) {
+            employee.setEmployeeId(Integer.parseInt(employeeId));
         }
         return employee;
     }
 
-    private void returnFailInput(HttpServletRequest request) {
-        request.setAttribute(FIRST_NAME, request.getParameter(FIRST_NAME));
-        request.setAttribute(LAST_NAME, request.getParameter(LAST_NAME));
-        request.setAttribute(EMAIL, request.getParameter(EMAIL));
-        request.setAttribute(SALARY, request.getParameter(SALARY));
-        request.setAttribute(HIRE_DATE, request.getParameter(HIRE_DATE));
+    private void sendFailInput(String firstName, String lastName, String email,
+                               String salary, String hireDate, Model model) {
+        model.addAttribute(FIRST_NAME, firstName);
+        model.addAttribute(LAST_NAME, lastName);
+        model.addAttribute(EMAIL, email);
+        model.addAttribute(SALARY, salary);
+        model.addAttribute(HIRE_DATE, hireDate);
     }
 }
