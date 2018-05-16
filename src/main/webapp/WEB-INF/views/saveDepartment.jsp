@@ -10,7 +10,7 @@
     <div class="row d-flex justify-content-center">
         <h2>Save Department Form</h2>
     </div>
-    <form action=<c:url value="/saveDepartment.do"/>  method=post>
+    <form action=<c:url value="/saveDepartment.do"/> modelAttribute="department"  method=post>
         <div class="form-group row">
             <label for="departmentName" class="col-2 col-form-label">Department Name</label>
             <div class="col-6">
