@@ -15,7 +15,6 @@ public class DataParser {
 
 
     static Date parseDate(String date){
-        System.out.println("date parser");
      try{
          return Date.valueOf(date);
      }catch (IllegalArgumentException e){
