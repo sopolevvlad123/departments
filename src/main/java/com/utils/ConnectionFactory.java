@@ -25,16 +25,6 @@ public class ConnectionFactory {
         }
         return connection;
     }
-
-    public static void closeConnection(Connection connection) throws DAOException{
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                throw new DAOException("Fail to close connection",e);
-            }
-        }
-    }
 }
 
 

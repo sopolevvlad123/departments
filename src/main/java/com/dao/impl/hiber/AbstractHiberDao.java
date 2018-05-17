@@ -8,7 +8,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public  abstract class AbstractHiberDao implements DAO {
-    final static Logger logger = Logger.getLogger(AbstractHiberDao.class);
+
+    private final static Logger logger = Logger.getLogger(AbstractHiberDao.class);
 
     @Autowired
     SessionFactory sessionFactory;

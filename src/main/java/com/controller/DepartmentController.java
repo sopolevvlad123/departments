@@ -22,11 +22,15 @@ import static com.utils.ServletHandlerConstants.*;
 
 @Controller
 public class DepartmentController {
-    final static Logger logger = Logger.getLogger(DepartmentController.class);
+    private final static Logger logger = Logger.getLogger(DepartmentController.class);
 
+
+    private final DepartmentService departmentServiceImpl;
 
     @Autowired
-    private DepartmentService departmentServiceImpl;
+    public DepartmentController(DepartmentService departmentServiceImpl) {
+        this.departmentServiceImpl = departmentServiceImpl;
+    }
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
     public String saveOrUpdateDepartment( @ModelAttribute("department")Department department, BindingResult result, ModelMap model) throws AppException {

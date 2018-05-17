@@ -1,14 +1,12 @@
 package com.utils;
 
-import java.text.SimpleDateFormat;
 import java.sql.Date;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DataParser {
 
 
-    public static Integer parseInteger(String num) {
+    private static Integer parseInteger(String num) {
         if (num == null || !(Pattern.matches("[0-9]+", num) && num.length() < 10)) {
             return null;
         }
@@ -16,7 +14,7 @@ public class DataParser {
     }
 
 
-    public static Date parseDate(String date){
+    static Date parseDate(String date){
         System.out.println("date parser");
      try{
          return Date.valueOf(date);

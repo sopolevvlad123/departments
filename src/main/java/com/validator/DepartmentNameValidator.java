@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public  class DepartmentNameValidator implements CheckWithCheck.SimpleCheck{
-    final static Logger logger = Logger.getLogger(DepartmentNameValidator.class);
+    private final static Logger logger = Logger.getLogger(DepartmentNameValidator.class);
 
     @Autowired
     private DepartmentService departmentServiceImpl;

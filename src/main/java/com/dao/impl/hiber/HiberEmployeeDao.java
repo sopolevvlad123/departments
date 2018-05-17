@@ -15,10 +15,14 @@ import java.util.List;
 
 @Component
 public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
-    final static Logger logger = Logger.getLogger(HiberEmployeeDao.class);
+    private final static Logger logger = Logger.getLogger(HiberEmployeeDao.class);
+
+    private final SessionFactory sessionFactory;
 
     @Autowired
-    private SessionFactory sessionFactory;
+    public HiberEmployeeDao(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public Employee getEmployeeByID(Integer employeeId) throws DAOException {
@@ -32,7 +36,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
     }
 
     @Override
-    public List<Employee> getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
+    public List getEmployeesByDepartmentID(Integer departmentId) throws DAOException {
         try {
             Query query = sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_EMPLOYEE_BY_DEP_ID);
             query.setParameter("departmentId", departmentId);

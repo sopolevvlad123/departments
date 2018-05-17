@@ -9,7 +9,7 @@ public interface DepartmentDAO extends DAO {
 
     Department getDepartmentByID(Integer departmentId) throws DAOException;
 
-    List<Department> getAllDepartments() throws DAOException;
+    List getAllDepartments() throws DAOException;
 
     Department getDepartmentByName(String departmentName)throws DAOException;
 

@@ -14,9 +14,13 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 @Component
 public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDAO {
-    final static Logger logger = Logger.getLogger(HiberDepartmentDao.class);
+    private  final static Logger logger = Logger.getLogger(HiberDepartmentDao.class);
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public HiberDepartmentDao(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public Department getDepartmentByID(Integer departmentId) throws DAOException {
@@ -29,7 +33,7 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
     }
 
     @Override
-    public List<Department> getAllDepartments() throws DAOException {
+    public List getAllDepartments() throws DAOException {
         try  {
             return sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_DEPARTMENT).list();
         }catch  (HibernateException e) {
@@ -40,16 +44,14 @@ public class HiberDepartmentDao extends AbstractHiberDao implements DepartmentDA
 
     @Override
     public Department getDepartmentByName(String departmentName) throws DAOException {
-        Department department;
         try  {
             Query query = sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_DEPARTMENT_BY_NAME);
             query.setParameter("departmentName", departmentName);
-            department = (Department) query.uniqueResult();
+            return (Department) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error(e);
             throw new DAOException("Fail to get department by name " + departmentName + " by Hibernate");
         }
-        return department;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.service;
 
 import com.bean.Department;
-import com.exception.DAOException;
 import com.exception.ServiceException;
 import com.exception.ValidationException;
 
@@ -13,7 +12,7 @@ public interface DepartmentService {
 
     Department getDepartment(Integer departmentId) throws ServiceException;
 
-    List<Department> getAllDepartments() throws ServiceException;
+    List getAllDepartments() throws ServiceException;
 
     void deleteDepartment(Integer departmentId) throws ServiceException;
 

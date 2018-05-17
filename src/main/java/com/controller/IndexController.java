@@ -18,10 +18,14 @@ import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
 @Controller
 public class IndexController {
-    final static Logger logger = Logger.getLogger(IndexController.class);
+    private final static Logger logger = Logger.getLogger(IndexController.class);
+
+    private final DepartmentService departmentServiceImpl;
 
     @Autowired
-    DepartmentService departmentServiceImpl;
+    public IndexController(DepartmentService departmentServiceImpl) {
+        this.departmentServiceImpl = departmentServiceImpl;
+    }
 
     @RequestMapping(value = {DEFAULT_URL, GET_DEPARTMENT_LIST})
     public String hello(Model model) throws AppException {

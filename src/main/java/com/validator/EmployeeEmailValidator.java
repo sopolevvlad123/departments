@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmployeeEmailValidator implements CheckWithCheck.SimpleCheck {
-    final static Logger logger = Logger.getLogger(EmployeeEmailValidator.class);
+    private final static Logger logger = Logger.getLogger(EmployeeEmailValidator.class);
     @Autowired
     EmployeeService employeeServiceImpl;
     @Override

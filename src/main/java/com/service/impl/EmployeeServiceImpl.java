@@ -20,12 +20,16 @@ import java.util.Map;
 @Component
 @Transactional(rollbackFor = ServiceException.class)
 public class EmployeeServiceImpl implements EmployeeService {
-    final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
-    @Autowired
-    private EmployeeDAO hiberEmployeeDao;
+    private final static Logger logger = Logger.getLogger(EmployeeServiceImpl.class);
+    private final EmployeeDAO hiberEmployeeDao;
+
+    private final ConstraintViolationsParser constraintViolationsParser;
 
     @Autowired
-    private ConstraintViolationsParser constraintViolationsParser;
+    public EmployeeServiceImpl(EmployeeDAO hiberEmployeeDao, ConstraintViolationsParser constraintViolationsParser) {
+        this.hiberEmployeeDao = hiberEmployeeDao;
+        this.constraintViolationsParser = constraintViolationsParser;
+    }
 
     @Override
     public void saveOrUpdateEmployee(Employee employee) throws ServiceException, ValidationException {
@@ -58,15 +62,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
-    public List<Employee> getDepartmentsEmployees(Integer departmentId) throws ServiceException{
-        List<Employee> employeeList;
+    public List getDepartmentsEmployees(Integer departmentId) throws ServiceException{
         try {
-            employeeList = hiberEmployeeDao.getEmployeesByDepartmentID(departmentId);
+           return hiberEmployeeDao.getEmployeesByDepartmentID(departmentId);
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to get department employees at service layer", e);
         }
-        return employeeList;
     }
 
     @Override

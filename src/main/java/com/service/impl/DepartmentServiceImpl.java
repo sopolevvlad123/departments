@@ -21,11 +21,15 @@ import java.util.Map;
 public class DepartmentServiceImpl implements DepartmentService {
     private final static Logger logger = Logger.getLogger(DepartmentServiceImpl.class);
 
-    @Autowired
-    private DepartmentDAO hiberDepartmentDao;
+    private final DepartmentDAO hiberDepartmentDao;
+
+    private final ConstraintViolationsParser constraintViolationsParser;
 
     @Autowired
-    private ConstraintViolationsParser constraintViolationsParser;
+    public DepartmentServiceImpl(DepartmentDAO hiberDepartmentDao, ConstraintViolationsParser constraintViolationsParser) {
+        this.hiberDepartmentDao = hiberDepartmentDao;
+        this.constraintViolationsParser = constraintViolationsParser;
+    }
 
     @Override
     public void saveOrUpdate(Department department) throws ServiceException, ValidationException {
@@ -57,15 +61,13 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
-    public List<Department> getAllDepartments() throws ServiceException {
-        List<Department> departmentList;
+    public List getAllDepartments() throws ServiceException {
         try {
-            departmentList = hiberDepartmentDao.getAllDepartments();
+            return hiberDepartmentDao.getAllDepartments();
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to get all departments at service layer", e);
         }
-        return departmentList;
     }
 
     @Override

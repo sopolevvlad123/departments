@@ -16,7 +16,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -24,10 +23,14 @@ import static com.utils.ServletHandlerConstants.*;
 
 @Controller
 public class EmployeeController {
-    final static Logger logger = Logger.getLogger(EmployeeController.class);
+    private final static Logger logger = Logger.getLogger(EmployeeController.class);
+
+    private final EmployeeService employeeService;
 
     @Autowired
-    private EmployeeService employeeService;
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @RequestMapping(value = SAVE_EMPLOYEE, method = RequestMethod.POST)
     public String saveEmployee(@ModelAttribute("employee")Employee employee, BindingResult result, ModelMap model) throws  AppException {
@@ -77,7 +80,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = DELETE_EMPLOYEE, method = RequestMethod.POST)
-    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId,@RequestParam(value = EMPLOYEE_ID) String employeeId) throws IOException, AppException {
+    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId,@RequestParam(value = EMPLOYEE_ID) String employeeId) throws AppException {
         try {
             employeeService.deleteEmployee(Integer.parseInt(employeeId));
         } catch (ServiceException e) {

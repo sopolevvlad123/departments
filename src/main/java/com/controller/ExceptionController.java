@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class ExceptionController extends ResponseEntityExceptionHandler {
 
-    final static Logger logger = Logger.getLogger(ExceptionController.class);
+    private final static Logger logger = Logger.getLogger(ExceptionController.class);
 
     @ExceptionHandler(value = AppException.class )
     public String appExceptionHandle(AppException e, Model model){
