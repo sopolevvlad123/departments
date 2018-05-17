@@ -29,8 +29,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action=
-                              <c:url value="/prepareDepartment.do"/> method="get">
+                    <form action=<c:url value="/prepareDepartment.do"/> method="get">
                         <button class="btn btn-light" name="departmentId" type="submit"
                                 value="${department.departmentId}"><h6>Update</h6></button>
                     </form>
@@ -45,11 +44,9 @@
         </c:forEach>
         </tbody>
     </table>
-
     <div class="row justify-content-md-around">
         <a class="btn btn-success" href=
         <c:url value="/departmentList.do"/>  role="button">Get Departments</a>
-
 
         <a class="btn btn-success" href=
         <c:url value="/prepareDepartment.do"/> role="button">Create Department</a>

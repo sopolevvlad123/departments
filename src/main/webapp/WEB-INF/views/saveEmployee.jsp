@@ -14,7 +14,7 @@
     <h2>Save Employee Form</h2>
     <form:form method="POST" action="/saveEmployee.do" modelAttribute="employee">
         <div class="form-group row">
-            <label for="firstName" class="col-2 col-form-label">First Name</label>
+            <label class="col-2 col-form-label">First Name</label>
             <div class="col-6">
                 <form:input path="firstName"/>
             </div>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="lastName" class="col-2 col-form-label">Last Name</label>
+            <label class="col-2 col-form-label">Last Name</label>
             <div class="col-6">
                 <form:input path="lastName"/>
             </div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="email" class="col-2 col-form-label">Email</label>
+            <label class="col-2 col-form-label">Email</label>
             <div class="col-6">
                 <form:input path="email"/>
             </div>
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="salary" class="col-2 col-form-label">Salary</label>
+            <label class="col-2 col-form-label">Salary</label>
             <div class="col-6">
                 <form:input path="salary"/>
             </div>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="hireDate" class="col-2 col-form-label">Hire Date</label>
+            <label class="col-2 col-form-label">Hire Date</label>
             <div class="col-6">
                 <form:input path="hireDate" type = "date"/>
             </div>

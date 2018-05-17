@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="jumbotron" style="padding: 180px">
-        <h1 class="text-center">404 Not Found<p> </p><p><small class="text-center"> Oh noes everything broke</small></p></h1>
+        <h1 class="text-center">404 Page Not Found</h1>
         <p class="text-center">Try pressing the back button or clicking on this button.</p>
         <p class="text-center"><a class="btn btn-primary" href=<c:url value= "/departmentList.do"/> ><i class="fa fa-home"></i>MainPage</a></p>
     </div>
