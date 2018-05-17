@@ -5,6 +5,7 @@ import com.bean.Department;
 import com.exception.AppException;
 import com.exception.ServiceException;
 import com.service.DepartmentService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
 @Controller
 public class IndexController {
+    final static Logger logger = Logger.getLogger(IndexController.class);
+
     @Autowired
     DepartmentService departmentServiceImpl;
 
@@ -26,7 +29,7 @@ public class IndexController {
         try {
             departmentList = departmentServiceImpl.getAllDepartments();
         } catch (ServiceException e) {
-            //logger.error(e);
+            logger.error(e);
             throw new AppException("Fail to get department list at application layer", e);
         }
         model.addAttribute("departmentList", departmentList);

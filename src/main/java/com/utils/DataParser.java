@@ -8,19 +8,6 @@ import java.util.regex.Pattern;
 public class DataParser {
 
 
-
-
-    public  static String parseClassName(String fullName){
-
-        Pattern p = Pattern.compile(".*.\\s*(.*)");
-        Matcher m = p.matcher(fullName);
-
-       /* if (m.find())
-            System.out.println(m.group(1));*/
-       return m.group(1);
-
-    };
-
     public static Integer parseInteger(String num) {
         if (num == null || !(Pattern.matches("[0-9]+", num) && num.length() < 10)) {
             return null;
@@ -30,6 +17,7 @@ public class DataParser {
 
 
     public static Date parseDate(String date){
+        System.out.println("date parser");
      try{
          return Date.valueOf(date);
      }catch (IllegalArgumentException e){

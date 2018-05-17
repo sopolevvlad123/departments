@@ -16,7 +16,7 @@ public interface ServletHandlerConstants {
     String ERROR_PAGE = "/WEB-INF/views/errorPage.jsp";
     String SAVE_DEPARTMENT_PAGE = "/WEB-INF/views/saveDepartment.jsp";
     String SAVE_EMPLOYEE_PAGE = "/WEB-INF/views/saveEmployee.jsp";
-    String EMPLOYEE_LIST_PAGE = "/WEB-INF/views/employeeList.jsp";
+    String  EMPLOYEE_LIST_PAGE = "/WEB-INF/views/employeeList.jsp";
     String INDEX_PAGE = "WEB-INF/views/index.jsp";
     String PAGE_404 ="/WEB-INF/views/page404.jsp";
 

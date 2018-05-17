@@ -45,7 +45,7 @@ public class Employee implements Serializable {
 
     @Column(name = "hire_date")
     @NotNull(message = "Incorrect date value")
-    @DateRange(format = "dd-mm-yyyy", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
+    @DateRange(format = "yyyy-MM-dd", max = "today", min = "01-01-2000", message = "Date should be in range 01-01-2000 to current day")
     private Date hireDate;
     @Column(name = "department_id")
     private Integer departmentId;
