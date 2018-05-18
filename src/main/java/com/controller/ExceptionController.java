@@ -6,10 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class ExceptionController extends ResponseEntityExceptionHandler {
+public class ExceptionController   {
 
     private final static Logger logger = Logger.getLogger(ExceptionController.class);
 
@@ -23,16 +22,16 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
     public String generalExceptionHandle(Throwable throwable, Model model){
         throwable.printStackTrace();
         logger.error(throwable);
-        model.addAttribute("error",new Exception("something goes wrong"));
+        model.addAttribute("error",new Exception("Something gone wrong"));
         return "errorPage";
     }
 
-    @ExceptionHandler(value = NoHandlerFoundException.class)
-    public String fortyExceptionHandle(Throwable throwable, Model model) {
+    @ExceptionHandler(value = NoHandlerFoundException.class )
+    public String get404Page(Throwable throwable, Model model){
         throwable.printStackTrace();
         logger.error(throwable);
-        System.out.println("hello");
-        model.addAttribute("error", new Exception("forti four"));
+        String address = throwable.getMessage().substring(throwable.getMessage().lastIndexOf("/") );
+        model.addAttribute("errorMessage","Page with address " + address + " does not exist");
         return "page404";
     }
 }

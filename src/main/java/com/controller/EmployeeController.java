@@ -49,7 +49,7 @@ public class EmployeeController {
 
     @RequestMapping(value = GET_DEP_EMPLOYEES, method = RequestMethod.GET)
     public String getDepEmployees(@RequestParam(value = DEPARTMENT_ID) String departmentId,Model model) throws  AppException {
-        List<Employee> employeeList;
+        List employeeList;
         try {
             employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(departmentId));
         } catch (ServiceException e) {
