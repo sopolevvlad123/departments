@@ -13,6 +13,9 @@
     <context:annotation-config/>
     <mvc:annotation-config/>
 
+    <bean id="dispatcher" class="org.springframework.web.servlet.DispatcherServlet">
+        <property name="throwExceptionIfNoHandlerFound" value="true"/>
+    </bean>
 
     <bean class="net.sf.oval.integration.spring.SpringInjector" />
 
