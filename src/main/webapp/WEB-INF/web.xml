@@ -7,6 +7,10 @@
         <servlet-name>springHandler</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
+        <init-param>
+            <param-name>throwExceptionIfNoHandlerFound</param-name>
+            <param-value>true</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -14,13 +18,5 @@
         <servlet-name>springHandler</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-<!--
-
-    <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/views/page404.jsp</location>
-    </error-page>
--->
 
 </web-app>

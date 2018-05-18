@@ -12,6 +12,7 @@
 <div class="container">
     <div class="jumbotron" style="padding: 180px">
         <h1 class="text-center">404 Page Not Found</h1>
+        <h3 class="text-center"><c:out value="${errorMessage}"></c:out></h3>
         <p class="text-center">Try pressing the back button or clicking on this button.</p>
         <p class="text-center"><a class="btn btn-primary" href=<c:url value= "/departmentList.do"/> ><i class="fa fa-home"></i>MainPage</a></p>
     </div>
