@@ -16,13 +16,6 @@
     </servlet-mapping>
 
 
-    <listener>
-        <listener-class>
-            org.springframework.web.context.ContextLoaderListener
-        </listener-class>
-    </listener>
-
-
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/views/page404.jsp</location>
