@@ -74,7 +74,4 @@ public class DepartmentController {
         }
         return "redirect:" + GET_DEPARTMENT_LIST;
     }
-
-
-
 }

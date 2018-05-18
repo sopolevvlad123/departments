@@ -1,7 +1,6 @@
 package com.controller;
 
 
-import com.bean.Department;
 import com.exception.AppException;
 import com.exception.ServiceException;
 import com.service.DepartmentService;
@@ -29,7 +28,7 @@ public class IndexController {
 
     @RequestMapping(value = {DEFAULT_URL, GET_DEPARTMENT_LIST})
     public String hello(Model model) throws AppException {
-        List<Department> departmentList;
+        List departmentList;
         try {
             departmentList = departmentServiceImpl.getAllDepartments();
         } catch (ServiceException e) {

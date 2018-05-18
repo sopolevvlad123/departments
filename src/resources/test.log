@@ -1335,3 +1335,179 @@
 18/05/2018 11:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
 18/05/2018 11:57 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
 18/05/2018 11:57 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:39 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:39 [http-nio-8080-exec-1] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:39 [http-nio-8080-exec-1] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:39 [http-nio-8080-exec-1] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:39 [http-nio-8080-exec-2] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:39 [http-nio-8080-exec-2] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:39 [http-nio-8080-exec-2] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:39 [http-nio-8080-exec-3] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:39 [http-nio-8080-exec-3] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:39 [http-nio-8080-exec-3] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:39 [http-nio-8080-exec-4] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:39 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:39 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:40 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:40 [http-nio-8080-exec-1] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:40 [http-nio-8080-exec-1] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:40 [http-nio-8080-exec-1] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:40 [http-nio-8080-exec-2] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:40 [http-nio-8080-exec-2] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:40 [http-nio-8080-exec-2] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:40 [http-nio-8080-exec-3] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:40 [http-nio-8080-exec-3] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:40 [http-nio-8080-exec-3] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:41 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:41 [http-nio-8080-exec-1] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:41 [http-nio-8080-exec-1] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:41 [http-nio-8080-exec-1] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:41 [http-nio-8080-exec-2] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:41 [http-nio-8080-exec-2] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:41 [http-nio-8080-exec-2] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:41 [http-nio-8080-exec-3] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:41 [http-nio-8080-exec-3] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:41 [http-nio-8080-exec-3] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:48 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:48 [http-nio-8080-exec-1] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:48 [http-nio-8080-exec-1] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:48 [http-nio-8080-exec-1] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:48 [http-nio-8080-exec-2] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:48 [http-nio-8080-exec-2] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:48 [http-nio-8080-exec-2] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:48 [http-nio-8080-exec-3] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:48 [http-nio-8080-exec-3] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:48 [http-nio-8080-exec-3] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:48 [http-nio-8080-exec-4] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:48 [http-nio-8080-exec-4] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:48 [http-nio-8080-exec-4] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:49 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:49 [http-nio-8080-exec-5] ERROR - <java.lang.IllegalArgumentException: No SpringInjector instance created yet. Add  <bean class="net.sf.oval.integration.spring.SpringInjector" /> to your spring configuration!>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:52 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:52 [http-nio-8080-exec-1] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:52 [http-nio-8080-exec-1] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:52 [http-nio-8080-exec-1] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:52 [http-nio-8080-exec-2] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:52 [http-nio-8080-exec-2] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:52 [http-nio-8080-exec-2] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:52 [http-nio-8080-exec-3] ERROR - <org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread>
+18/05/2018 12:52 [http-nio-8080-exec-3] ERROR - <com.exception.DAOException: Fail to get all Departments by Hibernate>
+18/05/2018 12:52 [http-nio-8080-exec-3] ERROR - <com.exception.ServiceException: Fail to get all departments at service layer>
+18/05/2018 12:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:53 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:54 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 12:54 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 12:55 [http-nio-8080-exec-6] ERROR - <java.lang.IllegalArgumentException: No SpringInjector instance created yet. Add  <bean class="net.sf.oval.integration.spring.SpringInjector" /> to your spring configuration!>
+18/05/2018 12:59 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 12:59 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 12:59 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 12:59 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 12:59 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:02 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:02 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:04 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:04 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:05 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:05 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:05 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:05 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:05 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:05 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:10 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:10 [http-nio-8080-exec-5] ERROR - <java.lang.IllegalArgumentException: No SpringInjector instance created yet. Add  <bean class="net.sf.oval.integration.spring.SpringInjector" /> to your spring configuration!>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:10 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:10 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:13 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:13 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:13 [http-nio-8080-exec-5] ERROR - <java.lang.IllegalArgumentException: No SpringInjector instance created yet. Add  <bean class="net.sf.oval.integration.spring.SpringInjector" /> to your spring configuration!>
+18/05/2018 1:13 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:13 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:13 [RMI TCP Connection(4)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:13 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:13 [RMI TCP Connection(4)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:13 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:13 [http-nio-8080-exec-5] ERROR - <java.lang.IllegalArgumentException: No SpringInjector instance created yet. Add  <bean class="net.sf.oval.integration.spring.SpringInjector" /> to your spring configuration!>
+18/05/2018 1:24 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:24 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:24 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:24 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:24 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:24 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:24 [http-nio-8080-exec-5] ERROR - <com.exception.ValidationException: Validations problems with department bean>
+18/05/2018 1:26 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000412: Hibernate Core {5.2.17.Final}>
+18/05/2018 1:26 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000206: hibernate.properties not found>
+18/05/2018 1:26 [RMI TCP Connection(2)-127.0.0.1] INFO - <HCANN000001: Hibernate Commons Annotations {5.0.1.Final}>
+18/05/2018 1:26 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect>
+18/05/2018 1:26 [RMI TCP Connection(2)-127.0.0.1] INFO - <HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4>
+18/05/2018 1:26 [http-nio-8080-exec-1] INFO - <HHH000397: Using ASTQueryTranslatorFactory>
+18/05/2018 1:30 [http-nio-8080-exec-9] ERROR - <com.exception.ValidationException: Validations problems with department bean>
