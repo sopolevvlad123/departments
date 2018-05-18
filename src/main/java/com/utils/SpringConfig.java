@@ -23,13 +23,18 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"com","net.sf.oval.integration.spring"})
+@ComponentScan(basePackages = {"com", "net.sf.oval.integration.spring"})
 
-public class SpringConfig extends WebMvcConfigurerAdapter{
+public class SpringConfig extends WebMvcConfigurerAdapter {
 
-     @Bean
+    @Bean
+    public static SpringInjector SpringInjector() {
+        return net.sf.oval.integration.spring.SpringInjector.get();
+    }
+
+    @Bean
     public ViewResolver viewResolver() {
-    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
         viewResolver.setPrefix("/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");
@@ -70,15 +75,10 @@ public class SpringConfig extends WebMvcConfigurerAdapter{
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto","update");
-        properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
-        properties.setProperty("hibernate.globally_quoted_identifiers","true");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        properties.setProperty("hibernate.globally_quoted_identifiers", "true");
         return properties;
-    }
-
-    @Bean
-    public static SpringInjector SpringInjector(){
-        return  net.sf.oval.integration.spring.SpringInjector.get();
     }
 
     @Override

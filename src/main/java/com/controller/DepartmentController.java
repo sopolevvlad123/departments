@@ -33,7 +33,7 @@ public class DepartmentController {
     }
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public String saveOrUpdateDepartment( @ModelAttribute("department")Department department, BindingResult result, ModelMap model) throws AppException {
+    public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, BindingResult result, ModelMap model) throws AppException {
         try {
             departmentServiceImpl.saveOrUpdate(department);
             model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
@@ -50,7 +50,7 @@ public class DepartmentController {
 
     @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
     public String getDepartmentForm(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
-                                 Model model) throws AppException {
+                                    Model model) throws AppException {
         Department department = new Department();
         if (DataParser.isIDValid(departmentId)) {
             try {

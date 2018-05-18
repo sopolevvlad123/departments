@@ -7,7 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public  abstract class AbstractHiberDao implements DAO {
+public abstract class AbstractHiberDao implements DAO {
 
     private final static Logger logger = Logger.getLogger(AbstractHiberDao.class);
 

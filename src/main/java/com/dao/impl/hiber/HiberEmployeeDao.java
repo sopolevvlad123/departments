@@ -49,7 +49,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
 
     @Override
     public Employee getEmployeeByEmail(String email) throws DAOException {
-        try  {
+        try {
             Query query = sessionFactory.getCurrentSession().createQuery(HibernateConstants.FROM_EMPLOYEE_BY_EMAIL);
             query.setParameter("email", email);
             return (Employee) query.uniqueResult();
@@ -62,7 +62,7 @@ public class HiberEmployeeDao extends AbstractHiberDao implements EmployeeDAO {
 
     @Override
     public void delete(Integer id) throws DAOException {
-        try  {
+        try {
             Employee employee = sessionFactory.getCurrentSession().load(Employee.class, id);
             if (employee != null) {
                 sessionFactory.getCurrentSession().delete(employee);

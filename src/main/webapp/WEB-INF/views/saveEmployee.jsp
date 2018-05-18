@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
@@ -12,6 +12,7 @@
 <div class="container">
 
     <h2>Save Employee Form</h2>
+    <%--@elvariable id="employee" type="com.bean.Employee"--%>
     <form:form method="POST" action="/saveEmployee.do" modelAttribute="employee">
         <div class="form-group row">
             <label class="col-2 col-form-label">First Name</label>
@@ -19,7 +20,8 @@
                 <form:input path="firstName"/>
             </div>
             <div>
-                <c:out value="${violationMap.firstName}"></c:out>
+                    <%--@elvariable id="violationMap" type="java.util.HashMap"--%>
+                <c:out value="${violationMap.firstName}"/>
             </div>
         </div>
         <div class="form-group row">
@@ -28,7 +30,7 @@
                 <form:input path="lastName"/>
             </div>
             <div>
-                <c:out value="${violationMap.lastName}"></c:out>
+                <c:out value="${violationMap.lastName}"/>
             </div>
         </div>
         <div class="form-group row">
@@ -37,7 +39,7 @@
                 <form:input path="email"/>
             </div>
             <div>
-                <c:out value="${violationMap.email}"></c:out>
+                <c:out value="${violationMap.email}"/>
             </div>
         </div>
         <div class="form-group row">
@@ -46,17 +48,17 @@
                 <form:input path="salary"/>
             </div>
             <div>
-                <c:out value="${violationMap.salary}"></c:out>
+                <c:out value="${violationMap.salary}"/>
 
             </div>
         </div>
         <div class="form-group row">
             <label class="col-2 col-form-label">Hire Date</label>
             <div class="col-6">
-                <form:input path="hireDate" type = "date"/>
+                <form:input path="hireDate" type="date"/>
             </div>
             <div>
-                <c:out value="${violationMap.hireDate}"></c:out>
+                <c:out value="${violationMap.hireDate}"/>
             </div>
         </div>
 
@@ -72,10 +74,9 @@
     </form:form>
 
     <form action=
-          <c:url value="/getDepartmentsEmployees.do"/>  method="get">
+                  "<c:url value="/getDepartmentsEmployees.do"/>" method="get">
         <div class="form-group row">
-            <button class="btn btn-success" name="departmentId" type="departmentId"
-                    value="${param.departmentId}"><h6>Employee List</h6></button>
+            <button class="btn btn-success" name="departmentId" value="${param.departmentId}">Employee List</button>
         </div>
     </form>
 

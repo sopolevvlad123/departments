@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name = "employee",schema = "aimprosoft")
+@Table(name = "employee", schema = "aimprosoft")
 public class Employee implements Serializable {
 
     @Id
@@ -51,9 +51,9 @@ public class Employee implements Serializable {
     private Integer departmentId;
 
     @ManyToOne
-    @JoinColumn(name="department_id",
-            insertable=false, updatable=false,
-            nullable=false)
+    @JoinColumn(name = "department_id",
+            insertable = false, updatable = false,
+            nullable = false)
     private Department department;
 
     public Employee() {

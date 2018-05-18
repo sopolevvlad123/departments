@@ -33,8 +33,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void saveOrUpdateEmployee(Employee employee) throws ServiceException, ValidationException {
-        Map<String,String> violationMap = constraintViolationsParser.getViolationsMap(employee);
-        if (violationMap.size() > 0){
+        Map<String, String> violationMap = constraintViolationsParser.getViolationsMap(employee);
+        if (violationMap.size() > 0) {
             throw new ValidationException("Validations problems with employee bean", violationMap);
         }
         try {
@@ -46,7 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public Employee getEmployee(Integer employeeId) throws ServiceException {
         Employee employee;
         try {
@@ -59,12 +59,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
 
-
     @Override
-    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
-    public List getDepartmentsEmployees(Integer departmentId) throws ServiceException{
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+    public List getDepartmentsEmployees(Integer departmentId) throws ServiceException {
         try {
-           return hiberEmployeeDao.getEmployeesByDepartmentID(departmentId);
+            return hiberEmployeeDao.getEmployeesByDepartmentID(departmentId);
         } catch (DAOException e) {
             logger.error(e);
             throw new ServiceException("Fail to get department employees at service layer", e);
@@ -72,7 +71,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void deleteEmployee(Integer employeeId) throws ServiceException{
+    public void deleteEmployee(Integer employeeId) throws ServiceException {
         try {
             hiberEmployeeDao.delete(employeeId);
         } catch (DAOException e) {
@@ -82,7 +81,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @Transactional(readOnly = true,propagation = Propagation.SUPPORTS)
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public Employee getEmployeeByEmail(String email) throws ServiceException {
         Employee employee;
         try {

@@ -11,9 +11,10 @@ public class CustomSqlEditor extends CustomDateEditor {
     public CustomSqlEditor(DateFormat dateFormat, boolean allowEmpty) {
         super(dateFormat, allowEmpty);
     }
+
     @Override
-    public void setAsText(@Nullable String text) throws IllegalArgumentException{
-        if (DataParser.parseDate(text) !=null){
+    public void setAsText(@Nullable String text) throws IllegalArgumentException {
+        if (DataParser.parseDate(text) != null) {
             setValue(Date.valueOf(text));
         }
     }

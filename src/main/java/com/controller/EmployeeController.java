@@ -33,7 +33,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = SAVE_EMPLOYEE, method = RequestMethod.POST)
-    public String saveEmployee(@ModelAttribute("employee")Employee employee, BindingResult result, ModelMap model) throws  AppException {
+    public String saveEmployee(@ModelAttribute("employee") Employee employee, BindingResult result, ModelMap model) throws AppException {
         try {
             employeeService.saveOrUpdateEmployee(employee);
             return "redirect:" + GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + employee.getDepartmentId();
@@ -48,7 +48,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = GET_DEP_EMPLOYEES, method = RequestMethod.GET)
-    public String getDepEmployees(@RequestParam(value = DEPARTMENT_ID) String departmentId,Model model) throws  AppException {
+    public String getDepEmployees(@RequestParam(value = DEPARTMENT_ID) String departmentId, Model model) throws AppException {
         List employeeList;
         try {
             employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(departmentId));
@@ -80,7 +80,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = DELETE_EMPLOYEE, method = RequestMethod.POST)
-    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId,@RequestParam(value = EMPLOYEE_ID) String employeeId) throws AppException {
+    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId, @RequestParam(value = EMPLOYEE_ID) String employeeId) throws AppException {
         try {
             employeeService.deleteEmployee(Integer.parseInt(employeeId));
         } catch (ServiceException e) {
@@ -90,8 +90,8 @@ public class EmployeeController {
         return "redirect:" + GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + departmentId;
     }
 
-    @InitBinder( value = "employee")
-    public void customizeBinding (WebDataBinder binder) {
+    @InitBinder(value = "employee")
+    public void customizeBinding(WebDataBinder binder) {
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         dateFormatter.setLenient(false);
         binder.registerCustomEditor(java.sql.Date.class, "hireDate",

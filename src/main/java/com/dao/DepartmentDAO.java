@@ -11,7 +11,7 @@ public interface DepartmentDAO extends DAO {
 
     List getAllDepartments() throws DAOException;
 
-    Department getDepartmentByName(String departmentName)throws DAOException;
+    Department getDepartmentByName(String departmentName) throws DAOException;
 
 
 }

@@ -10,13 +10,14 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "department",schema = "aimprosoft")
-public class Department  implements Serializable {
+@Table(name = "department", schema = "aimprosoft")
+public class Department implements Serializable {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "department_id")
     private Integer departmentId;
-    @Column(name = "department_name",unique = true)
+    @Column(name = "department_name", unique = true)
     @NotNull(message = "Incorrect department name value")
     @NotBlank(message = "Department name should not be blank")
     @MaxLength(value = 10, message = "Maximum length is 10 symbols")
@@ -24,7 +25,7 @@ public class Department  implements Serializable {
     @CheckWith(value = DepartmentNameValidator.class, message = "Department with this name already exist")
     private String departmentName;
 
-    @OneToMany(cascade={CascadeType.ALL},fetch =FetchType.LAZY ,mappedBy = "department")
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, mappedBy = "department")
     private List<Employee> employeeList = new ArrayList<>();
 
     public Department() {
