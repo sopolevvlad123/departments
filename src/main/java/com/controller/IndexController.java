@@ -27,7 +27,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = {DEFAULT_URL, GET_DEPARTMENT_LIST})
-    public String hello(Model model) throws AppException {
+    public String getIndexPage(Model model) throws AppException {
         List departmentList;
         try {
             departmentList = departmentServiceImpl.getAllDepartments();

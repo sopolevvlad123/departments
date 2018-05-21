@@ -33,7 +33,7 @@ public class DepartmentController {
     }
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public String saveOrUpdateDepartment( @ModelAttribute("department")Department department, BindingResult result, ModelMap model) throws AppException {
+    public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, ModelMap model) throws AppException, ServiceException {
         try {
             departmentServiceImpl.saveOrUpdate(department);
             model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
@@ -42,39 +42,25 @@ public class DepartmentController {
             logger.error(e);
             model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
             return "saveDepartment";
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to create or update department at application layer", e);
         }
     }
 
     @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
     public String getDepartmentForm(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
-                                 Model model) throws AppException {
-        Department department = new Department();
+                                    Model model) throws ServiceException {
         if (DataParser.isIDValid(departmentId)) {
-            try {
-                department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
-            } catch (ServiceException e) {
-                logger.error(e);
-                throw new AppException("Fail to get department at application layer", e);
-            }
+            Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
+            model.addAttribute("department", department);
         }
-        model.addAttribute("department", department);
         return "saveDepartment";
     }
 
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)
-    public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws AppException {
-        try {
-            departmentServiceImpl.deleteDepartment(Integer.parseInt(departmentId));
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to delete department at application layer", e);
-        }
+    public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws ServiceException {
+
+        departmentServiceImpl.deleteDepartment(Integer.parseInt(departmentId));
         return "redirect:" + GET_DEPARTMENT_LIST;
     }
-
 
 
 }

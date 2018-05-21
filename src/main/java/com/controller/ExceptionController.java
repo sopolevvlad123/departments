@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.exception.AppException;
+import com.exception.ServiceException;
 import org.apache.log4j.Logger;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -33,5 +34,12 @@ public class ExceptionController   {
         String address = throwable.getMessage().substring(throwable.getMessage().lastIndexOf("/") );
         model.addAttribute("errorMessage","Page with address " + address + " does not exist");
         return "page404";
+    }
+
+    @ExceptionHandler(value = ServiceException.class )
+    public String serviceExceptionHandle(ServiceException exception, Model model){
+        logger.error(exception);
+        model.addAttribute("error",exception);
+        return "errorPage";
     }
 }
