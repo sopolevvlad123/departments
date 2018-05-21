@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,53 +25,42 @@ public class DepartmentController {
     private final static Logger logger = Logger.getLogger(DepartmentController.class);
 
 
-    private final DepartmentService departmentService;
+    private final DepartmentService departmentServiceImpl;
 
     @Autowired
-    public DepartmentController(DepartmentService departmentService) {
-        this.departmentService = departmentService;
+    public DepartmentController(DepartmentService departmentServiceImpl) {
+        this.departmentServiceImpl = departmentServiceImpl;
     }
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, ModelMap model) throws AppException {
+    public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, ModelMap model) throws AppException, ServiceException {
         try {
-            departmentService.saveOrUpdate(department);
-            model.addAttribute(DEPARTMENT_LIST, departmentService.getAllDepartments());
+            departmentServiceImpl.saveOrUpdate(department);
+            model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
             return "redirect:" + GET_DEPARTMENT_LIST;
         } catch (ValidationException e) {
             logger.error(e);
             model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
             return "saveDepartment";
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to create or update department at application layer", e);
         }
     }
 
     @RequestMapping(value = PREPARE_DEPARTMENT, method = RequestMethod.GET)
     public String getDepartmentForm(@RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
-                                    Model model) throws AppException {
-        Department department = new Department();
+                                    Model model) throws ServiceException {
         if (DataParser.isIDValid(departmentId)) {
-            try {
-                department = departmentService.getDepartment(Integer.parseInt(departmentId));
-            } catch (ServiceException e) {
-                logger.error(e);
-                throw new AppException("Fail to get department at application layer", e);
-            }
+            Department department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
+            model.addAttribute("department", department);
         }
-        model.addAttribute("department", department);
         return "saveDepartment";
     }
 
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)
-    public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws AppException {
-        try {
-            departmentService.deleteDepartment(Integer.parseInt(departmentId));
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to delete department at application layer", e);
-        }
+    public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws ServiceException {
+
+        departmentServiceImpl.deleteDepartment(Integer.parseInt(departmentId));
         return "redirect:" + GET_DEPARTMENT_LIST;
     }
+
+
 }

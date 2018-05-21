@@ -15,6 +15,7 @@ import java.util.List;
 import static com.utils.ServletHandlerConstants.DEFAULT_URL;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
+
 @Controller
 public class IndexController {
     private final static Logger logger = Logger.getLogger(IndexController.class);
@@ -27,7 +28,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = {DEFAULT_URL, GET_DEPARTMENT_LIST})
-    public String hello(Model model) throws AppException {
+    public String getIndexPage(Model model) throws AppException {
         List departmentList;
         try {
             departmentList = departmentServiceImpl.getAllDepartments();

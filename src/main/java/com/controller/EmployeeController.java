@@ -32,7 +32,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = SAVE_EMPLOYEE, method = RequestMethod.POST)
-    public String saveEmployee(@ModelAttribute("employee") Employee employee, ModelMap model) throws AppException {
+    public String saveEmployee(@ModelAttribute("employee") Employee employee, ModelMap model) throws ServiceException {
         try {
             employeeService.saveOrUpdateEmployee(employee);
             return "redirect:" + GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + employee.getDepartmentId();
@@ -40,21 +40,12 @@ public class EmployeeController {
             logger.error(e);
             model.addAttribute(VIOLATIONS_MAP, e.getViolationsMap());
             return "saveEmployee";
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to create or update employee at application layer", e);
         }
     }
 
     @RequestMapping(value = GET_DEP_EMPLOYEES, method = RequestMethod.GET)
-    public String getDepEmployees(@RequestParam(value = DEPARTMENT_ID) String departmentId, Model model) throws AppException {
-        List employeeList;
-        try {
-            employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(departmentId));
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to get departments employee at application layer", e);
-        }
+    public String getDepEmployees(@RequestParam(value = DEPARTMENT_ID) String departmentId, Model model) throws ServiceException {
+        List employeeList = employeeService.getDepartmentsEmployees(Integer.parseInt(departmentId));
         model.addAttribute(EMPLOYEE_LIST, employeeList);
         model.addAttribute(DEPARTMENT_ID, departmentId);
         return "employeeList";
@@ -63,29 +54,19 @@ public class EmployeeController {
     @RequestMapping(value = PREPARE_EMPLOYEE, method = RequestMethod.GET)
     public String getEmployeeForm(@RequestParam(value = EMPLOYEE_ID, required = false) String employeeId,
                                   @RequestParam(value = DEPARTMENT_ID, required = false) String departmentId,
-                                  Model model) throws AppException {
+                                  Model model) throws ServiceException {
         Employee employee = new Employee();
         employee.setDepartmentId(Integer.parseInt(departmentId));
         if (DataParser.isIDValid(employeeId)) {
-            try {
-                employee = employeeService.getEmployee(Integer.parseInt(employeeId));
-            } catch (ServiceException e) {
-                logger.error(e);
-                throw new AppException("Fail to get department at application layer", e);
-            }
+            employee = employeeService.getEmployee(Integer.parseInt(employeeId));
+            model.addAttribute("employee", employee);
         }
-        model.addAttribute("employee", employee);
         return "saveEmployee";
     }
 
     @RequestMapping(value = DELETE_EMPLOYEE, method = RequestMethod.POST)
-    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId, @RequestParam(value = EMPLOYEE_ID) String employeeId) throws AppException {
-        try {
-            employeeService.deleteEmployee(Integer.parseInt(employeeId));
-        } catch (ServiceException e) {
-            logger.error(e);
-            throw new AppException("Fail to delete or update employee at application layer", e);
-        }
+    public String deleteEmployee(@RequestParam(value = DEPARTMENT_ID) String departmentId, @RequestParam(value = EMPLOYEE_ID) String employeeId) throws ServiceException {
+        employeeService.deleteEmployee(Integer.parseInt(employeeId));
         return "redirect:" + GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + departmentId;
     }
 
