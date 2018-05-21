@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <head>
@@ -23,23 +23,26 @@
         <tbody>
         <c:forEach var="employee" items="${employeeList}">
             <tr>
-                <th scope="row"><c:out value="${employee.employeeId}"></c:out></th>
-                <td><c:out value="${employee.firstName}"></c:out></td>
-                <td><c:out value="${employee.lastName}"></c:out></td>
-                <td><c:out value="${employee.email}"></c:out></td>
-                <td><c:out value="${employee.salary}"></c:out></td>
-                <td><c:out value="${employee.hireDate}"></c:out></td>
+                <th scope="row"><c:out value="${employee.employeeId}"/></th>
+                <td><c:out value="${employee.firstName}"/></td>
+                <td><c:out value="${employee.lastName}"/></td>
+                <td><c:out value="${employee.email}"/></td>
+                <td><c:out value="${employee.salary}"/></td>
+                <td><c:out value="${employee.hireDate}"/></td>
                 <td>
-                    <form action=<c:url value= "/deleteEmployee.do"/>  method="post">
+                    <form action="<c:url value= "/deleteEmployee.do"/>" method="post">
                         <input type="hidden" name="departmentId" value="${param.departmentId}"/>
                         <button class="btn btn-light" name="employeeId" type="submit"
-                                value="${employee.employeeId}"><h6>Delete Employee</h6></button>
+                                value="${employee.employeeId}">Delete Employee
+                        </button>
                     </form>
                 </td>
                 <td>
-                    <form action=<c:url value= "/prepareEmployee.do"/> method="get">
+                    <form action="<c:url value= "/prepareEmployee.do"/>" method="get">
                         <input type="hidden" name="employeeId" value="${employee.employeeId}"/>
-                        <button class="btn btn-light" name="departmentId" value="${departmentId}" type="submit">Update Employee</button>
+                        <button class="btn btn-light" name="departmentId" value="${departmentId}" type="submit">Update
+                            Employee
+                        </button>
                     </form>
                 </td>
             </tr>
@@ -47,12 +50,13 @@
         </tbody>
     </table>
     <div class="row justify-content-md-around">
-        <form action = <c:url value= "/prepareEmployee.do"/> method="get">
+        <form action="<c:url value= "/prepareEmployee.do"/>" method="get">
             <button class="btn btn-success" name="departmentId" type="submit" value="${departmentId}">
-                <h6>Create Employee</h6></button>
+                Create Employee
+            </button>
         </form>
         <div>
-            <a class="btn btn-success" href=<c:url value= "/departmentList.do"/> role="button">Main Page</a>
+            <a class="btn btn-success" href="<c:url value= "/departmentList.do"/>" role="button">Main Page</a>
         </div>
     </div>
 </div>

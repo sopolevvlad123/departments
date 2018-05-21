@@ -18,10 +18,8 @@ public class Validator {
     }
 
 
-    public  static List<ConstraintViolation> getViolationsList(Object valObj) {
-        AnnotationsConfigurer myConfigurer = new AnnotationsConfigurer();
-        myConfigurer.addCheckInitializationListener(BeanInjectingCheckInitializationListener.INSTANCE);
-        validator = new net.sf.oval.Validator(myConfigurer);
+    public static List<ConstraintViolation> getViolationsList(Object valObj) {
+
         return validator.validate(valObj);
     }
 

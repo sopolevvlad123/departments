@@ -66,7 +66,6 @@ public class DepartmentController {
 
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)
     public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws AppException {
-        if (true) throw new AppException("fdfsdf");
         try {
             departmentServiceImpl.deleteDepartment(Integer.parseInt(departmentId));
         } catch (ServiceException e) {
