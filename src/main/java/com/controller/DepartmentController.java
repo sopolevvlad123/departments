@@ -33,7 +33,7 @@ public class DepartmentController {
     }
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
-    public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, BindingResult result, ModelMap model) throws AppException {
+    public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, ModelMap model) throws AppException {
         try {
             departmentService.saveOrUpdate(department);
             model.addAttribute(DEPARTMENT_LIST, departmentService.getAllDepartments());
