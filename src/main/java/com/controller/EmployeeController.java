@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +32,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = SAVE_EMPLOYEE, method = RequestMethod.POST)
-    public String saveEmployee(@ModelAttribute("employee") Employee employee, BindingResult result, ModelMap model) throws AppException {
+    public String saveEmployee(@ModelAttribute("employee") Employee employee, ModelMap model) throws AppException {
         try {
             employeeService.saveOrUpdateEmployee(employee);
             return "redirect:" + GET_DEP_EMPLOYEES + "?" + DEPARTMENT_ID + "=" + employee.getDepartmentId();
