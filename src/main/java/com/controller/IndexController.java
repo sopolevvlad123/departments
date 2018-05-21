@@ -15,13 +15,11 @@ import java.util.List;
 import static com.utils.ServletHandlerConstants.DEFAULT_URL;
 import static com.utils.ServletHandlerConstants.GET_DEPARTMENT_LIST;
 
-
 @Controller
 public class IndexController {
     private final static Logger logger = Logger.getLogger(IndexController.class);
 
     private final DepartmentService departmentServiceImpl;
-
 
     @Autowired
     public IndexController(DepartmentService departmentServiceImpl) {

@@ -18,7 +18,6 @@ public class DataParser {
         } catch (IllegalArgumentException e) {
             return null;
         }
-
     }
 
     public static boolean isIDValid(String id) {

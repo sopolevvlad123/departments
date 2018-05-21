@@ -11,8 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmployeeEmailValidator implements CheckWithCheck.SimpleCheck {
     private final static Logger logger = Logger.getLogger(EmployeeEmailValidator.class);
+    private EmployeeService employeeServiceImpl;
+
     @Autowired
-    EmployeeService employeeServiceImpl;
+    public void setEmployeeServiceImpl(EmployeeService employeeServiceImpl) {
+        this.employeeServiceImpl = employeeServiceImpl;
+    }
 
     @Override
     public boolean isSatisfied(Object valObj, Object value) {

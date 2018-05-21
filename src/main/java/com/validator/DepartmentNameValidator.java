@@ -15,10 +15,6 @@ public class DepartmentNameValidator implements CheckWithCheck.SimpleCheck {
 
     private DepartmentService departmentServiceImpl;
 
-    public DepartmentService getDepartmentServiceImpl() {
-        return departmentServiceImpl;
-    }
-
     @Autowired
     public void setDepartmentServiceImpl(DepartmentService departmentServiceImpl) {
         this.departmentServiceImpl = departmentServiceImpl;

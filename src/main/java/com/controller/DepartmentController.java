@@ -25,18 +25,18 @@ public class DepartmentController {
     private final static Logger logger = Logger.getLogger(DepartmentController.class);
 
 
-    private final DepartmentService departmentServiceImpl;
+    private final DepartmentService departmentService;
 
     @Autowired
-    public DepartmentController(DepartmentService departmentServiceImpl) {
-        this.departmentServiceImpl = departmentServiceImpl;
+    public DepartmentController(DepartmentService departmentService) {
+        this.departmentService = departmentService;
     }
 
     @RequestMapping(value = SAVE_DEPARTMENT, method = RequestMethod.POST)
     public String saveOrUpdateDepartment(@ModelAttribute("department") Department department, BindingResult result, ModelMap model) throws AppException {
         try {
-            departmentServiceImpl.saveOrUpdate(department);
-            model.addAttribute(DEPARTMENT_LIST, departmentServiceImpl.getAllDepartments());
+            departmentService.saveOrUpdate(department);
+            model.addAttribute(DEPARTMENT_LIST, departmentService.getAllDepartments());
             return "redirect:" + GET_DEPARTMENT_LIST;
         } catch (ValidationException e) {
             logger.error(e);
@@ -54,7 +54,7 @@ public class DepartmentController {
         Department department = new Department();
         if (DataParser.isIDValid(departmentId)) {
             try {
-                department = departmentServiceImpl.getDepartment(Integer.parseInt(departmentId));
+                department = departmentService.getDepartment(Integer.parseInt(departmentId));
             } catch (ServiceException e) {
                 logger.error(e);
                 throw new AppException("Fail to get department at application layer", e);
@@ -67,7 +67,7 @@ public class DepartmentController {
     @RequestMapping(value = DELETE_DEPARTMENT, method = RequestMethod.POST)
     public String deleteDepartment(@RequestParam(value = DEPARTMENT_ID) String departmentId) throws AppException {
         try {
-            departmentServiceImpl.deleteDepartment(Integer.parseInt(departmentId));
+            departmentService.deleteDepartment(Integer.parseInt(departmentId));
         } catch (ServiceException e) {
             logger.error(e);
             throw new AppException("Fail to delete department at application layer", e);
